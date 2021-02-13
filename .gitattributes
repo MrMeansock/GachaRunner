@@ -1,0 +1,6 @@
+C:/Users/Camilo/source/repos/crlimacastro/GachaRunner/Gacha[[:space:]]Runner/WwiseUnityIntegration_Mac_Src.zip filter=lfs diff=lfs merge=lfs -text
+C:/Users/Camilo/source/repos/crlimacastro/GachaRunner/Gacha[[:space:]]Runner/WwiseUnityIntegration_Windows_Src.zip filter=lfs diff=lfs merge=lfs -text
+C:/Users/Camilo/source/repos/crlimacastro/GachaRunner/Gacha[[:space:]]Runner/WwiseUnityIntegration_WindowsStore_Src.zip filter=lfs diff=lfs merge=lfs -text
+C:/Users/Camilo/source/repos/crlimacastro/GachaRunner/Gacha[[:space:]]Runner/WwiseUnityIntegration_Android_Src.zip filter=lfs diff=lfs merge=lfs -text
+C:/Users/Camilo/source/repos/crlimacastro/GachaRunner/Gacha[[:space:]]Runner/WwiseUnityIntegration_iOS_Src.zip filter=lfs diff=lfs merge=lfs -text
+Gacha[[:space:]]Runner/Assets/Wwise/** filter=lfs diff=lfs merge=lfs -text
