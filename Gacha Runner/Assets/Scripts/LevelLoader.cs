@@ -5,9 +5,9 @@ using UnityEngine;
 public class LevelLoader : MonoBehaviour
 {
     [SerializeField]
-    private float groundHeight;
+    private float groundHeight = 0;
     [SerializeField]
-    private GameObject groundPrefab;
+    private GameObject groundPrefab = null;
     private float groundWidth;
     private List<GameObject> groundObjects;
     private Character character;
