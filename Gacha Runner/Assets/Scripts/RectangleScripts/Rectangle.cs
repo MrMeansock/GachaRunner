@@ -1,24 +1,24 @@
 ﻿using UnityEngine;
 
-public class Rectangle : MonoBehaviour
+namespace GotchaGuys
 {
-    float lifespan; // in seconds
-
-    void Update()
+    namespace GameRectangle
     {
-        lifespan -= Time.deltaTime;
-
-        if (lifespan <= 0)
+        public class Rectangle : MonoBehaviour
         {
-            Destroy(gameObject);
-        }
-    }
+            public void Init(RectanglePreview preview)
+            {
+                transform.position = preview.transform.position;
+                transform.rotation = preview.transform.rotation;
+                transform.localScale = preview.transform.localScale;
+            } 
 
-    public static Rectangle MakeRectangle(Rectangle rectanglePrefab, RectanglePreview preview, float lifespan)
-    {
-        Rectangle rectangle = Instantiate(rectanglePrefab, preview.transform.position, preview.transform.rotation);
-        rectangle.transform.localScale = preview.transform.localScale;
-        rectangle.lifespan = lifespan;
-        return rectangle;
+            public static Rectangle MakeRectangle(Rectangle rectanglePrefab, RectanglePreview preview)
+            {
+                Rectangle rectangle = Instantiate(rectanglePrefab);
+                rectangle.Init(preview);
+                return rectangle;
+            }
+        }
     }
 }
