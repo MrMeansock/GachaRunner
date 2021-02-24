@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GotchaGuys.GameRectangle;
 
 public class Missile : MonoBehaviour
 {
@@ -49,6 +50,11 @@ public class Missile : MonoBehaviour
         if(collision.tag == "Player")
         {
             //Player has been hit
+            GameObject.Destroy(gameObject);
+        }
+        if (collision.TryGetComponent<Rectangle>(out Rectangle rectangle))
+        {
+            // Missigle hit a rectangle
             GameObject.Destroy(gameObject);
         }
     }

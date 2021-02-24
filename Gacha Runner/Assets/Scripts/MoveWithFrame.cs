@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class MoveWithFrame : MonoBehaviour
 {
-    private GameObject player;
+    [SerializeField] private GameObject player;
     private float lastPlayerX;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        if(!player) player = GameObject.FindGameObjectWithTag("Player");
         lastPlayerX = player.transform.position.x;
     }
 
