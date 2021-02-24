@@ -5,7 +5,7 @@ namespace GotchaGuys
 {
     namespace GameRectangle
     {
-
+        [RequireComponent(typeof(SpriteRenderer))]
         public class RectanglePreview : MonoBehaviour
         {
             private Vector2 startPosition;
@@ -30,7 +30,16 @@ namespace GotchaGuys
                 }
             }
 
+            public float Length => (EndPosition - StartPosition).magnitude;
+
+            public SpriteRenderer spriteRenderer;
+
             private event Action OnResize;
+
+            private void Awake()
+            {
+                spriteRenderer = GetComponent<SpriteRenderer>();
+            }
 
             private void OnEnable()
             {

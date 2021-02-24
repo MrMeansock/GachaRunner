@@ -5,7 +5,7 @@ using UnityEngine;
 public class MissileManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject missilePrefab;
+    private GameObject missilePrefab = null;
     private BoxCollider2D spawnArea;
 
     private float minMissileSpawnDelay = 1.5f;
