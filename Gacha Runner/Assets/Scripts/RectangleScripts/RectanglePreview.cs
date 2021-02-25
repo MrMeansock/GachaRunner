@@ -11,7 +11,10 @@ namespace GotchaGuys
             private Vector2 startPosition;
             public Vector2 StartPosition
             {
-                get => startPosition;
+                get
+                {
+                    return startPosition + new Vector2(moveWithFrame.GetTrackingDelta(), 0);
+                }
                 set
                 {
                     startPosition = value;
@@ -22,13 +25,19 @@ namespace GotchaGuys
             private Vector2 endPosition;
             public Vector2 EndPosition
             {
-                get => endPosition;
+                get
+                {
+                        return endPosition;
+                }
                 set
                 {
                     endPosition = value;
                     OnResize?.Invoke();
                 }
             }
+
+            private Vector2 initalPosition;
+            private MoveWithFrame moveWithFrame;
 
             public float Length => (EndPosition - StartPosition).magnitude;
 
@@ -39,6 +48,7 @@ namespace GotchaGuys
             private void Awake()
             {
                 spriteRenderer = GetComponent<SpriteRenderer>();
+                moveWithFrame = GetComponent<MoveWithFrame>();
             }
 
             private void OnEnable()
@@ -77,6 +87,8 @@ namespace GotchaGuys
             {
                 StartPosition = startPosition;
                 EndPosition = startPosition;
+                moveWithFrame.StartTracking();
+                Debug.Log("Tracking started");
             }
 
             public static RectanglePreview MakePreview(RectanglePreview previewPrefab, Vector3 startPosition)

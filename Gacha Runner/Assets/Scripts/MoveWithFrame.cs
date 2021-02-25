@@ -6,11 +6,12 @@ public class MoveWithFrame : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     private float lastPlayerX;
+    private float trackPlayerX;
 
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        if(!player) player = GameObject.FindGameObjectWithTag("Player");
+        if (!player) player = GameObject.FindGameObjectWithTag("Player");
         lastPlayerX = player.transform.position.x;
     }
 
@@ -19,5 +20,15 @@ public class MoveWithFrame : MonoBehaviour
     {
         transform.Translate(new Vector3(player.transform.position.x - lastPlayerX, 0, 0));
         lastPlayerX = player.transform.position.x;
+    }
+
+    public void StartTracking()
+    {
+        trackPlayerX = player.transform.position.x;
+    }
+
+    public float GetTrackingDelta()
+    {
+        return player.transform.position.x - trackPlayerX;
     }
 }

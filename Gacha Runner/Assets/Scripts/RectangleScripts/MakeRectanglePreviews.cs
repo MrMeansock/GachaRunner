@@ -44,21 +44,21 @@ namespace GotchaGuys
                 touchHandler.OnFirstTouchEnd -= EndPreview;
             }
 
-            void StartPreview(Touch touch)
+            void StartPreview(Vector2 touchPos)
             {
-                activePreview = previewPool.GetNextAvailable(MainCamera.ScreenToWorldPoint(touch.position));
+                activePreview = previewPool.GetNextAvailable(MainCamera.ScreenToWorldPoint(touchPos));
                 UpdateColor(activePreview);
             }
 
-            void UpdatePreview(Touch touch, Vector2 deltaPosition)
+            void UpdatePreview(Vector2 touchPos, Vector2 deltaPosition)
             {
-                activePreview.EndPosition = MainCamera.ScreenToWorldPoint(touch.position);
+                activePreview.EndPosition = MainCamera.ScreenToWorldPoint(touchPos);
                 UpdateColor(activePreview);
             }
 
-            void EndPreview(Touch touch)
+            void EndPreview(Vector2 touchPos)
             {
-                activePreview.EndPosition = MainCamera.ScreenToWorldPoint(touch.position);
+                activePreview.EndPosition = MainCamera.ScreenToWorldPoint(touchPos);
                 UpdateColor(activePreview);
 
                 // Invoke GoodPreview event if conditions met
