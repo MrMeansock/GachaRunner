@@ -50,6 +50,7 @@ public class Missile : MonoBehaviour
         if(collision.tag == "Player")
         {
             //Player has been hit
+            collision.GetComponent<Character>().TakeDamage();
             GameObject.Destroy(gameObject);
         }
         if (collision.TryGetComponent<Rectangle>(out Rectangle rectangle))

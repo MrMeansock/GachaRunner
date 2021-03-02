@@ -19,6 +19,13 @@ public class Character : MonoBehaviour
     protected float bounceHeight = 0.25f;
     protected float bounceInterval = 0.3f;
 
+    //Invinciblity values
+    protected float iMaxTime = 0.5f;
+    protected float iTime = 0.0f;
+    protected int iFrames = 0;
+    protected bool isInvincible = false;
+
+
     // Start is called before the first frame update
     virtual protected void Start()
     {
@@ -31,6 +38,11 @@ public class Character : MonoBehaviour
         MoveForward();
     }
 
+    protected void FixedUpdate()
+    {
+        HandleInvinciblity();
+    }
+
     protected void MoveForward()
     {
         Vector2 force = transform.right * speed;
@@ -39,13 +51,44 @@ public class Character : MonoBehaviour
         Bounce(true);
     }
 
-    /*protected void MoveTowardsPoint(Vector3 point)
+    protected void HandleInvinciblity()
     {
-        point = new Vector3(point.x, transform.position.y, point.z);
-        Vector3 dir = point - transform.position;
-        dir.Normalize();
-        cc.Move(dir * speed);
-    }*/
+        if(isInvincible)
+        {
+            //Do invincilibity timer
+            if(iTime >= iMaxTime)
+            {
+                isInvincible = false;
+                //Make sure body is visible upon ending iFrames
+                SpriteRenderer bodySprite = body.GetComponent<SpriteRenderer>();
+                bodySprite.color = new Color(bodySprite.color.r, bodySprite.color.g, bodySprite.color.b, 1.0f);
+                iTime = 0;
+                iFrames = 0;
+                return;
+            }
+
+            //Make body blink while invincible
+            Debug.Log(iFrames);
+            if(iFrames % 5 == 0)
+            {
+                SpriteRenderer bodySprite = body.GetComponent<SpriteRenderer>();
+                bodySprite.color = new Color(bodySprite.color.r, bodySprite.color.g, bodySprite.color.b, bodySprite.color.a == 0.0f ? 1.0f : 0.0f);
+            }
+
+            iTime += Time.deltaTime;
+            iFrames++;
+        }
+    }
+
+    public void TakeDamage()
+    {
+        if(!isInvincible)
+        {
+            //Handle damage taking
+
+            isInvincible = true;
+        }
+    }
 
     protected void Bounce(bool moving)
     {
