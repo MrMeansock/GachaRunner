@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ public class Character : MonoBehaviour
     protected bool grounded = false;
     protected float bounceTime = 0.0f;
     protected float gravity = 5.0f;
+    protected float startX;
 
     //Config values
     [SerializeField]
@@ -25,11 +27,15 @@ public class Character : MonoBehaviour
     protected int iFrames = 0;
     protected bool isInvincible = false;
 
+    public float DisplacementX => Math.Abs(transform.position.x - startX); // (Abs to get pure distance, left or right).
+
+    public event Action OnDeath;
 
     // Start is called before the first frame update
     virtual protected void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        startX = transform.position.x;
     }
 
     // Update is called once per frame
@@ -68,7 +74,7 @@ public class Character : MonoBehaviour
             }
 
             //Make body blink while invincible
-            Debug.Log(iFrames);
+            // Debug.Log(iFrames);
             if(iFrames % 5 == 0)
             {
                 SpriteRenderer bodySprite = body.GetComponent<SpriteRenderer>();
@@ -85,6 +91,8 @@ public class Character : MonoBehaviour
         if(!isInvincible)
         {
             //Handle damage taking
+            // Handle player death
+            // OnDeath?.Invoke();
 
             isInvincible = true;
         }
