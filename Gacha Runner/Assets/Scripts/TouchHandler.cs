@@ -88,6 +88,7 @@ public class TouchHandler : MonoBehaviour
                 case TouchPhase.Began:
                     OnFirstTouchStart?.Invoke(pos);
                     break;
+                case TouchPhase.Stationary:
                 case TouchPhase.Moved:
                     OnFirstTouchMoved?.Invoke(pos, fTouch.deltaPosition);
                     break;
