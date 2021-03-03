@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 public class GameObjectPool : AbstractPool
 {
@@ -93,6 +96,7 @@ public class GameObjectPool : AbstractPool
     }
 }
 
+#if UNITY_EDITOR
 // Inherit AbstractPoolEditor
 [CustomEditor(typeof(GameObjectPool))]
 public class GameObjectPoolEditor : AbstractPoolEditor {
@@ -116,3 +120,4 @@ public class GameObjectPoolEditor : AbstractPoolEditor {
         base.OnInspectorGUI();
     }
 }
+#endif

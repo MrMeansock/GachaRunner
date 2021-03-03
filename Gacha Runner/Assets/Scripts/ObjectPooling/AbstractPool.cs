@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 public abstract class AbstractPool : MonoBehaviour
 {
@@ -17,6 +19,7 @@ public abstract class AbstractPool : MonoBehaviour
     public int max = 1; // Only serializes if isDynamic is set to false
 }
 
+#if UNITY_EDITOR
 /// <summary>
 /// Custom editor for AbstractPools
 /// Children's editors should inherit from this one
@@ -56,3 +59,4 @@ public class AbstractPoolEditor : Editor
         }
     }
 }
+#endif
