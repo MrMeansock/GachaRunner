@@ -1,15 +1,15 @@
 ﻿using System;
 using UnityEngine;
 
-public class CurrencyHandler : MonoBehaviour
+public class RunCurrencyHandler : MonoBehaviour
 {
     [SerializeField] ScoreHandler scoreHandler;
 
     [Tooltip("Score -> to currency conversion factor.")]
-    [SerializeField] float scoreToCurrency = 0.1f;
+    [SerializeField] int scoreToCurrency = 1;
 
-    float runEarnings; // How much currency the player has earned during the run
-    public float RunEarnings
+    int runEarnings; // Currency the player has earned during the run (non score related, pickups?)
+    public int RunEarnings
     {
         get => runEarnings;
         set
