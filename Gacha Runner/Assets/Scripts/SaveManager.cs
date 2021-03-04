@@ -56,7 +56,7 @@ public class SaveManager : MonoBehaviour
         //Do loading things here
         #region Loading Stuff
 
-        cm.userCharacters = new List<Character>(data.characters);
+        cm.userCharacters = new List<CharacterBase>(data.characters);
 
         #endregion
 

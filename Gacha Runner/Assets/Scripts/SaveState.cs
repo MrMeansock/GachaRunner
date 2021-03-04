@@ -2,9 +2,9 @@
 //Where all saved variables will go
 public class SaveState
 {
-    public Character [] characters;
+    public CharacterBase[] characters;
 
-    public SaveState(Character[] characters)
+    public SaveState(CharacterBase[] characters)
     {
         this.characters = characters;
     }

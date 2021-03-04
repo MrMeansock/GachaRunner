@@ -6,7 +6,7 @@ public class CharacterManager : MonoBehaviour
 {
     [SerializeField]
     private CharStats[] baseCharacters;
-    public List<Character> userCharacters;
+    public List<CharacterBase> userCharacters;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +19,7 @@ public class CharacterManager : MonoBehaviour
         {
             if (charstats.name == name)
             {
-                userCharacters.Add(new Character(charstats));
+                userCharacters.Add(new CharacterBase(charstats));
                 return;
             }
         }
@@ -28,7 +28,7 @@ public class CharacterManager : MonoBehaviour
 
 
 
-    public Character AddRandomCharacter(int r)
+    public CharacterBase AddRandomCharacter(int r)
     {
         if(r != 0)
         {
@@ -36,7 +36,7 @@ public class CharacterManager : MonoBehaviour
             {
                 if(baseCharacters[i].rarity == r)
                 {
-                    Character charToAdd = new Character(baseCharacters[i]);
+                    CharacterBase charToAdd = new CharacterBase(baseCharacters[i]);
                     userCharacters.Add(charToAdd);
                     return charToAdd;
                 }
@@ -46,7 +46,7 @@ public class CharacterManager : MonoBehaviour
         else
         {
             //if peram is 0
-            Character charToAdd = new Character(baseCharacters[Random.Range(0, baseCharacters.Length)]);
+            CharacterBase charToAdd = new CharacterBase(baseCharacters[Random.Range(0, baseCharacters.Length)]);
             userCharacters.Add(charToAdd);
             return charToAdd;
         }

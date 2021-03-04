@@ -70,7 +70,7 @@ public class GachaScript : MonoBehaviour
         if(!inPull)
         {
             inPull = true;
-            Character charPulled = new Character();
+            CharacterBase charPulled = new CharacterBase();
             totalPulls++;
             int chance = Random.Range(0, 101);
             Debug.Log("[Hit] - " + chance + "/100");

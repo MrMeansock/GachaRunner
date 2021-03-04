@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Character
+public class CharacterBase
 {
     [SerializeField]
     private string name;
@@ -22,7 +22,7 @@ public class Character
     [SerializeField]
     private float baseHealth;
 
-    public Character(CharStats baseStats)
+    public CharacterBase(CharStats baseStats)
     {
         this.name = baseStats.name;
         this.level = baseStats.level;
@@ -33,7 +33,7 @@ public class Character
         this.sprite = baseStats.sprite;
     }
 
-    public Character ()
+    public CharacterBase()
     {
         this.name = "Null";
         this.level = 0;
@@ -52,17 +52,5 @@ public class Character
     public Sprite getSprite()
     {
         return sprite;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
