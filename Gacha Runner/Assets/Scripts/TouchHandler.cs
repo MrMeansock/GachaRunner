@@ -34,7 +34,7 @@ public class TouchHandler : MonoBehaviour
 
     private void Start()
     {
-        mobileInput = !(Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer);
+        mobileInput = !(Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WebGLPlayer);
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
