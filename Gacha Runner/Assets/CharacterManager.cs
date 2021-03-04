@@ -28,9 +28,28 @@ public class CharacterManager : MonoBehaviour
 
 
 
-    void AddRandomCharacter()
+    public Character AddRandomCharacter(int r)
     {
-        userCharacters.Add(new Character(baseCharacters[Random.Range(0, baseCharacters.Length)]));
+        if(r != 0)
+        {
+            for(int i = Random.Range(0, baseCharacters.Length); i > -2; i = Random.Range(0, baseCharacters.Length))
+            {
+                if(baseCharacters[i].rarity == r)
+                {
+                    Character charToAdd = new Character(baseCharacters[i]);
+                    userCharacters.Add(charToAdd);
+                    return charToAdd;
+                }
+            }
+            return null;
+        }
+        else
+        {
+            //if peram is 0
+            Character charToAdd = new Character(baseCharacters[Random.Range(0, baseCharacters.Length)]);
+            userCharacters.Add(charToAdd);
+            return charToAdd;
+        }
     }
 
     // Update is called once per frame
@@ -38,7 +57,7 @@ public class CharacterManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.P))
         {
-            AddRandomCharacter();
+            AddRandomCharacter(0);
         }
     }
 }

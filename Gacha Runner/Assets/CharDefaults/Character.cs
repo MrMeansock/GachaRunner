@@ -9,6 +9,10 @@ public class Character
     private string name;
     [SerializeField]
     private int level;
+    [SerializeField]
+    private int rarity;
+    [SerializeField]
+    private Sprite sprite;
 
     //Movement
     [SerializeField]
@@ -25,6 +29,29 @@ public class Character
         this.baseSpeed = baseStats.baseSpeed;
         this.baseJump = baseStats.baseJump;
         this.baseHealth = baseStats.baseHealth;
+        this.rarity = baseStats.rarity;
+        this.sprite = baseStats.sprite;
+    }
+
+    public Character ()
+    {
+        this.name = "Null";
+        this.level = 0;
+        this.baseSpeed = 1;
+        this.baseJump = 0;
+        this.baseHealth = 1;
+        this.rarity = 0;
+        this.sprite = null;
+    }
+
+    public int GetRarity()
+    {
+        return rarity;
+    }
+
+    public Sprite getSprite()
+    {
+        return sprite;
     }
 
     // Start is called before the first frame update
