@@ -30,47 +30,29 @@ public class TouchHandler : MonoBehaviour
     public event Action<Vector2> OnFirstTouchEnd;
 
     private bool mobileInput;
+    private GameManager gm;
 
     private void Start()
     {
         mobileInput = !(Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer);
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if(mobileInput)
+        if (!gm.IsPaused)
         {
-            UpdateTouching();
-            DoMobileInput();
-        }
-        else
-        {
-            DoKeyboardInput();
-        }
-
-        /*if (Touching)
-        {
-            // Cache first touch this frame
-            Touch fTouch = FirstTouch;
-            // Cache position info too
-            Vector2 pos = fTouch.position;
-
-            // Invoke events
-            switch (fTouch.phase)
+            if (mobileInput)
             {
-                case TouchPhase.Began:
-                    OnFirstTouchStart?.Invoke(fTouch);
-                    break;
-                case TouchPhase.Moved:
-                    OnFirstTouchMoved?.Invoke(fTouch, fTouch.deltaPosition);
-                    break;
-                case TouchPhase.Ended:
-                    OnFirstTouchEnd?.Invoke(fTouch);
-                    break;
+                UpdateTouching();
+                DoMobileInput();
             }
-        }*/
+            else
+            {
+                DoKeyboardInput();
+            }
+        }
     }
 
     private void DoMobileInput()

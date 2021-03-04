@@ -8,6 +8,7 @@ public class Character : MonoBehaviour
     protected Rigidbody2D rb;
     [SerializeField]
     protected GameObject body;
+    protected GameManager gm;
 
     //Other values
     protected bool grounded = false;
@@ -27,6 +28,12 @@ public class Character : MonoBehaviour
     protected int iFrames = 0;
     protected bool isInvincible = false;
 
+    //Health
+    protected int maxHealth = 3;
+    protected int health = 3;
+    [SerializeField]
+    protected GameObject healthArea;
+
     public float DisplacementX => Math.Abs(transform.position.x - startX); // (Abs to get pure distance, left or right).
 
     public event Action OnDeath;
@@ -35,6 +42,7 @@ public class Character : MonoBehaviour
     virtual protected void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         startX = transform.position.x;
     }
 
@@ -91,8 +99,14 @@ public class Character : MonoBehaviour
         if(!isInvincible)
         {
             //Handle damage taking
-            // Handle player death
-            // OnDeath?.Invoke();
+            health--;
+            healthArea.transform.GetChild(health).gameObject.SetActive(false);
+            if (health == 0)
+            {
+                // Handle player death
+                OnDeath?.Invoke();
+                gm.GameOver();
+            }
 
             isInvincible = true;
         }
