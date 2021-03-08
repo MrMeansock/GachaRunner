@@ -14,13 +14,21 @@ namespace GotchaGuys
             [Header("Parameters")]
             [Tooltip("Minimum length a preview needs to be in order to create a rectangle.")]
             [SerializeField] float minLength = 2.5f;
+            [Tooltip("Maximum length a preview can be to be in order to create a rectangle.")]
+            [SerializeField] float maxLength = 8.5f;
+            [Tooltip("Time (in seconds) a player has to wait to make the next rectangle.")]
+            [SerializeField] float cooldown = 2.0f;
+
             [Tooltip("Color of previews that are too short and won't make a rectangle.")]
             [SerializeField] Color badPreviewColor = Color.gray;
             [Tooltip("Color of previews long enough to make a rectangle.")]
             [SerializeField] Color goodPreviewColor = Color.red;
+            [Tooltip("Color of previews while the user cannot make rectangles yet.")]
+            [SerializeField] Color cooldownColor = Color.red;
 
             // Tool logic variables
             private RectanglePreview activePreview;
+            private float currentCooldown;
 
             public event Action<RectanglePreview> OnGoodPreviewEnd;
 
@@ -28,6 +36,15 @@ namespace GotchaGuys
             {
                 if (!touchHandler) touchHandler = FindObjectOfType<TouchHandler>();
                 if (!previewPool) previewPool = FindObjectOfType<RectanglePreviewPool>();
+            }
+
+            private void Update()
+            {
+                // Update cooldown time
+                if (currentCooldown > 0)
+                {
+                    currentCooldown -= Time.deltaTime;
+                }
             }
 
             private void OnEnable()
@@ -53,18 +70,26 @@ namespace GotchaGuys
             void UpdatePreview(Vector2 touchPos, Vector2 deltaPosition)
             {
                 activePreview.EndPosition = MainCamera.ScreenToWorldPoint(touchPos);
+
+                // Clamp length of preview
+                if (activePreview.Length > maxLength)
+                {
+                    Vector2 direction = activePreview.EndPosition - activePreview.StartPosition;
+                    direction.Normalize();
+                    direction *= maxLength;
+                    activePreview.EndPosition = activePreview.StartPosition + direction;
+                }
+
                 UpdateColor(activePreview);
             }
 
             void EndPreview(Vector2 touchPos)
             {
-                activePreview.EndPosition = MainCamera.ScreenToWorldPoint(touchPos);
-                UpdateColor(activePreview);
-
                 // Invoke GoodPreview event if conditions met
-                if (activePreview.Length >= minLength)
+                if (currentCooldown <= 0 && activePreview.Length >= minLength)
                 {
                     OnGoodPreviewEnd?.Invoke(activePreview);
+                    currentCooldown = cooldown;
                 }
 
                 previewPool.ReturnToPool(activePreview);
@@ -73,13 +98,20 @@ namespace GotchaGuys
 
             void UpdateColor(RectanglePreview preview)
             {
-                if (preview.Length < minLength)
+                if (currentCooldown <= 0)
                 {
-                    preview.spriteRenderer.color = badPreviewColor;
+                    if (preview.Length < minLength)
+                    {
+                        preview.spriteRenderer.color = badPreviewColor;
+                    }
+                    else
+                    {
+                        preview.spriteRenderer.color = goodPreviewColor;
+                    }
                 }
                 else
                 {
-                    preview.spriteRenderer.color = goodPreviewColor;
+                    preview.spriteRenderer.color = cooldownColor;
                 }
             }
         }
