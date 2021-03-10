@@ -46,5 +46,8 @@ MonoBehaviour:
   touchHandler: {fileID: 0}
   previewPool: {fileID: 0}
   minLength: 2.5
+  maxLength: 8.5
+  cooldown: 2
   badPreviewColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   goodPreviewColor: {r: 1, g: 0, b: 0, a: 1}
+  cooldownColor: {r: 1, g: 0.5, b: 0.5, a: 0.39215687}
