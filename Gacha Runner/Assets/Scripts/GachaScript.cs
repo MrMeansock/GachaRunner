@@ -23,7 +23,7 @@ public class GachaScript : MonoBehaviour
 
     void Start()
     {
-        cm = GameObject.Find("GameManager").GetComponent<CharacterManager>();
+        cm = GameObject.Find("OverallGameManager").GetComponent<CharacterManager>();
         gachaMenu = GameObject.Find("Canvas").transform.Find("GachaPanel").gameObject;
         gachaSparkles = GameObject.Find("GachaSparkles");
         inPull = false;
