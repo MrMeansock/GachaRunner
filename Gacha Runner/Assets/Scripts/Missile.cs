@@ -45,6 +45,11 @@ public class Missile : MonoBehaviour
         lifeTime += Time.deltaTime;
     }
 
+    public void SetSpeedMult(float speedMult)
+    {
+        speed *= speedMult;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Player")

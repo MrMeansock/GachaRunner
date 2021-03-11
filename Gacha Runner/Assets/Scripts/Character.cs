@@ -59,7 +59,7 @@ public class Character : MonoBehaviour
 
     protected void MoveForward()
     {
-        Vector2 force = transform.right * speed;
+        Vector2 force = transform.right * speed * gm.PlayerSpeedMultiplier;
         force += Vector2.down * gravity;
         rb.velocity = force;
         Bounce(true);
