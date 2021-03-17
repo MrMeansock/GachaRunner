@@ -49,8 +49,13 @@ public class CharacterBase
         return rarity;
     }
 
-    public Sprite getSprite()
+    public Sprite GetSprite()
     {
         return sprite;
+    }
+
+    public int GetLevel()
+    {
+        return level;
     }
 }

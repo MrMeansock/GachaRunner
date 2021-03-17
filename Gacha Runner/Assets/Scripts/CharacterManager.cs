@@ -7,6 +7,7 @@ public class CharacterManager : MonoBehaviour
     [SerializeField]
     private CharStats[] baseCharacters;
     public List<CharacterBase> userCharacters;
+    public int selectedCharacter;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +27,10 @@ public class CharacterManager : MonoBehaviour
         Debug.LogError("Name Was Not Found While Adding Character!");
     }
 
-
+    public void SortByLevel ()
+    {
+        userCharacters.Sort((p1, p2)=> p2.GetLevel().CompareTo(p1.GetLevel()));
+    }
 
     public CharacterBase AddRandomCharacter(int r)
     {
@@ -58,6 +62,7 @@ public class CharacterManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.P))
         {
             AddRandomCharacter(0);
+            SortByLevel();
         }
     }
 }

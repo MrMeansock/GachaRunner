@@ -125,8 +125,8 @@ public class GachaScript : MonoBehaviour
             }
 
             Debug.Log("A");
-            if(charPulled.getSprite() != null)
-                gachaMenu.transform.Find("CharacterSprite").GetComponent<Image>().sprite = charPulled.getSprite();
+            if(charPulled.GetSprite() != null)
+                gachaMenu.transform.Find("CharacterSprite").GetComponent<Image>().sprite = charPulled.GetSprite();
             inPull = false;
         }
     }  
