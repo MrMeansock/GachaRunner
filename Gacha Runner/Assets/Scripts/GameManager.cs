@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public bool IsPaused => isPaused;
     private Character player;
     [SerializeField]
-    private GameObject gameOverMenu;
+    private GameObject gameOverMenu = null;
     private float gameTimer;
 
     //Progression values
