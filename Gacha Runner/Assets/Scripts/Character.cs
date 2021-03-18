@@ -90,7 +90,7 @@ public class Character : MonoBehaviour
             }
 
             //Make body blink while invincible
-            Debug.Log(iFrames);
+            //Debug.Log(iFrames);
             if(iFrames % 5 == 0)
             {
                 SpriteRenderer bodySprite = body.GetComponent<SpriteRenderer>();
