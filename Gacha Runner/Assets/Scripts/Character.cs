@@ -34,9 +34,16 @@ public class Character : MonoBehaviour
     [SerializeField]
     protected GameObject healthArea;
 
+    //Slope values
+    protected float bottomDisplacement = 0.5f;
+    protected float slopeRayLength = 0.5f;
+    protected float upSlopeForceMultiplier = 4.0f;
+    protected float downSlopeForceMultiplier = 10.0f;
+
     public float DisplacementX => Math.Abs(transform.position.x - startX); // (Abs to get pure distance, left or right).
 
     public event Action OnDeath;
+
 
     // Start is called before the first frame update
     virtual protected void Start()
@@ -50,6 +57,7 @@ public class Character : MonoBehaviour
     virtual protected void Update()
     {
         MoveForward();
+        HandleSlopes();
     }
 
     protected void FixedUpdate()
@@ -92,6 +100,54 @@ public class Character : MonoBehaviour
             iTime += Time.deltaTime;
             iFrames++;
         }
+    }
+
+    protected void HandleSlopes()
+    {
+        RaycastHit2D[] hits = new RaycastHit2D[16];
+        bool hitFound = false;
+        int hitAmount = Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y - bottomDisplacement), Vector2.right, new ContactFilter2D(), hits, slopeRayLength);
+        
+        for(int i = 0; i < hitAmount; i++)
+        {
+            if(hits[i].collider.tag != "Player")
+            {
+                hitFound = true;
+                float upForce = hits[i].normal.y;
+                if (upForce > 0)
+                {
+                    upForce *= upSlopeForceMultiplier;
+                    rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y + upForce);
+                }
+            }
+        }
+
+        if(!hitFound)
+        {
+            hitAmount = Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y - bottomDisplacement), Vector2.down, new ContactFilter2D(), hits, slopeRayLength);
+
+            for (int i = 0; i < hitAmount; i++)
+            {
+                if (hits[i].collider.tag != "Player")
+                {
+                    hitFound = true;
+                    float upForce = hits[i].normal.y;
+                    if (upForce > 0 && hits[i].normal.x < 0f)
+                    {
+                        upForce *= upSlopeForceMultiplier;
+                        rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y + upForce);
+                    }
+                    else if(hits[i].normal.x > 0f)
+                    {
+                        float forwardForce = hits[i].normal.x;
+                        forwardForce *= downSlopeForceMultiplier;
+                        rb.velocity = new Vector2(rb.velocity.x + forwardForce, rb.velocity.y);
+                    }
+                }
+            }
+        }
+
+        Debug.DrawLine(new Vector3(transform.position.x, transform.position.y - bottomDisplacement), new Vector3(transform.position.x + slopeRayLength, transform.position.y - bottomDisplacement), Color.red);
     }
 
     public void TakeDamage()

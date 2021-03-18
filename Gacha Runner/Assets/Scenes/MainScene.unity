@@ -770,8 +770,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152a33db1675b6544a9d752cb3d4c977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundHeight: -5.2
-  groundPrefab: {fileID: 4354035176549903945, guid: 2849d82744450244ca631c0efad6c884,
+  groundHeight: -4.6
+  groundPrefab: {fileID: 6394022643643930059, guid: 4fc6fcff2094a6c4b9811ed4e7efc25b,
     type: 3}
 --- !u!4 &749660012
 Transform:
