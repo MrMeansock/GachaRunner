@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Flyler
   level: 0
   rarity: 3
+  sprite: {fileID: 21300000, guid: 80a34d87109bd3b42bed378de7be44e3, type: 3}
   baseSpeed: 10
   baseJump: 4
   baseHealth: 2

@@ -34,10 +34,10 @@ RectTransform:
   m_Father: {fileID: 8288245363942007995}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -91.1, y: 0.0002327}
-  m_SizeDelta: {x: 355.2349, y: 341.29138}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 35.595, y: -37.5}
+  m_SizeDelta: {x: 71.20343, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8288245362540872422
 CanvasRenderer:
@@ -120,10 +120,10 @@ RectTransform:
   m_Father: {fileID: 8288245363942007995}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 108.600006, y: -99.90015}
-  m_SizeDelta: {x: 273.57745, y: 122.13478}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 36.930054, y: -17.559998}
+  m_SizeDelta: {x: -86.00506, y: -41.031948}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8288245363389210461
 CanvasRenderer:
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 109.3
+  m_fontSize: 1252.2
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -271,15 +271,15 @@ RectTransform:
   m_GameObject: {fileID: 8288245363875840866}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6362715, y: 1.6362715, z: 1.6362715}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8288245362540872419}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -38, y: -145}
-  m_SizeDelta: {x: 206.70367, y: 356.08878}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 44.864, y: -76}
+  m_SizeDelta: {x: 89.72748, y: 125.04077}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8288245363875840869
 CanvasRenderer:
@@ -310,7 +310,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 06868367745d6b444a6330ecbc107c0f, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -354,10 +354,10 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -291, y: -191.5}
-  m_SizeDelta: {x: 537.4711, y: 341.29102}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8288245363942007997
 CanvasRenderer:

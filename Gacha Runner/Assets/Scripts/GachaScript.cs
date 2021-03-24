@@ -9,6 +9,7 @@ public class GachaScript : MonoBehaviour
     private CharacterManager cm;
     private GameObject gachaMenu;
     private GameObject gachaSparkles;
+    private GameObject characterSprite;
 
     public int totalPulls;
 
@@ -23,8 +24,9 @@ public class GachaScript : MonoBehaviour
 
     void Start()
     {
+        characterSprite = transform.Find("CharacterSprite").gameObject;
         cm = GameObject.Find("OverallGameManager").GetComponent<CharacterManager>();
-        gachaMenu = GameObject.Find("Canvas").transform.Find("GachaPanel").gameObject;
+        gachaMenu = GameObject.Find("Canvas").transform.Find("SummonPanel").gameObject;
         gachaSparkles = GameObject.Find("GachaSparkles");
         inPull = false;
     }
@@ -37,7 +39,7 @@ public class GachaScript : MonoBehaviour
         }
     }
 
-    void StartPull(bool tenPull = false)
+    public void StartPull(bool tenPull = false)
     {
         if(!tenPull)
         {
@@ -70,6 +72,7 @@ public class GachaScript : MonoBehaviour
         if(!inPull)
         {
             inPull = true;
+            characterSprite.SetActive(false);
             CharacterBase charPulled = new CharacterBase();
             totalPulls++;
             int chance = Random.Range(0, 101);
@@ -125,8 +128,12 @@ public class GachaScript : MonoBehaviour
             }
 
             Debug.Log("A");
-            if(charPulled.GetSprite() != null)
-                gachaMenu.transform.Find("CharacterSprite").GetComponent<Image>().sprite = charPulled.GetSprite();
+            if (charPulled.GetSprite() != null)
+            {
+                characterSprite.SetActive(true);
+                characterSprite.GetComponent<Image>().sprite = charPulled.GetSprite();
+            }
+                
             inPull = false;
         }
     }  

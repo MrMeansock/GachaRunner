@@ -10,7 +10,7 @@ public class CharacterPanel : MonoBehaviour
     private CharacterManager cm;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         cm = GameObject.Find("OverallGameManager").GetComponent<CharacterManager>();
     }
@@ -26,6 +26,10 @@ public class CharacterPanel : MonoBehaviour
 
     public void CreatePanel()
     {
+        if (cm.userCharacters.Count == 0)
+            return;
+
+
         Transform contentPanel = this.transform.GetChild(0).GetChild(0);
         foreach (Transform child in contentPanel)
         {

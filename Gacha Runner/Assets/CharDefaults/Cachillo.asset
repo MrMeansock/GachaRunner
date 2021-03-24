@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Cachillo
   level: 0
   rarity: 2
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 6dcc46b6766d8184c98ac457604d9a0c, type: 3}
   baseSpeed: 15
   baseJump: 1
   baseHealth: 1

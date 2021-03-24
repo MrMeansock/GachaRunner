@@ -11,7 +11,12 @@ public class CharacterManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        userCharacters = new List<CharacterBase>();
+    }
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
     }
 
     void AddCharacter (string name)
