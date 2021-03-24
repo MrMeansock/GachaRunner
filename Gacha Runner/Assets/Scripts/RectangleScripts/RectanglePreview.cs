@@ -8,12 +8,14 @@ namespace GotchaGuys
         [RequireComponent(typeof(SpriteRenderer))]
         public class RectanglePreview : MonoBehaviour
         {
+            private float maxMoveWithScreenY = -2.5f;
+
             private Vector2 startPosition;
             public Vector2 StartPosition
             {
                 get
                 {
-                    return startPosition; // + new Vector2(moveWithFrame.GetTrackingDelta(), 0);
+                    return startPosition + (moveWithFrame.enabled ? new Vector2(moveWithFrame.GetTrackingDelta(), 0) : Vector2.zero);
                 }
                 set
                 {
@@ -38,6 +40,7 @@ namespace GotchaGuys
 
             private Vector2 initalPosition;
             private MoveWithFrame moveWithFrame;
+            private GameObject player;
 
             public float Length => (EndPosition - StartPosition).magnitude;
 
@@ -49,6 +52,7 @@ namespace GotchaGuys
             {
                 spriteRenderer = GetComponent<SpriteRenderer>();
                 moveWithFrame = GetComponent<MoveWithFrame>();
+                player = GameObject.FindGameObjectWithTag("Player");
             }
 
             private void OnEnable()
@@ -87,7 +91,13 @@ namespace GotchaGuys
             {
                 StartPosition = startPosition;
                 EndPosition = startPosition;
-                //moveWithFrame.StartTracking();
+                if (startPosition.y <= player.transform.position.y)
+                    moveWithFrame.enabled = false;
+                else
+                {
+                    moveWithFrame.enabled = true;
+                    moveWithFrame.StartTracking();
+                }
                 //Debug.Log("Tracking started");
             }
 

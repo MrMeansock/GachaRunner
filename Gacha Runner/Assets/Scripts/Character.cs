@@ -36,9 +36,14 @@ public class Character : MonoBehaviour
 
     //Slope values
     protected float bottomDisplacement = 0.5f;
+    protected float headDisplacement = 0.5f;
     protected float slopeRayLength = 0.5f;
     protected float upSlopeForceMultiplier = 4.0f;
     protected float downSlopeForceMultiplier = 10.0f;
+    protected float prevX = 0;
+    protected float minXDelta = 0;
+    protected float jumpStrength = 500.0f;
+    protected float jumpRayLength = 1.0f;
 
     public float DisplacementX => Math.Abs(transform.position.x - startX); // (Abs to get pure distance, left or right).
 
@@ -51,6 +56,7 @@ public class Character : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         startX = transform.position.x;
+        prevX = transform.position.x;
     }
 
     // Update is called once per frame
@@ -58,6 +64,9 @@ public class Character : MonoBehaviour
     {
         MoveForward();
         HandleSlopes();
+        if (transform.position.y < -6.0f)
+            TakeDamage(false);
+        prevX = transform.position.x;
     }
 
     protected void FixedUpdate()
@@ -121,14 +130,16 @@ public class Character : MonoBehaviour
                 }
             }
         }
+        bool bottomHitFound = false;
+    
+            hitAmount = Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y - bottomDisplacement), Vector2.down, new ContactFilter2D(), hits, jumpRayLength);
 
-        if(!hitFound)
+        for (int i = 0; i < hitAmount; i++)
         {
-            hitAmount = Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y - bottomDisplacement), Vector2.down, new ContactFilter2D(), hits, slopeRayLength);
-
-            for (int i = 0; i < hitAmount; i++)
+            if (hits[i].collider.tag != "Player")
             {
-                if (hits[i].collider.tag != "Player")
+                bottomHitFound = true;
+                if (!hitFound)
                 {
                     hitFound = true;
                     float upForce = hits[i].normal.y;
@@ -137,7 +148,7 @@ public class Character : MonoBehaviour
                         upForce *= upSlopeForceMultiplier;
                         rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y + upForce);
                     }
-                    else if(hits[i].normal.x > 0f)
+                    else if (hits[i].normal.x > 0f)
                     {
                         float forwardForce = hits[i].normal.x;
                         forwardForce *= downSlopeForceMultiplier;
@@ -147,12 +158,35 @@ public class Character : MonoBehaviour
             }
         }
 
+        bool rightHitFound = false;
+        //If x movement is too low, try to jump over obstical
+        if(transform.position.x - prevX < minXDelta)
+        {
+            if (bottomHitFound)
+            {
+                Debug.Log("Trying to jump");
+                hitAmount = Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y + headDisplacement), Vector2.right, new ContactFilter2D(), hits, jumpRayLength);
+                for (int i = 0; i < hitAmount; i++)
+                {
+                    if (hits[i].collider.tag != "Player")
+                    {
+                        rightHitFound = true;
+                    }
+                }
+            }
+
+
+            if (!rightHitFound && bottomHitFound)
+                rb.AddForce(Vector2.up * jumpStrength);
+        }
+
         Debug.DrawLine(new Vector3(transform.position.x, transform.position.y - bottomDisplacement), new Vector3(transform.position.x + slopeRayLength, transform.position.y - bottomDisplacement), Color.red);
+        Debug.DrawLine(new Vector3(transform.position.x, transform.position.y + headDisplacement), new Vector3(transform.position.x + jumpRayLength, transform.position.y + headDisplacement), Color.blue);
     }
 
-    public void TakeDamage()
+    public void TakeDamage(bool doInvincibility)
     {
-        if(!isInvincible)
+        if(!doInvincibility || !isInvincible)
         {
             //Handle damage taking
             health--;

@@ -7,10 +7,10 @@ public class Missile : MonoBehaviour
 {
     private GameObject player;
     private GameObject body;
-    private float speed = 10.0f;
+    private float speed = 5.0f;
     private float lifeTime = 0f;
     private float offset;
-    private float wiggleStrength = 20.0f;
+    private float wiggleStrength = 10.0f;
     private float perlinMult = 2.5f;
 
     // Start is called before the first frame update
@@ -55,7 +55,7 @@ public class Missile : MonoBehaviour
         if(collision.tag == "Player")
         {
             //Player has been hit
-            collision.GetComponent<Character>().TakeDamage();
+            collision.GetComponent<Character>().TakeDamage(true);
             GameObject.Destroy(gameObject);
         }
         if (collision.TryGetComponent<Rectangle>(out Rectangle rectangle))
