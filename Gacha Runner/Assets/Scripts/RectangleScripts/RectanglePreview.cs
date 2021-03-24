@@ -13,7 +13,7 @@ namespace GotchaGuys
             {
                 get
                 {
-                    return startPosition + new Vector2(moveWithFrame.GetTrackingDelta(), 0);
+                    return startPosition; // + new Vector2(moveWithFrame.GetTrackingDelta(), 0);
                 }
                 set
                 {
@@ -87,8 +87,8 @@ namespace GotchaGuys
             {
                 StartPosition = startPosition;
                 EndPosition = startPosition;
-                moveWithFrame.StartTracking();
-                Debug.Log("Tracking started");
+                //moveWithFrame.StartTracking();
+                //Debug.Log("Tracking started");
             }
 
             public static RectanglePreview MakePreview(RectanglePreview previewPrefab, Vector3 startPosition)

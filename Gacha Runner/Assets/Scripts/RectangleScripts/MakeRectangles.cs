@@ -7,9 +7,9 @@ namespace GotchaGuys
     {
         public class MakeRectangles : MonoBehaviour
         {
-            [Header("Dependencies")]
-            [SerializeField] RectanglePool rectanglePool;
-            [SerializeField] MakeRectanglePreviews previewMaker;
+            // Dependencies
+            private RectanglePool rectanglePool;
+            private MakeRectanglePreviews previewMaker;
 
             [Header("Parameters")]
             [Tooltip("Time (in seconds) until a rectangle despawns when created.")]
@@ -17,8 +17,8 @@ namespace GotchaGuys
 
             private void Awake()
             {
-                if (!rectanglePool) rectanglePool = FindObjectOfType<RectanglePool>();
-                if (!previewMaker) previewMaker = FindObjectOfType<MakeRectanglePreviews>();
+                rectanglePool = FindObjectOfType<RectanglePool>();
+                previewMaker = FindObjectOfType<MakeRectanglePreviews>();
             }
 
             private void OnEnable()

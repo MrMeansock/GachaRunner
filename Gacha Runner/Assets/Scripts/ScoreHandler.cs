@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class ScoreHandler : MonoBehaviour
 {
-    [Header("Dependencies")]
-    [SerializeField] Character player;
-    [SerializeField] RunEndHandler runEndHandler;
+    // Dependencies
+    private Character player;
+    private RunEndHandler runEndHandler;
 
     [Header("Parameters")]
     [Tooltip("Displacement -> Score conversion factor.")]
@@ -17,8 +17,8 @@ public class ScoreHandler : MonoBehaviour
 
     private void Awake()
     {
-        if (!player) player = GameObject.FindGameObjectWithTag("Player").GetComponent<Character>();
-        if (!runEndHandler) runEndHandler = FindObjectOfType<RunEndHandler>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Character>();
+        runEndHandler = FindObjectOfType<RunEndHandler>();
     }
 
     private void OnEnable()

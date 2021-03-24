@@ -13,7 +13,7 @@ public class GenSection : MonoBehaviour
 
     private BoxCollider2D bounds;
     [SerializeField]
-    private GameObject genGroundPrefab;
+    private GameObject genGroundPrefab = null;
     private float minY;
     [SerializeField]
     private float minX;
