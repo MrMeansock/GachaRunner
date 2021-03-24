@@ -5,7 +5,7 @@ using UnityEngine;
 public class GachaCoinSpawner : MonoBehaviour
 {
     [SerializeField]
-    private GameObject coinPrefab;
+    private GameObject coinPrefab = null;
     private BoxCollider2D spawnArea;
     private GameManager gm;
 
