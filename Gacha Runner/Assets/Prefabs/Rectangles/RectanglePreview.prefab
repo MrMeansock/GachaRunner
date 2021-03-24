@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3795114212163630488}
   - component: {fileID: 4779898650453185973}
   - component: {fileID: 1471829908121028314}
-  - component: {fileID: 7600749868669758687}
+  - component: {fileID: -8746165605176846216}
   m_Layer: 0
   m_Name: RectanglePreview
   m_TagString: Untagged
@@ -96,14 +96,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 0}
---- !u!114 &7600749868669758687
+--- !u!114 &-8746165605176846216
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8728565327141470244}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0206fdc0e3e3e17408b6c1b6c2eca187, type: 3}
   m_Name: 

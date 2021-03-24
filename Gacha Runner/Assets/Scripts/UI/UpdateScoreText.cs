@@ -4,15 +4,16 @@ using UnityEngine;
 [RequireComponent(typeof(TextMeshProUGUI))]
 public class UpdateScoreText : MonoBehaviour
 {
-    TextMeshProUGUI tmpText;
+    private TextMeshProUGUI tmpText;
 
-    [SerializeField] ScoreHandler scoreHandler;
+    // Dependencies
+    private ScoreHandler scoreHandler;
 
     private void Awake()
     {
         tmpText = GetComponent<TextMeshProUGUI>();
 
-        if (!scoreHandler) scoreHandler = FindObjectOfType<ScoreHandler>();
+        scoreHandler = FindObjectOfType<ScoreHandler>();
     }
 
     private void Update()

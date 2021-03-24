@@ -7,9 +7,9 @@ namespace GotchaGuys
     {
         public class MakeRectanglePreviews : MonoBehaviour
         {
-            [Header("Dependencies")]
-            [SerializeField] TouchHandler touchHandler;
-            [SerializeField] RectanglePreviewPool previewPool;
+            // Dependencies
+            private TouchHandler touchHandler;
+            private RectanglePreviewPool previewPool;
 
             [Header("Parameters")]
             [Tooltip("Minimum length a preview needs to be in order to create a rectangle.")]
@@ -34,8 +34,8 @@ namespace GotchaGuys
 
             private void Awake()
             {
-                if (!touchHandler) touchHandler = FindObjectOfType<TouchHandler>();
-                if (!previewPool) previewPool = FindObjectOfType<RectanglePreviewPool>();
+                touchHandler = FindObjectOfType<TouchHandler>();
+                previewPool = FindObjectOfType<RectanglePreviewPool>();
             }
 
             private void Update()

@@ -156,8 +156,11 @@ public class Character : MonoBehaviour
         {
             //Handle damage taking
             health--;
-            healthArea.transform.GetChild(health).gameObject.SetActive(false);
-            if (health == 0)
+            if (health >= 0)
+            {
+                healthArea.transform.GetChild(health).gameObject.SetActive(false);
+            }
+            if (health <= 0)
             {
                 // Handle player death
                 OnDeath?.Invoke();

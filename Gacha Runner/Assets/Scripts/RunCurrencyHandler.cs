@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class RunCurrencyHandler : MonoBehaviour
 {
-    [SerializeField] ScoreHandler scoreHandler;
+    private ScoreHandler scoreHandler;
 
     [Tooltip("Score -> to currency conversion factor.")]
     [SerializeField] int scoreToCurrency = 1;
@@ -27,7 +27,7 @@ public class RunCurrencyHandler : MonoBehaviour
 
     private void Awake()
     {
-        if (!scoreHandler) scoreHandler = FindObjectOfType<ScoreHandler>();
+        scoreHandler = FindObjectOfType<ScoreHandler>();
     }
 
     private void OnEnable()
