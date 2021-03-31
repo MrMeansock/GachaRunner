@@ -6,6 +6,13 @@ public class LevelLoader : MonoBehaviour
 {
     [SerializeField]
     private float groundHeight = 0;
+    [Tooltip("Prefabs that will be loaded before generating random levels")]
+    [SerializeField]
+    private List<GameObject> directLoadLevels;
+    private int directLevelsLoaded = 0;
+    [Tooltip("Height of the last directly loaded. Used to start generating new levels")]
+    [SerializeField]
+    private float lastLoadHeight;
     [SerializeField]
     private float parallaxFrontHeight = 0;
     [SerializeField]
@@ -44,12 +51,22 @@ public class LevelLoader : MonoBehaviour
         groundObjects = new List<GameObject>();
         parallaxFrontObjects = new List<GameObject>();
         parallaxBackObjects = new List<GameObject>();
+        //Generate ground
         groundObjects.Add(Instantiate(groundPrefab, new Vector3(character.transform.position.x - groundWidth, groundHeight, 0), groundPrefab.transform.rotation));
         currHeight = groundObjects[groundObjects.Count - 1].GetComponent<GenSection>().GenerateFlat(0.5f);
         groundObjects.Add(Instantiate(groundPrefab, new Vector3(character.transform.position.x, groundHeight, 0), groundPrefab.transform.rotation));
         currHeight = groundObjects[groundObjects.Count - 1].GetComponent<GenSection>().GenerateFlat(currHeight);
-        groundObjects.Add(Instantiate(groundPrefab, new Vector3(character.transform.position.x + groundWidth, groundHeight, 0), groundPrefab.transform.rotation));
-        currHeight = groundObjects[groundObjects.Count - 1].GetComponent<GenSection>().Generate(currHeight);
+        if (directLoadLevels.Count > directLevelsLoaded)
+        {
+            groundObjects.Add(Instantiate(directLoadLevels[directLevelsLoaded], new Vector3(character.transform.position.x + groundWidth, groundHeight, 0), directLoadLevels[directLevelsLoaded].transform.rotation));
+            directLevelsLoaded++;
+            currHeight = lastLoadHeight;
+        }
+        else
+        {
+            groundObjects.Add(Instantiate(groundPrefab, new Vector3(character.transform.position.x + groundWidth, groundHeight, 0), groundPrefab.transform.rotation));
+            currHeight = groundObjects[groundObjects.Count - 1].GetComponent<GenSection>().Generate(currHeight);
+        }
         parallaxFrontObjects.Add(Instantiate(parallaxFrontPrefab, new Vector3(character.transform.position.x - parallaxFrontWidth, parallaxFrontHeight, 0), parallaxFrontPrefab.transform.rotation));
         parallaxFrontObjects.Add(Instantiate(parallaxFrontPrefab, new Vector3(character.transform.position.x, parallaxFrontHeight, 0), parallaxFrontPrefab.transform.rotation));
         parallaxFrontObjects.Add(Instantiate(parallaxFrontPrefab, new Vector3(character.transform.position.x + parallaxFrontWidth, parallaxFrontHeight, 0), parallaxFrontPrefab.transform.rotation));
@@ -70,8 +87,14 @@ public class LevelLoader : MonoBehaviour
         {
             GameObject.Destroy(groundObjects[0]);
             groundObjects.RemoveAt(0);
-            groundObjects.Add(Instantiate(groundPrefab, new Vector3(groundObjects[1].transform.position.x + groundWidth, groundHeight, 0), groundPrefab.transform.rotation));
-            currHeight = groundObjects[groundObjects.Count - 1].GetComponent<GenSection>().Generate(currHeight);
+            if (directLoadLevels.Count > directLevelsLoaded)
+            {
+            }
+            else
+            {
+                groundObjects.Add(Instantiate(groundPrefab, new Vector3(groundObjects[1].transform.position.x + groundWidth, groundHeight, 0), groundPrefab.transform.rotation));
+                currHeight = groundObjects[groundObjects.Count - 1].GetComponent<GenSection>().Generate(currHeight);
+            }
         }
 
         if (IsOffscreen(parallaxFrontObjects[1].transform.position.x - (parallaxFrontWidth * 0.5f)))

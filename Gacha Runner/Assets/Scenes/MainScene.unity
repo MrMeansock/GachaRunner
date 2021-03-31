@@ -131,7 +131,7 @@ PrefabInstance:
     - target: {fileID: 269987924706255336, guid: 3447749098791dd47a56d68d4887e1cd,
         type: 3}
       propertyPath: cooldown
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 291988046860581453, guid: 3447749098791dd47a56d68d4887e1cd,
         type: 3}
@@ -893,6 +893,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundHeight: -4.6
+  directLoadLevels: []
+  lastLoadHeight: 0.5
   parallaxFrontHeight: -2.4
   parallaxBackHeight: -1.6
   parallaxFrontSpeed: 0.005
@@ -914,8 +916,8 @@ Transform:
   m_LocalPosition: {x: -9.892718, y: -2.4443645, z: -8.333984}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1844886785}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &749660013
 MonoBehaviour:
@@ -2412,7 +2414,6 @@ Transform:
   m_Children:
   - {fileID: 769791358}
   - {fileID: 960451486}
-  - {fileID: 749660012}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

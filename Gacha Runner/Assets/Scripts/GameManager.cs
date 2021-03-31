@@ -16,13 +16,13 @@ public class GameManager : MonoBehaviour
     private float progPlayerSpeedMult = 0.02f; //Increase player speed by 0.2 per second
     private float progMissileSpeedMult = 0.01f; //Increse missile speed by 0.1 per second
     private float progMinMissileDelayMult = 0.25f; //Minimum amount of missile delay multiplier
-    private float progBaseMissileDelayMult = 0.05f; //Rate at which missile delay decreases
+    private float progBaseMissileDelayMult = 0.005f; //Rate at which missile delay decreases
                                                     //Smaller value = more gradual
     private int progMinMinMissilesToSpawn = 1; //Minimum amount of min missiles to spawn
     //private int progMaxMinMissilesToSpawn = 3; //Max amount of min missiles to spawn
-    private float progMinMissilesIncreaseTime = 20.0f; //Amount of time to increase amount of min missiles
+    private float progMinMissilesIncreaseTime = 40.0f; //Amount of time to increase amount of min missiles
     private int progMinMaxMissilesToSpawn = 2; //Min amount of max missiles to spawn
-    private float progMaxMissilesIncreaseTime = 15.0f; //Amount of time to increase amount of max missiles
+    private float progMaxMissilesIncreaseTime = 25.0f; //Amount of time to increase amount of max missiles
     
 
     public float PlayerSpeedMultiplier
