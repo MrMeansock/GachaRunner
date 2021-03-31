@@ -11,16 +11,19 @@ public class GachaScript : MonoBehaviour
     private GameObject gachaSparkles;
     private GameObject characterSprite;
 
+    private MenuCurrencyHandler menuCurrency;
+
     public int totalPulls;
 
     public bool inPull;
 
+    // Cost of summoning
+    public int cost = 10;
 
     [Header("Rates")]
     public int SR_Rate;
     public int R_Rate;
     public int C_Rate;
-
 
     void Start()
     {
@@ -28,6 +31,7 @@ public class GachaScript : MonoBehaviour
         cm = GameObject.Find("OverallGameManager").GetComponent<CharacterManager>();
         gachaMenu = GameObject.Find("Canvas").transform.Find("SummonPanel").gameObject;
         gachaSparkles = GameObject.Find("GachaSparkles");
+        menuCurrency = FindObjectOfType<MenuCurrencyHandler>();
         inPull = false;
     }
 
@@ -41,15 +45,27 @@ public class GachaScript : MonoBehaviour
 
     public void StartPull(bool tenPull = false)
     {
-        if(!tenPull)
+        if (!inPull)
         {
-            StartCoroutine("NormalPull");
-        }
-        else
-        {
-            for(int i = 0; i < 10; i++)
+            if (menuCurrency.PlayerCurrency - cost >= 0)
             {
-                StartCoroutine("NormalPull");
+                if (!tenPull)
+                {
+                    StartCoroutine("NormalPull");
+                }
+                else
+                {
+                    for (int i = 0; i < 10; i++)
+                    {
+                        StartCoroutine("NormalPull");
+                    }
+                }
+
+                menuCurrency.PlayerCurrency -= cost;
+            }
+            else
+            {
+                Debug.Log("Not enough currency to summon!!");
             }
         }
     }

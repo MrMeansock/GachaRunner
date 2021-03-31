@@ -592,6 +592,11 @@ PrefabInstance:
       propertyPath: healthArea
       value: 
       objectReference: {fileID: 876407276}
+    - target: {fileID: 6242094074948969942, guid: a169dea9d0ab2d24fa31bd971ad089f3,
+        type: 3}
+      propertyPath: godMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a169dea9d0ab2d24fa31bd971ad089f3, type: 3}
 --- !u!224 &622523089 stripped
@@ -1057,7 +1062,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c29d5412cb75ace43aa6b5025f874f42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreToCurrency: 1
 --- !u!4 &769791358
 Transform:
   m_ObjectHideFlags: 0
@@ -1251,14 +1255,14 @@ RectTransform:
   m_GameObject: {fileID: 894158884}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 2025260584}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -350, y: -140}
+  m_AnchoredPosition: {x: -360, y: -150}
   m_SizeDelta: {x: 58, y: 58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &894158886

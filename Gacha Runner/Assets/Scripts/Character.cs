@@ -65,7 +65,7 @@ public class Character : MonoBehaviour
     {
         MoveForward();
         HandleSlopes();
-        if (transform.position.y < -6.0f)
+        if (transform.position.y < -6.0f && health > 0)
             TakeDamage(false);
         prevX = transform.position.x;
     }
@@ -189,7 +189,7 @@ public class Character : MonoBehaviour
     {
         if (!godMode)
         {
-            if (!doInvincibility || !isInvincible)
+            if (!isInvincible)
             {
                 //Handle damage taking
                 health--;
@@ -204,7 +204,10 @@ public class Character : MonoBehaviour
                     gm.GameOver();
                 }
 
-                isInvincible = true;
+                if (doInvincibility)
+                {
+                    isInvincible = true;
+                }
             }
         }
     }
