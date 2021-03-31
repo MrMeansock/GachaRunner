@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnGM : MonoBehaviour
 {
     [SerializeField]
-    private GameObject GameManager;
+    private GameObject GameManager = null;
     private void Awake()
     {
         GameObject gm = new GameObject();

@@ -33,6 +33,7 @@ public class Character : MonoBehaviour
     protected int health = 3;
     [SerializeField]
     protected GameObject healthArea;
+    [SerializeField] protected bool godMode = false;
 
     //Slope values
     protected float bottomDisplacement = 0.5f;
@@ -186,22 +187,25 @@ public class Character : MonoBehaviour
 
     public void TakeDamage(bool doInvincibility)
     {
-        if(!doInvincibility || !isInvincible)
+        if (!godMode)
         {
-            //Handle damage taking
-            health--;
-            if (health >= 0)
+            if (!doInvincibility || !isInvincible)
             {
-                healthArea.transform.GetChild(health).gameObject.SetActive(false);
-            }
-            if (health <= 0)
-            {
-                // Handle player death
-                OnDeath?.Invoke();
-                gm.GameOver();
-            }
+                //Handle damage taking
+                health--;
+                if (health >= 0)
+                {
+                    healthArea.transform.GetChild(health).gameObject.SetActive(false);
+                }
+                if (health <= 0)
+                {
+                    // Handle player death
+                    OnDeath?.Invoke();
+                    gm.GameOver();
+                }
 
-            isInvincible = true;
+                isInvincible = true;
+            }
         }
     }
 
