@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 
 // Util to cache the main camera only once, make it static
-// and make screen to world conversions static (common operation)
+// and make some common operations static.
+[RequireComponent(typeof(Camera))]
 public class MainCamera : MonoBehaviour
 {
     public static Camera Cam { get; private set; }
@@ -9,7 +10,7 @@ public class MainCamera : MonoBehaviour
     private void Awake()
     {
         // Cache the camera because Camera.main is a search operation
-        Cam = Camera.main;
+        Cam = GetComponent<Camera>();
     }
 
     public static Vector3 ScreenToWorldPoint(Vector3 position) => Cam.ScreenToWorldPoint(position);

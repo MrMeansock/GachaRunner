@@ -25,15 +25,38 @@ public class TouchHandler : MonoBehaviour
     public Vector3 WorldPosition => MainCamera.ScreenToWorldPoint(Position);
 
     // Events
-    public event Action<Touch> OnFirstTouchStart;
-    public event Action<Touch, Vector2> OnFirstTouchMoved;
-    public event Action<Touch> OnFirstTouchEnd;
+    public event Action<Vector2> OnFirstTouchStart;
+    public event Action<Vector2, Vector2> OnFirstTouchMoved;
+    public event Action<Vector2> OnFirstTouchEnd;
+
+    private bool mobileInput;
+    private GameManager gm;
+
+    private void Start()
+    {
+        mobileInput = !(Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WebGLPlayer);
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        UpdateTouching();
+        if (!gm.IsPaused)
+        {
+            if (mobileInput)
+            {
+                UpdateTouching();
+                DoMobileInput();
+            }
+            else
+            {
+                DoKeyboardInput();
+            }
+        }
+    }
 
+    private void DoMobileInput()
+    {
         if (Touching)
         {
             // Cache first touch this frame
@@ -45,16 +68,31 @@ public class TouchHandler : MonoBehaviour
             switch (fTouch.phase)
             {
                 case TouchPhase.Began:
-                    OnFirstTouchStart?.Invoke(fTouch);
+                    OnFirstTouchStart?.Invoke(pos);
                     break;
+                case TouchPhase.Stationary:
                 case TouchPhase.Moved:
-                    OnFirstTouchMoved?.Invoke(fTouch, fTouch.deltaPosition);
+                    OnFirstTouchMoved?.Invoke(pos, fTouch.deltaPosition);
                     break;
                 case TouchPhase.Ended:
-                    OnFirstTouchEnd?.Invoke(fTouch);
+                    OnFirstTouchEnd?.Invoke(pos);
                     break;
             }
         }
+    }
+
+    private void DoKeyboardInput()
+    {
+        // Cache position info too
+        Vector2 pos = Input.mousePosition;
+
+        // Invoke events
+        if (Input.GetMouseButtonDown(0))
+            OnFirstTouchStart?.Invoke(pos);
+        else if (Input.GetMouseButton(0))
+            OnFirstTouchMoved?.Invoke(pos, Vector2.zero);
+        else if (Input.GetMouseButtonUp(0))
+            OnFirstTouchEnd?.Invoke(pos);
     }
 
     private void UpdateTouching()

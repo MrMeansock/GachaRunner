@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,11 +8,13 @@ public class Character : MonoBehaviour
     protected Rigidbody2D rb;
     [SerializeField]
     protected GameObject body;
+    protected GameManager gm;
 
     //Other values
     protected bool grounded = false;
     protected float bounceTime = 0.0f;
     protected float gravity = 5.0f;
+    protected float startX;
 
     //Config values
     [SerializeField]
@@ -19,33 +22,195 @@ public class Character : MonoBehaviour
     protected float bounceHeight = 0.25f;
     protected float bounceInterval = 0.3f;
 
+    //Invinciblity values
+    protected float iMaxTime = 0.5f;
+    protected float iTime = 0.0f;
+    protected int iFrames = 0;
+    protected bool isInvincible = false;
+
+    //Health
+    protected int maxHealth = 3;
+    protected int health = 3;
+    [SerializeField]
+    protected GameObject healthArea;
+    [SerializeField] protected bool godMode = false;
+
+    //Slope values
+    protected float bottomDisplacement = 0.5f;
+    protected float headDisplacement = 0.5f;
+    protected float slopeRayLength = 0.5f;
+    protected float upSlopeForceMultiplier = 4.0f;
+    protected float downSlopeForceMultiplier = 10.0f;
+    protected float prevX = 0;
+    protected float minXDelta = 0;
+    protected float jumpStrength = 500.0f;
+    protected float jumpRayLength = 1.0f;
+
+    public float DisplacementX => Math.Abs(transform.position.x - startX); // (Abs to get pure distance, left or right).
+
+    public event Action OnDeath;
+
+
     // Start is called before the first frame update
     virtual protected void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        startX = transform.position.x;
+        prevX = transform.position.x;
     }
 
     // Update is called once per frame
     virtual protected void Update()
     {
         MoveForward();
+        HandleSlopes();
+        if (transform.position.y < -6.0f && health > 0)
+            TakeDamage(false);
+        prevX = transform.position.x;
+    }
+
+    protected void FixedUpdate()
+    {
+        HandleInvinciblity();
     }
 
     protected void MoveForward()
     {
-        Vector2 force = transform.right * speed;
+        Vector2 force = transform.right * speed * gm.PlayerSpeedMultiplier;
         force += Vector2.down * gravity;
         rb.velocity = force;
         Bounce(true);
     }
 
-    /*protected void MoveTowardsPoint(Vector3 point)
+    protected void HandleInvinciblity()
     {
-        point = new Vector3(point.x, transform.position.y, point.z);
-        Vector3 dir = point - transform.position;
-        dir.Normalize();
-        cc.Move(dir * speed);
-    }*/
+        if(isInvincible)
+        {
+            //Do invincilibity timer
+            if(iTime >= iMaxTime)
+            {
+                isInvincible = false;
+                //Make sure body is visible upon ending iFrames
+                SpriteRenderer bodySprite = body.GetComponent<SpriteRenderer>();
+                bodySprite.color = new Color(bodySprite.color.r, bodySprite.color.g, bodySprite.color.b, 1.0f);
+                iTime = 0;
+                iFrames = 0;
+                return;
+            }
+
+            //Make body blink while invincible
+            //Debug.Log(iFrames);
+            if(iFrames % 5 == 0)
+            {
+                SpriteRenderer bodySprite = body.GetComponent<SpriteRenderer>();
+                bodySprite.color = new Color(bodySprite.color.r, bodySprite.color.g, bodySprite.color.b, bodySprite.color.a == 0.0f ? 1.0f : 0.0f);
+            }
+
+            iTime += Time.deltaTime;
+            iFrames++;
+        }
+    }
+
+    protected void HandleSlopes()
+    {
+        RaycastHit2D[] hits = new RaycastHit2D[16];
+        bool hitFound = false;
+        int hitAmount = Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y - bottomDisplacement), Vector2.right, new ContactFilter2D(), hits, slopeRayLength);
+        
+        for(int i = 0; i < hitAmount; i++)
+        {
+            if(hits[i].collider.tag != "Player")
+            {
+                hitFound = true;
+                float upForce = hits[i].normal.y;
+                if (upForce > 0)
+                {
+                    upForce *= upSlopeForceMultiplier;
+                    rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y + upForce);
+                }
+            }
+        }
+        bool bottomHitFound = false;
+    
+            hitAmount = Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y - bottomDisplacement), Vector2.down, new ContactFilter2D(), hits, jumpRayLength);
+
+        for (int i = 0; i < hitAmount; i++)
+        {
+            if (hits[i].collider.tag != "Player")
+            {
+                bottomHitFound = true;
+                if (!hitFound)
+                {
+                    hitFound = true;
+                    float upForce = hits[i].normal.y;
+                    if (upForce > 0 && hits[i].normal.x < 0f)
+                    {
+                        upForce *= upSlopeForceMultiplier;
+                        rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y + upForce);
+                    }
+                    else if (hits[i].normal.x > 0f)
+                    {
+                        float forwardForce = hits[i].normal.x;
+                        forwardForce *= downSlopeForceMultiplier;
+                        rb.velocity = new Vector2(rb.velocity.x + forwardForce, rb.velocity.y);
+                    }
+                }
+            }
+        }
+
+        bool rightHitFound = false;
+        //If x movement is too low, try to jump over obstical
+        if(transform.position.x - prevX < minXDelta)
+        {
+            if (bottomHitFound)
+            {
+                Debug.Log("Trying to jump");
+                hitAmount = Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y + headDisplacement), Vector2.right, new ContactFilter2D(), hits, jumpRayLength);
+                for (int i = 0; i < hitAmount; i++)
+                {
+                    if (hits[i].collider.tag != "Player")
+                    {
+                        rightHitFound = true;
+                    }
+                }
+            }
+
+
+            if (!rightHitFound && bottomHitFound)
+                rb.AddForce(Vector2.up * jumpStrength);
+        }
+
+        Debug.DrawLine(new Vector3(transform.position.x, transform.position.y - bottomDisplacement), new Vector3(transform.position.x + slopeRayLength, transform.position.y - bottomDisplacement), Color.red);
+        Debug.DrawLine(new Vector3(transform.position.x, transform.position.y + headDisplacement), new Vector3(transform.position.x + jumpRayLength, transform.position.y + headDisplacement), Color.blue);
+    }
+
+    public void TakeDamage(bool doInvincibility)
+    {
+        if (!godMode)
+        {
+            if (!isInvincible)
+            {
+                //Handle damage taking
+                health--;
+                if (health >= 0)
+                {
+                    healthArea.transform.GetChild(health).gameObject.SetActive(false);
+                }
+                if (health <= 0)
+                {
+                    // Handle player death
+                    OnDeath?.Invoke();
+                    gm.GameOver();
+                }
+
+                if (doInvincibility)
+                {
+                    isInvincible = true;
+                }
+            }
+        }
+    }
 
     protected void Bounce(bool moving)
     {

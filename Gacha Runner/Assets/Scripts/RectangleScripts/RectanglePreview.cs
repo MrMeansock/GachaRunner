@@ -5,13 +5,18 @@ namespace GotchaGuys
 {
     namespace GameRectangle
     {
-
+        [RequireComponent(typeof(SpriteRenderer))]
         public class RectanglePreview : MonoBehaviour
         {
+            private float maxMoveWithScreenY = -2.5f;
+
             private Vector2 startPosition;
             public Vector2 StartPosition
             {
-                get => startPosition;
+                get
+                {
+                    return startPosition + (moveWithFrame.enabled ? new Vector2(moveWithFrame.GetTrackingDelta(), 0) : Vector2.zero);
+                }
                 set
                 {
                     startPosition = value;
@@ -22,7 +27,10 @@ namespace GotchaGuys
             private Vector2 endPosition;
             public Vector2 EndPosition
             {
-                get => endPosition;
+                get
+                {
+                        return endPosition;
+                }
                 set
                 {
                     endPosition = value;
@@ -30,7 +38,22 @@ namespace GotchaGuys
                 }
             }
 
+            private Vector2 initalPosition;
+            private MoveWithFrame moveWithFrame;
+            private GameObject player;
+
+            public float Length => (EndPosition - StartPosition).magnitude;
+
+            public SpriteRenderer spriteRenderer;
+
             private event Action OnResize;
+
+            private void Awake()
+            {
+                spriteRenderer = GetComponent<SpriteRenderer>();
+                moveWithFrame = GetComponent<MoveWithFrame>();
+                player = GameObject.FindGameObjectWithTag("Player");
+            }
 
             private void OnEnable()
             {
@@ -68,6 +91,14 @@ namespace GotchaGuys
             {
                 StartPosition = startPosition;
                 EndPosition = startPosition;
+                if (startPosition.y <= player.transform.position.y)
+                    moveWithFrame.enabled = false;
+                else
+                {
+                    moveWithFrame.enabled = true;
+                    moveWithFrame.StartTracking();
+                }
+                //Debug.Log("Tracking started");
             }
 
             public static RectanglePreview MakePreview(RectanglePreview previewPrefab, Vector3 startPosition)
