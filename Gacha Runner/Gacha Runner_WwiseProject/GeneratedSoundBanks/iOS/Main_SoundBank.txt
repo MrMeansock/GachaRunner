@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2263046456	OnMainMenuLoad			\Default Work Unit\OnMainMenuLoad	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	269123617	TELEPHONE_RING	C:\Users\Camilo\source\repos\crlimacastro\GachaRunner\Gacha Runner\Gacha Runner_WwiseProject\.cache\iOS\SFX\TELEPHONE_RING_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music Container\Music Segment\TELEPHONE_RING		457528
+

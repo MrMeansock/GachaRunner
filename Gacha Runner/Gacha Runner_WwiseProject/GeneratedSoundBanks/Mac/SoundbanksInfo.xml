@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="12" SoundbankVersion="135">
+	<RootPaths>
+		<ProjectRoot>C:\Users\Camilo\source\repos\crlimacastro\GachaRunner\Gacha Runner\Gacha Runner_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\Camilo\source\repos\crlimacastro\GachaRunner\Gacha Runner\Gacha Runner_WwiseProject\.cache\Mac\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\Camilo\source\repos\crlimacastro\GachaRunner\Gacha Runner\Gacha Runner_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Users\Camilo\source\repos\crlimacastro\GachaRunner\Gacha Runner\Gacha Runner_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX" Hash="2953616821">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="2228651116" Language="SFX" Hash="3884323634">
+			<ObjectPath>\SoundBanks\Default Work Unit\Main_SoundBank</ObjectPath>
+			<ShortName>Main_SoundBank</ShortName>
+			<Path>Main_SoundBank.bnk</Path>
+			<IncludedEvents>
+				<Event Id="2263046456" Name="OnMainMenuLoad" ObjectPath="\Events\Default Work Unit\OnMainMenuLoad" DurationType="OneShot" DurationMin="2.382625" DurationMax="2.382625">
+					<IncludedMemoryFiles>
+						<File Id="269123617" Language="SFX">
+							<ShortName>TELEPHONE_RING.wav</ShortName>
+							<Path>SFX\TELEPHONE_RING_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

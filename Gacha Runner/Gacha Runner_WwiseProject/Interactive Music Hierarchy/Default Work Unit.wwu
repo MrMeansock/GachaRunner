@@ -1,6 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{F02DFECA-1B31-4CAE-A6D3-32C7B8C2D6B5}" SchemaVersion="97">
 	<InteractiveMusic>
-		<WorkUnit Name="Default Work Unit" ID="{F02DFECA-1B31-4CAE-A6D3-32C7B8C2D6B5}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{F02DFECA-1B31-4CAE-A6D3-32C7B8C2D6B5}" PersistMode="Standalone">
+			<ChildrenList>
+				<MusicPlaylistContainer Name="Music Container" ID="{2FB8178A-AFF6-4FD2-9BFE-FA4F14041848}" ShortID="572175879">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1CCBAA11-5023-42A3-B372-965A8B1ED4EC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{05ABCFB3-8BA1-441A-A4C8-6BCF775F1395}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicSegment Name="Music Segment" ID="{96449098-0B41-453C-A46E-5F382FC85B5C}" ShortID="121215009">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="2382.625"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1CCBAA11-5023-42A3-B372-965A8B1ED4EC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{05ABCFB3-8BA1-441A-A4C8-6BCF775F1395}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="TELEPHONE_RING" ID="{0E176174-1F70-4848-B887-1A1547CA4654}" ShortID="1010490331">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{05ABCFB3-8BA1-441A-A4C8-6BCF775F1395}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="TELEPHONE_RING" ID="{E2A742D1-BF2D-4770-BE1E-DD15A21F084D}">
+											<Language>SFX</Language>
+											<AudioFile>TELEPHONE_RING.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="269123617"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{ECE3C856-28D5-49D7-B098-E273997224D7}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<SequenceList>
+										<MusicTrackSequence Name="" ID="{66737491-161F-48F3-B531-EB8015791B2A}">
+											<ClipList>
+												<MusicClip Name="TELEPHONE_RING" ID="{CC735927-EE61-4580-B6BE-DFFFB26DB3B6}">
+													<PropertyList>
+														<Property Name="EndTrimOffset" Type="Real64" Value="2382.625"/>
+														<Property Name="FadeInMode" Type="int16" Value="0"/>
+														<Property Name="FadeOutMode" Type="int16" Value="0"/>
+													</PropertyList>
+													<AudioSourceRef Name="TELEPHONE_RING" ID="{E2A742D1-BF2D-4770-BE1E-DD15A21F084D}"/>
+												</MusicClip>
+											</ClipList>
+										</MusicTrackSequence>
+									</SequenceList>
+								</MusicTrack>
+							</ChildrenList>
+							<CueList>
+								<MusicCue Name="Entry Cue" ID="{C5540238-96D4-4D6C-BB44-8B09398D0D1D}"/>
+								<MusicCue Name="Exit Cue" ID="{A0A58C7D-1CF8-4778-8DF4-7D27C3FB4434}">
+									<PropertyList>
+										<Property Name="CueType" Type="int16" Value="1"/>
+										<Property Name="TimeMs" Type="Real64" Value="2382.625"/>
+									</PropertyList>
+								</MusicCue>
+							</CueList>
+						</MusicSegment>
+					</ChildrenList>
+					<TransitionList>
+						<MusicTransition Name="Root" ID="{825ECC1B-F5DA-400D-A055-8000A387E090}">
+							<PropertyList>
+								<Property Name="IsFolder" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<MusicTransition Name="Transition" ID="{6C4F5E7A-F216-4F64-8A41-307F898F7528}">
+									<TransitionInfo/>
+								</MusicTransition>
+							</ChildrenList>
+							<TransitionInfo/>
+						</MusicTransition>
+					</TransitionList>
+					<Playlist>
+						<MusicPlaylistItem Name="" ID="{CE80C229-3168-43C2-80DA-448AA4FABA20}" ShortID="611474915">
+							<ChildrenList>
+								<MusicPlaylistItem Name="" ID="{6B458772-2E9E-48AF-A741-F6C3787BF5CB}" ShortID="993878672">
+									<PropertyList>
+										<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+									</PropertyList>
+									<SegmentRef Name="Music Segment" ID="{96449098-0B41-453C-A46E-5F382FC85B5C}"/>
+								</MusicPlaylistItem>
+							</ChildrenList>
+						</MusicPlaylistItem>
+					</Playlist>
+				</MusicPlaylistContainer>
+			</ChildrenList>
+		</WorkUnit>
 	</InteractiveMusic>
 </WwiseDocument>

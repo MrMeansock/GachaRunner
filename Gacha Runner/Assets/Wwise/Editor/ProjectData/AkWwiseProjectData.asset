@@ -49,8 +49,17 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 360467f0920aba47a80c9639a878c267
     GuidInternal: 
-    m_lastTime: -8585840700563845470
-    List: []
+    m_lastTime: -8585840690536137087
+    List:
+    - name: Main_SoundBank
+      guid: 4833c6f62061674f824edf76f07cb0cd
+      id: 2228651116
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Main_SoundBank
+        ObjectType: 7
+      Path: Default Work Unit\Main_SoundBank
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
@@ -59,8 +68,20 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: f06aef6eb29cf741b3ef5e9b30a33b95
     GuidInternal: 
-    m_lastTime: -8585840700563865418
-    List: []
+    m_lastTime: -8585840689358224388
+    List:
+    - name: OnMainMenuLoad
+      guid: d511126a30a053499d6b4a762b9259ee
+      id: 2263046456
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: OnMainMenuLoad
+        ObjectType: 3
+      Path: Default Work Unit\OnMainMenuLoad
+      maxAttenuation: 0
+      maxDuration: 2.382625
+      minDuration: 2.382625
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -101,6 +122,9 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8585840742016072630
     List: []
-  ExpandedItems: []
+  ExpandedItems:
+  - /Gacha Runner_WwiseProject
+  - /Gacha Runner_WwiseProject/Events
+  - /Gacha Runner_WwiseProject/Events/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
