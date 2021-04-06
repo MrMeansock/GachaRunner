@@ -58,6 +58,10 @@ public class Character : MonoBehaviour
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         startX = transform.position.x;
         prevX = transform.position.x;
+        for(int i = healthArea.transform.childCount - 1; i > health - 1; i--)
+        {
+            healthArea.transform.GetChild(i).gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -81,6 +85,11 @@ public class Character : MonoBehaviour
         force += Vector2.down * gravity;
         rb.velocity = force;
         Bounce(true);
+    }
+
+    public Vector3 GetFuturePosition(float time)
+    {
+        return transform.position + transform.right * rb.velocity.x * time;
     }
 
     protected void HandleInvinciblity()
