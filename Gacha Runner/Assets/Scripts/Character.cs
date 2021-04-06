@@ -63,6 +63,11 @@ public class Character : MonoBehaviour
         startX = transform.position.x;
         prevX = transform.position.x;
 
+        for(int i = healthArea.transform.childCount - 1; i > health - 1; i--)
+        {
+            healthArea.transform.GetChild(i).gameObject.SetActive(false);
+        }
+
         //Assign Values from selected character
         if (GameObject.Find("OverallGameManager") != null)
             GetCharValues();
@@ -84,6 +89,7 @@ public class Character : MonoBehaviour
         rectPreview.MaxLength = selectedCharacter.MaxPlatformLength;
         rectPreview.Cooldown = selectedCharacter.PlatformCooldown;
         this.powerID = selectedCharacter.PowerID;
+
     }
 
     // Update is called once per frame
@@ -107,6 +113,11 @@ public class Character : MonoBehaviour
         force += Vector2.down * gravity;
         rb.velocity = force;
         Bounce(true);
+    }
+
+    public Vector3 GetFuturePosition(float time)
+    {
+        return transform.position + transform.right * rb.velocity.x * time;
     }
 
     protected void HandleInvinciblity()
