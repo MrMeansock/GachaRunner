@@ -8,10 +8,15 @@ public class CharStats : ScriptableObject
     public new string name;
     public int level;
     public int rarity;
-    public Sprite sprite;
+    public Sprite mainSprite;
     //Movement
     public float baseSpeed;
     public float baseJump;
-    public float baseHealth;
-
+    public int baseHealth;
+    //Game Variables
+    public float invisFrames;
+    public float slopeSpeed;
+    public float maxPlatformLength;
+    public float platformCooldown;
+    public int powerID;
 }

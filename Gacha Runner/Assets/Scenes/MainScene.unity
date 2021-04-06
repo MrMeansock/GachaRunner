@@ -597,6 +597,11 @@ PrefabInstance:
       propertyPath: godMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6242094074948969942, guid: a169dea9d0ab2d24fa31bd971ad089f3,
+        type: 3}
+      propertyPath: rectPreview
+      value: 
+      objectReference: {fileID: 2142674788}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a169dea9d0ab2d24fa31bd971ad089f3, type: 3}
 --- !u!224 &622523089 stripped
@@ -3141,3 +3146,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54b1be9dc13d53f4690081d3c86b7bdb, type: 3}
+--- !u!114 &2142674788 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 269987924706255336, guid: 3447749098791dd47a56d68d4887e1cd,
+    type: 3}
+  m_PrefabInstance: {fileID: 144875023}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5307b83aa11a6884db1e37b07fa77026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
