@@ -34,8 +34,11 @@ public class CharacterBase
     private float invisFrames;
     public float InvisFrames => invisFrames;
     [SerializeField]
-    private float slopeSpeed;
-    public float SlopeSpeed => slopeSpeed;
+    private float upSlopeSpeed;
+    public float UpSlopeSpeed => upSlopeSpeed;
+    [SerializeField]
+    private float downSlopeSpeed;
+    public float DownSlopeSpeed => downSlopeSpeed;
     [SerializeField]
     private float maxPlatformLength;
     public float MaxPlatformLength => maxPlatformLength;
@@ -56,7 +59,8 @@ public class CharacterBase
         this.baseHealth = baseStats.baseHealth;
         this.rarity = baseStats.rarity;
         this.invisFrames = baseStats.invisFrames;
-        this.slopeSpeed = baseStats.slopeSpeed;
+        this.upSlopeSpeed = baseStats.upSlopeSpeed;
+        this.downSlopeSpeed = baseStats.downSlopeSpeed;
         this.maxPlatformLength = baseStats.maxPlatformLength;
         this.platformCooldown = baseStats.platformCooldown;
         this.powerID = baseStats.powerID;
@@ -72,7 +76,8 @@ public class CharacterBase
         this.rarity = 0;
         this.mainSprite = null;
         this.invisFrames = 0.5f;
-        this.slopeSpeed = 1;
+        this.upSlopeSpeed = 1;
+        this.downSlopeSpeed = 1;
         this.maxPlatformLength = 1;
         this.platformCooldown = 0.25f;
         this.powerID = 0;

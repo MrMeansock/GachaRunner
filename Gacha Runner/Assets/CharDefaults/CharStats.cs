@@ -15,7 +15,8 @@ public class CharStats : ScriptableObject
     public int baseHealth;
     //Game Variables
     public float invisFrames;
-    public float slopeSpeed;
+    public float downSlopeSpeed;
+    public float upSlopeSpeed;
     public float maxPlatformLength;
     public float platformCooldown;
     public int powerID;
