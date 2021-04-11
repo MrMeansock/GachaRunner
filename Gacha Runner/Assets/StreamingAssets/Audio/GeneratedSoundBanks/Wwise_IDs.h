@@ -13,7 +13,12 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID ONBACKBUTTONCLICK = 3784996477U;
+        static const AkUniqueID ONBUTTONCLICK = 1633782454U;
         static const AkUniqueID ONMAINMENULOAD = 2263046456U;
+        static const AkUniqueID ONMAINMENUUNLOAD = 652909205U;
+        static const AkUniqueID ONPLAY = 2012478988U;
+        static const AkUniqueID ONPLAYUNLOAD = 2706983445U;
     } // namespace EVENTS
 
     namespace BANKS

@@ -49,7 +49,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 360467f0920aba47a80c9639a878c267
     GuidInternal: 
-    m_lastTime: -8585840690536137087
+    m_lastTime: -8585834627349451066
     List:
     - name: Main_SoundBank
       guid: 4833c6f62061674f824edf76f07cb0cd
@@ -68,20 +68,116 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: f06aef6eb29cf741b3ef5e9b30a33b95
     GuidInternal: 
-    m_lastTime: -8585840689358224388
+    m_lastTime: -8585834628019675553
     List:
+    - name: Music
+      guid: 6e735fa43446cf40b9c77009e7922ff3
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      Path: Default Work Unit\Music
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnBackButtonClick
+      guid: 1b30803d07aebc4fae1601a0a3a706a8
+      id: 3784996477
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: OnBackButtonClick
+        ObjectType: 3
+      Path: Default Work Unit\UI\OnBackButtonClick
+      maxAttenuation: 0
+      maxDuration: 0.5
+      minDuration: 0.5
+    - name: OnButtonClick
+      guid: 876dbf0653836b4eb48109a58a129da0
+      id: 1633782454
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: OnButtonClick
+        ObjectType: 3
+      Path: Default Work Unit\UI\OnButtonClick
+      maxAttenuation: 0
+      maxDuration: 0.5
+      minDuration: 0.5
     - name: OnMainMenuLoad
       guid: d511126a30a053499d6b4a762b9259ee
       id: 2263046456
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
       - ElementName: OnMainMenuLoad
         ObjectType: 3
-      Path: Default Work Unit\OnMainMenuLoad
+      Path: Default Work Unit\Music\OnMainMenuLoad
       maxAttenuation: 0
-      maxDuration: 2.382625
-      minDuration: 2.382625
+      maxDuration: -1
+      minDuration: -1
+    - name: OnMainMenuUnload
+      guid: dfe4a13ab67ec948810ce0452c0f970e
+      id: 652909205
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: OnMainMenuUnload
+        ObjectType: 3
+      Path: Default Work Unit\Music\OnMainMenuUnload
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: OnPlay
+      guid: d1261a7e9f637943a8b63a417450dcd6
+      id: 2012478988
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: OnPlay
+        ObjectType: 3
+      Path: Default Work Unit\Music\OnPlay
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: OnPlayUnload
+      guid: bc3b2084f8040d4d9529a4f8d5e2f226
+      id: 2706983445
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: OnPlayUnload
+        ObjectType: 3
+      Path: Default Work Unit\Music\OnPlayUnload
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: UI
+      guid: ded675fc8d571540afd42cf849ec3023
+      id: 1551306167
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      Path: Default Work Unit\UI
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -126,5 +222,7 @@ MonoBehaviour:
   - /Gacha Runner_WwiseProject
   - /Gacha Runner_WwiseProject/Events
   - /Gacha Runner_WwiseProject/Events/Default Work Unit
+  - /Gacha Runner_WwiseProject/Events/Default Work Unit/Music
+  - /Gacha Runner_WwiseProject/Events/Default Work Unit/UI
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

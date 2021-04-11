@@ -5,7 +5,12 @@
 			<ChildrenList>
 				<SoundBank Name="Main_SoundBank" ID="{F6C63348-6120-4F67-824E-DF76F07CB0CD}">
 					<ObjectInclusionList>
+						<ObjectRef Name="OnPlay" ID="{7E1A26D1-639F-4379-A8B6-3A417450DCD6}" WorkUnitID="{6EEF6AF0-9CB2-41F7-B3EF-5E9B30A33B95}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="OnMainMenuUnload" ID="{3AA1E4DF-7EB6-48C9-810C-E0452C0F970E}" WorkUnitID="{6EEF6AF0-9CB2-41F7-B3EF-5E9B30A33B95}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="OnMainMenuLoad" ID="{6A1211D5-A030-4953-9D6B-4A762B9259EE}" WorkUnitID="{6EEF6AF0-9CB2-41F7-B3EF-5E9B30A33B95}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="OnPlayUnload" ID="{84203BBC-04F8-4D0D-9529-A4F8D5E2F226}" WorkUnitID="{6EEF6AF0-9CB2-41F7-B3EF-5E9B30A33B95}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="OnButtonClick" ID="{06BF6D87-8353-4E6B-B481-09A58A129DA0}" WorkUnitID="{6EEF6AF0-9CB2-41F7-B3EF-5E9B30A33B95}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="OnBackButtonClick" ID="{3D80301B-AE07-4FBC-AE16-01A0A3A706A8}" WorkUnitID="{6EEF6AF0-9CB2-41F7-B3EF-5E9B30A33B95}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
