@@ -30,7 +30,12 @@ public class Missile : MonoBehaviour
     void MoveTowardsPlayer()
     {
         //Move towards player
-        Vector2 dir = player.GetFuturePosition(0.1f) - transform.position;
+        Vector3 pPos = Vector3.zero;
+        if (Vector3.SqrMagnitude(player.transform.position - transform.position) > 1.5f * 1.5f)
+            pPos = player.GetFuturePosition(0.15f);
+        else
+            pPos = player.transform.position;
+        Vector2 dir = pPos - transform.position;
         dir.Normalize();
         transform.Translate(dir * speed * Time.deltaTime);
 
