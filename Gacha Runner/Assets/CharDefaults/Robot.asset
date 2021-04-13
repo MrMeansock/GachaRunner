@@ -10,12 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67b9854b4e3864441ad3b085024f056f, type: 3}
-  m_Name: Jaden
+  m_Name: Robot
   m_EditorClassIdentifier: 
-  name: Jaden
+  name: Robot
   level: 0
-  rarity: 1
-  sprite: {fileID: 8080365889060353203, guid: b7ac4dd1f7c04f94b97bdf40ac963a6d, type: 3}
-  baseSpeed: 6
-  baseJump: 2
-  baseHealth: 3
+  rarity: 2
+  mainSprite: {fileID: -4467266811179974332, guid: 1e4271db98e927245afd7dda5620b194,
+    type: 3}
+  baseSpeed: 8
+  baseJump: 450
+  baseHealth: 4
+  invisFrames: 0.5
+  downSlopeSpeed: 8
+  upSlopeSpeed: 4
+  maxPlatformLength: 8
+  platformCooldown: 2.1
+  powerID: 3
