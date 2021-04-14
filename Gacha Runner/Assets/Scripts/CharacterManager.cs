@@ -34,7 +34,7 @@ public class CharacterManager : MonoBehaviour
 
     public void SortByLevel ()
     {
-        userCharacters.Sort((p1, p2)=> p2.Level.CompareTo(p1.Level));
+        userCharacters.Sort((p1, p2)=> p2.GetLevel().CompareTo(p1.GetLevel()));
     }
 
     public CharacterBase AddRandomCharacter(int r)

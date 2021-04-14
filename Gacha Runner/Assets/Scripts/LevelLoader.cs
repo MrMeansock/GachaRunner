@@ -27,16 +27,8 @@ public class LevelLoader : MonoBehaviour
     private GameObject parallaxFrontPrefab = null;
     [SerializeField]
     private GameObject parallaxBackPrefab = null;
-    [SerializeField]
-    private List<Sprite> backgroundSprites;
-    [SerializeField]
-    private GameObject backgroundPrefab;
-    [SerializeField]
-    private float backgroundHeight;
-    private List<GameObject> backgroundObjects;
 
     private float groundWidth;
-    private float backgroundWidth;
     private float parallaxFrontWidth;
     private float parallaxBackWidth;
 
@@ -54,13 +46,11 @@ public class LevelLoader : MonoBehaviour
         character = GameObject.FindGameObjectWithTag("Player").GetComponent<Character>();
         characterPreviousPosition = character.transform.position;
         groundWidth = groundPrefab.GetComponent<BoxCollider2D>().size.x * groundPrefab.transform.localScale.x;
-        backgroundWidth = backgroundPrefab.GetComponent<BoxCollider2D>().size.x * backgroundPrefab.transform.localScale.x;
         parallaxFrontWidth = parallaxFrontPrefab.GetComponent<SpriteRenderer>().size.x * parallaxFrontPrefab.transform.localScale.x;
         parallaxBackWidth = parallaxBackPrefab.GetComponent<SpriteRenderer>().size.x * parallaxFrontPrefab.transform.localScale.x;
         groundObjects = new List<GameObject>();
         parallaxFrontObjects = new List<GameObject>();
         parallaxBackObjects = new List<GameObject>();
-        backgroundObjects = new List<GameObject>();
         //Generate ground
         groundObjects.Add(Instantiate(groundPrefab, new Vector3(character.transform.position.x - groundWidth, groundHeight, 0), groundPrefab.transform.rotation));
         currHeight = groundObjects[groundObjects.Count - 1].GetComponent<GenSection>().GenerateFlat(0.5f);
@@ -77,17 +67,12 @@ public class LevelLoader : MonoBehaviour
             groundObjects.Add(Instantiate(groundPrefab, new Vector3(character.transform.position.x + groundWidth, groundHeight, 0), groundPrefab.transform.rotation));
             currHeight = groundObjects[groundObjects.Count - 1].GetComponent<GenSection>().Generate(currHeight);
         }
-        parallaxFrontObjects.Add(Instantiate(parallaxFrontPrefab, new Vector3(character.transform.position.x - parallaxFrontWidth, parallaxFrontHeight, 6), parallaxFrontPrefab.transform.rotation));
-        parallaxFrontObjects.Add(Instantiate(parallaxFrontPrefab, new Vector3(character.transform.position.x, parallaxFrontHeight, 6), parallaxFrontPrefab.transform.rotation));
-        parallaxFrontObjects.Add(Instantiate(parallaxFrontPrefab, new Vector3(character.transform.position.x + parallaxFrontWidth, parallaxFrontHeight, 6), parallaxFrontPrefab.transform.rotation));
-        parallaxBackObjects.Add(Instantiate(parallaxBackPrefab, new Vector3(character.transform.position.x - parallaxBackWidth, parallaxBackHeight, 6), parallaxBackPrefab.transform.rotation));
-        parallaxBackObjects.Add(Instantiate(parallaxBackPrefab, new Vector3(character.transform.position.x, parallaxBackHeight, 6), parallaxBackPrefab.transform.rotation));
-        parallaxBackObjects.Add(Instantiate(parallaxBackPrefab, new Vector3(character.transform.position.x + parallaxBackWidth, parallaxBackHeight, 6), parallaxBackPrefab.transform.rotation));
-        AddBackgroundObject(new Vector3(character.transform.position.x - backgroundWidth * 2, backgroundHeight, 5));
-        AddBackgroundObject(new Vector3(character.transform.position.x - backgroundWidth, backgroundHeight, 5));
-        AddBackgroundObject(new Vector3(character.transform.position.x, backgroundHeight, 5));
-        AddBackgroundObject(new Vector3(character.transform.position.x + backgroundWidth, backgroundHeight, 5));
-        AddBackgroundObject(new Vector3(character.transform.position.x + backgroundWidth * 2, backgroundHeight, 5));
+        parallaxFrontObjects.Add(Instantiate(parallaxFrontPrefab, new Vector3(character.transform.position.x - parallaxFrontWidth, parallaxFrontHeight, 0), parallaxFrontPrefab.transform.rotation));
+        parallaxFrontObjects.Add(Instantiate(parallaxFrontPrefab, new Vector3(character.transform.position.x, parallaxFrontHeight, 0), parallaxFrontPrefab.transform.rotation));
+        parallaxFrontObjects.Add(Instantiate(parallaxFrontPrefab, new Vector3(character.transform.position.x + parallaxFrontWidth, parallaxFrontHeight, 0), parallaxFrontPrefab.transform.rotation));
+        parallaxBackObjects.Add(Instantiate(parallaxBackPrefab, new Vector3(character.transform.position.x - parallaxBackWidth, parallaxBackHeight, 0), parallaxBackPrefab.transform.rotation));
+        parallaxBackObjects.Add(Instantiate(parallaxBackPrefab, new Vector3(character.transform.position.x, parallaxBackHeight, 0), parallaxBackPrefab.transform.rotation));
+        parallaxBackObjects.Add(Instantiate(parallaxBackPrefab, new Vector3(character.transform.position.x + parallaxBackWidth, parallaxBackHeight, 0), parallaxBackPrefab.transform.rotation));
     }
 
     // Update is called once per frame
@@ -104,8 +89,6 @@ public class LevelLoader : MonoBehaviour
             groundObjects.RemoveAt(0);
             if (directLoadLevels.Count > directLevelsLoaded)
             {
-                groundObjects.Add(Instantiate(directLoadLevels[directLevelsLoaded], new Vector3(character.transform.position.x + groundWidth, groundHeight, 0), directLoadLevels[directLevelsLoaded].transform.rotation));
-                directLevelsLoaded++;
             }
             else
             {
@@ -114,25 +97,18 @@ public class LevelLoader : MonoBehaviour
             }
         }
 
-        if(character.transform.position.x > backgroundObjects[2].transform.position.x + (backgroundWidth / 2))
-        {
-            Destroy(backgroundObjects[0]);
-            backgroundObjects.RemoveAt(0);
-            AddBackgroundObject(new Vector3(backgroundObjects[backgroundObjects.Count-1].transform.position.x + backgroundWidth, backgroundHeight, 5));
-        }
-
         if (IsOffscreen(parallaxFrontObjects[1].transform.position.x - (parallaxFrontWidth * 0.5f)))
         {
             GameObject.Destroy(parallaxFrontObjects[0]);
             parallaxFrontObjects.RemoveAt(0);
-            parallaxFrontObjects.Add(Instantiate(parallaxFrontPrefab, new Vector3(parallaxFrontObjects[1].transform.position.x + parallaxFrontWidth, parallaxFrontHeight, 6), parallaxFrontPrefab.transform.rotation));
+            parallaxFrontObjects.Add(Instantiate(parallaxFrontPrefab, new Vector3(parallaxFrontObjects[1].transform.position.x + parallaxFrontWidth, parallaxFrontHeight, 0), parallaxFrontPrefab.transform.rotation));
         }
        
         if (IsOffscreen(parallaxBackObjects[2].transform.position.x - (parallaxBackWidth * 0.5f)))
         {
             GameObject.Destroy(parallaxBackObjects[0]);
             parallaxBackObjects.RemoveAt(0);
-            parallaxBackObjects.Add(Instantiate(parallaxBackPrefab, new Vector3(parallaxBackObjects[1].transform.position.x + parallaxBackWidth, parallaxBackHeight, 6), parallaxBackPrefab.transform.rotation));
+            parallaxBackObjects.Add(Instantiate(parallaxBackPrefab, new Vector3(parallaxBackObjects[1].transform.position.x + parallaxBackWidth, parallaxBackHeight, 0), parallaxBackPrefab.transform.rotation));
         }
 
         characterPreviousPosition = character.transform.position;
@@ -159,13 +135,5 @@ public class LevelLoader : MonoBehaviour
         {
             pb.transform.position += new Vector3(-parallaxBackSpeed, 0);
         });
-    }
-
-    void AddBackgroundObject(Vector3 pos)
-    {
-        backgroundObjects.Add(Instantiate(backgroundPrefab, pos, backgroundPrefab.transform.rotation));
-        //Select random sprite to use
-        backgroundObjects[backgroundObjects.Count - 1].GetComponent<SpriteRenderer>().sprite = backgroundSprites[Random.Range(0, backgroundSprites.Count)];
-
     }
 }

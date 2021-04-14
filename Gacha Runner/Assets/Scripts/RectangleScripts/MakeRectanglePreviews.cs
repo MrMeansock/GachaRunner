@@ -16,30 +16,8 @@ namespace GotchaGuys
             [SerializeField] float minLength = 2.5f;
             [Tooltip("Maximum length a preview can be to be in order to create a rectangle.")]
             [SerializeField] float maxLength = 8.5f;
-            public float MaxLength
-            {
-                get
-                {
-                    return maxLength;
-                }
-                set
-                {
-                    maxLength = value;
-                }
-            }
             [Tooltip("Time (in seconds) a player has to wait to make the next rectangle.")]
             [SerializeField] float cooldown = 2.0f;
-            public float Cooldown
-            {
-                get
-                {
-                    return cooldown;
-                }
-                set
-                {
-                    cooldown = value;
-                }
-            }
 
             [Tooltip("Color of previews that are too short and won't make a rectangle.")]
             [SerializeField] Color badPreviewColor = Color.gray;

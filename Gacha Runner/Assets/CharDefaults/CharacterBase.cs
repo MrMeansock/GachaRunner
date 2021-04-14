@@ -7,63 +7,30 @@ public class CharacterBase
 {
     [SerializeField]
     private string name;
-    public string Name => name;
     [SerializeField]
     private int level;
-    public int Level => level;
     [SerializeField]
     private int rarity;
-    public int Rarity => rarity;
     [SerializeField]
-    private Sprite mainSprite;
-    public Sprite MainSprite => mainSprite;
+    private Sprite sprite;
 
     //Movement
     [SerializeField]
     private float baseSpeed;
-    public float BaseSpeed => baseSpeed;
     [SerializeField]
     private float baseJump;
-    public float BaseJump => baseJump;
     [SerializeField]
-    private int baseHealth;
-    public int BaseHealth => baseHealth;
-
-    //Gameplay
-    [SerializeField]
-    private float invisFrames;
-    public float InvisFrames => invisFrames;
-    [SerializeField]
-    private float upSlopeSpeed;
-    public float UpSlopeSpeed => upSlopeSpeed;
-    [SerializeField]
-    private float downSlopeSpeed;
-    public float DownSlopeSpeed => downSlopeSpeed;
-    [SerializeField]
-    private float maxPlatformLength;
-    public float MaxPlatformLength => maxPlatformLength;
-    [SerializeField]
-    private float platformCooldown;
-    public float PlatformCooldown => platformCooldown;
-    [SerializeField]
-    private int powerID;
-    public int PowerID => powerID;
+    private float baseHealth;
 
     public CharacterBase(CharStats baseStats)
     {
         this.name = baseStats.name;
         this.level = baseStats.level;
-        this.mainSprite = baseStats.mainSprite; //Yo does this work
         this.baseSpeed = baseStats.baseSpeed;
         this.baseJump = baseStats.baseJump;
         this.baseHealth = baseStats.baseHealth;
         this.rarity = baseStats.rarity;
-        this.invisFrames = baseStats.invisFrames;
-        this.upSlopeSpeed = baseStats.upSlopeSpeed;
-        this.downSlopeSpeed = baseStats.downSlopeSpeed;
-        this.maxPlatformLength = baseStats.maxPlatformLength;
-        this.platformCooldown = baseStats.platformCooldown;
-        this.powerID = baseStats.powerID;
+        this.sprite = baseStats.sprite;
     }
 
     public CharacterBase()
@@ -74,12 +41,21 @@ public class CharacterBase
         this.baseJump = 0;
         this.baseHealth = 1;
         this.rarity = 0;
-        this.mainSprite = null;
-        this.invisFrames = 0.5f;
-        this.upSlopeSpeed = 1;
-        this.downSlopeSpeed = 1;
-        this.maxPlatformLength = 1;
-        this.platformCooldown = 0.25f;
-        this.powerID = 0;
+        this.sprite = null;
+    }
+
+    public int GetRarity()
+    {
+        return rarity;
+    }
+
+    public Sprite GetSprite()
+    {
+        return sprite;
+    }
+
+    public int GetLevel()
+    {
+        return level;
     }
 }

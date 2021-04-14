@@ -10,19 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67b9854b4e3864441ad3b085024f056f, type: 3}
-  m_Name: RedRobot
+  m_Name: Jaden
   m_EditorClassIdentifier: 
-  name: Red Robot
+  name: Jaden
   level: 0
-  rarity: 3
-  mainSprite: {fileID: 5442043502427055121, guid: f867467db5ffab54586273b2d55c5fab,
-    type: 3}
-  baseSpeed: 9
-  baseJump: 500
-  baseHealth: 5
-  invisFrames: 0.6
-  downSlopeSpeed: 10
-  upSlopeSpeed: 4
-  maxPlatformLength: 9
-  platformCooldown: 2
-  powerID: 3
+  rarity: 1
+  sprite: {fileID: 8080365889060353203, guid: b7ac4dd1f7c04f94b97bdf40ac963a6d, type: 3}
+  baseSpeed: 6
+  baseJump: 2
+  baseHealth: 3
