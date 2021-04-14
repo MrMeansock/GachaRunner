@@ -11,7 +11,7 @@ public class GenGround : MonoBehaviour
 
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         col = GetComponent<BoxCollider2D>();
     }
 

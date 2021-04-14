@@ -70,6 +70,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 009ac1fd1c4da5f4b876688ea38da0bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  genGroundPrefab: {fileID: 8138976904647864976, guid: cdc48d32171352c499eb053fbd1c8b06,
+  genGroundPrefab: {fileID: 8138976904647864976, guid: de6ffe00812dbd3469acbe8652ec0550,
     type: 3}
   minX: 0
