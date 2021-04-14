@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{6EEF6AF0-9CB2-41F7-B3EF-5E9B30A33B95}" SchemaVersion="97">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{6EEF6AF0-9CB2-41F7-B3EF-5E9B30A33B95}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="Music" ID="{A45F736E-4634-40CF-B9C7-7009E7922FF3}" ShortID="167933118">
+					<ChildrenList>
+						<Event Name="OnMainMenuLoad" ID="{6A1211D5-A030-4953-9D6B-4A762B9259EE}">
+							<ChildrenList>
+								<Action Name="" ID="{1023551B-3171-4029-B339-7DCC9B692B68}" ShortID="28641736">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Main Menu Music Container" ID="{EB2F7B85-1BAD-4AD7-A505-8A2CD74839D6}" WorkUnitID="{F02DFECA-1B31-4CAE-A6D3-32C7B8C2D6B5}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{42AB52CC-3C29-4BD2-AB22-81DC066C68BC}" ShortID="453423076">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Main Menu Music Container" ID="{EB2F7B85-1BAD-4AD7-A505-8A2CD74839D6}" WorkUnitID="{F02DFECA-1B31-4CAE-A6D3-32C7B8C2D6B5}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="OnPlay" ID="{7E1A26D1-639F-4379-A8B6-3A417450DCD6}">
+							<ChildrenList>
+								<Action Name="" ID="{41CB47ED-34F5-4B94-B819-0F1EDC41DAE3}" ShortID="312941035">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="In Game Music Container" ID="{79789B4E-0E23-40CC-A62A-5367456715AA}" WorkUnitID="{F02DFECA-1B31-4CAE-A6D3-32C7B8C2D6B5}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{B9751087-AF88-4F66-B81D-A47E080A47E1}" ShortID="496837987">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="In Game Music Container" ID="{79789B4E-0E23-40CC-A62A-5367456715AA}" WorkUnitID="{F02DFECA-1B31-4CAE-A6D3-32C7B8C2D6B5}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="OnMainMenuUnload" ID="{3AA1E4DF-7EB6-48C9-810C-E0452C0F970E}">
+							<ChildrenList>
+								<Action Name="" ID="{8C13B42F-E375-4A0D-9D2B-D1582A65547C}" ShortID="328809243">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Main Menu Music Container" ID="{EB2F7B85-1BAD-4AD7-A505-8A2CD74839D6}" WorkUnitID="{F02DFECA-1B31-4CAE-A6D3-32C7B8C2D6B5}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="OnPlayUnload" ID="{84203BBC-04F8-4D0D-9529-A4F8D5E2F226}">
+							<ChildrenList>
+								<Action Name="" ID="{8AF49EC6-9EB8-4B9C-B786-437BF33B9B41}" ShortID="329467577">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="In Game Music Container" ID="{79789B4E-0E23-40CC-A62A-5367456715AA}" WorkUnitID="{F02DFECA-1B31-4CAE-A6D3-32C7B8C2D6B5}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="UI" ID="{FC75D6DE-578D-4015-AFD4-2CF849EC3023}" ShortID="142676517">
+					<ChildrenList>
+						<Event Name="OnButtonClick" ID="{06BF6D87-8353-4E6B-B481-09A58A129DA0}">
+							<ChildrenList>
+								<Action Name="" ID="{D74DF1E0-AEF8-4F23-925A-CADFC331CB4D}" ShortID="653239145">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Confirm" ID="{9E6A71E3-C580-4041-A207-63EB0E05C16B}" WorkUnitID="{CC26E5BC-5FD3-4273-B6A1-A52D211A552C}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="OnBackButtonClick" ID="{3D80301B-AE07-4FBC-AE16-01A0A3A706A8}">
+							<ChildrenList>
+								<Action Name="" ID="{A0B4037B-9DD7-40FB-BA5F-CFE0A3778316}" ShortID="221296990">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Cancel" ID="{04847229-34A5-4196-B6F0-462CA5A3CB73}" WorkUnitID="{CC26E5BC-5FD3-4273-B6A1-A52D211A552C}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
