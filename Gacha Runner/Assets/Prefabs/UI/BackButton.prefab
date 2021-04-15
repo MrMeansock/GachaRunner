@@ -170,7 +170,8 @@ GameObject:
   - component: {fileID: 6936635145604437007}
   - component: {fileID: 6936635145604437004}
   - component: {fileID: 6936635145604437005}
-  - component: {fileID: 6936635145604437010}
+  - component: {fileID: 4724972687826085349}
+  - component: {fileID: 6798435087991467832}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -278,18 +279,29 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4724972687826085349}
         m_MethodName: PlayButtonClick
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 6936635145604437008}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6936635145604437010
+      - m_Target: {fileID: 6798435087991467832}
+        m_MethodName: Back
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4724972687826085349
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -298,6 +310,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 6936635145604437008}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bb363cf72312914094f7c88450da583, type: 3}
+  m_Script: {fileID: 11500000, guid: e5c6c17b446204841888d49810798bd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6798435087991467832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6936635145604437008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b717ba06174b9ca41b57353b1f0ffe98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -20,7 +20,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 7acf986a8e7e174f81786467af5d69d0
     GuidInternal: 
-    m_lastTime: -8585831484058334092
+    m_lastTime: -8585831475796188168
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -30,7 +30,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: b3cfab05a18b1a44a4c86bcf775f1395
     GuidInternal: 
-    m_lastTime: -8585831484059613549
+    m_lastTime: -8585831066332440183
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -41,6 +41,28 @@ MonoBehaviour:
       - ElementName: Master Audio Bus
         ObjectType: 2
       Path: Default Work Unit\Master Audio Bus
+    - name: Music Audio Bus
+      guid: ad78678b89a7b148be0c48a46cbbc0fb
+      id: 493417818
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: Music Audio Bus
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\Music Audio Bus
+    - name: SFX Audio Bus
+      guid: 1e7920762571704296262212bd02eb04
+      id: 4084199202
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: SFX Audio Bus
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\SFX Audio Bus
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     PathAndIcons:
@@ -49,7 +71,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 360467f0920aba47a80c9639a878c267
     GuidInternal: 
-    m_lastTime: -8585831028756726392
+    m_lastTime: -8585831475796208114
     List:
     - name: Master_SoundBank
       guid: 79583aae79e3944487e86f7b8f8683b2
@@ -68,7 +90,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: f06aef6eb29cf741b3ef5e9b30a33b95
     GuidInternal: 
-    m_lastTime: -8585831484064051618
+    m_lastTime: -8585830955691221736
     List:
     - name: Music
       guid: 6e735fa43446cf40b9c77009e7922ff3
@@ -186,8 +208,50 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: b506ff4a998f5346ae6f327790d3354f
     GuidInternal: 
-    m_lastTime: -8585831484064051618
-    List: []
+    m_lastTime: -8585831065857348317
+    List:
+    - name: MasterVolume
+      guid: c245c7317f30e84db90a02a9bae68b47
+      id: 2918011349
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Volumes
+        ObjectType: 4
+      - ElementName: MasterVolume
+        ObjectType: 13
+      Path: Default Work Unit\Volumes\MasterVolume
+    - name: MusicVolume
+      guid: 358c69b6183e7449974cc3f55febf103
+      id: 2346531308
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Volumes
+        ObjectType: 4
+      - ElementName: MusicVolume
+        ObjectType: 13
+      Path: Default Work Unit\Volumes\MusicVolume
+    - name: SFXVolume
+      guid: fcb00f9a64ea264db681eeee9a85e422
+      id: 988953028
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Volumes
+        ObjectType: 4
+      - ElementName: SFXVolume
+        ObjectType: 13
+      Path: Default Work Unit\Volumes\SFXVolume
+    - name: Volumes
+      guid: 7c327eb28aaf7745b822a8bab2a06bc9
+      id: 4043670282
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Volumes
+        ObjectType: 4
+      Path: Default Work Unit\Volumes
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     PathAndIcons:
@@ -196,7 +260,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: f3d15a996228b24795686a7ff8b00871
     GuidInternal: 
-    m_lastTime: -8585831484058354037
+    m_lastTime: -8585831475796198140
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
@@ -206,7 +270,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 706e6f28d1ade947895f1e4b45f5d382
     GuidInternal: 
-    m_lastTime: -8585831484058344065
+    m_lastTime: -8585831475796188168
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
@@ -216,9 +280,12 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: ecbaea21c561b941bba9e04f9ecba040
     GuidInternal: 
-    m_lastTime: -8585831484058344065
+    m_lastTime: -8585831475796188168
     List: []
   ExpandedItems:
   - /Gacha Runner_WwiseProject
+  - /Gacha Runner_WwiseProject/Events
+  - /Gacha Runner_WwiseProject/Events/Default Work Unit
+  - /Gacha Runner_WwiseProject/Events/Default Work Unit/Music
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

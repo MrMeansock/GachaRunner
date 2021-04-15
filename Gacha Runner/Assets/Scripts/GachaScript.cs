@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GachaScript : MonoBehaviour
 {
-    public Color [] particleColor;
+    public Color[] particleColor;
     private CharacterManager cm;
     private GameObject gachaMenu;
     private GameObject gachaSparkles;
@@ -37,7 +37,7 @@ public class GachaScript : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.H))
+        if (Input.GetKeyDown(KeyCode.H))
         {
             StartPull(false);
         }
@@ -47,25 +47,31 @@ public class GachaScript : MonoBehaviour
     {
         if (!inPull)
         {
-            if (menuCurrency.PlayerCurrency - cost >= 0)
+
+            if (!tenPull)
             {
-                if (!tenPull)
+                if (menuCurrency.PlayerCurrency - cost >= 0)
                 {
                     StartCoroutine("NormalPull");
                 }
                 else
+                {
+                    Debug.Log("Not enough currency to summon!!");
+                }
+            }
+            else
+            {
+                if (menuCurrency.PlayerCurrency - cost * 10 >= 0)
                 {
                     for (int i = 0; i < 10; i++)
                     {
                         StartCoroutine("NormalPull");
                     }
                 }
-
-                menuCurrency.PlayerCurrency -= cost;
-            }
-            else
-            {
-                Debug.Log("Not enough currency to summon!!");
+                else
+                {
+                    Debug.Log("Not enough currency to summon ten!!");
+                }
             }
         }
     }
@@ -75,7 +81,7 @@ public class GachaScript : MonoBehaviour
         StopCoroutine("NormalPull");
     }
 
-    ParticleSystem SetParticleColor (string particleName, Color col)
+    ParticleSystem SetParticleColor(string particleName, Color col)
     {
         ParticleSystem sys = gachaSparkles.transform.Find(particleName).GetComponent<ParticleSystem>();
         ParticleSystem.MainModule psMain = sys.main;
@@ -83,10 +89,12 @@ public class GachaScript : MonoBehaviour
         return sys;
     }
 
-    IEnumerator NormalPull ()
+    IEnumerator NormalPull()
     {
-        if(!inPull)
+        if (!inPull)
         {
+            menuCurrency.PlayerCurrency -= cost;
+
             inPull = true;
             characterSprite.SetActive(false);
             CharacterBase charPulled = new CharacterBase();
@@ -149,8 +157,8 @@ public class GachaScript : MonoBehaviour
                 characterSprite.SetActive(true);
                 characterSprite.GetComponent<Image>().sprite = charPulled.MainSprite;
             }
-                
+
             inPull = false;
         }
-    }  
+    }
 }
