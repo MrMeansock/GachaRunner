@@ -45,12 +45,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseCharacters:
-  - {fileID: 11400000, guid: 1d65b6891adfb654e83add41de0eaa51, type: 2}
-  - {fileID: 11400000, guid: 6ff176eeb3db179459a92e76e3702207, type: 2}
-  - {fileID: 11400000, guid: a8d0ac6ce4d4bce418f525be11576609, type: 2}
-  - {fileID: 11400000, guid: 681b75312a1173648b5e717709a2e22b, type: 2}
-  - {fileID: 11400000, guid: 8141bf18f401d4f4a8543332a1f6c3e3, type: 2}
+  - {fileID: 11400000, guid: bb2a87ed592ac0d47bfee52cd056c500, type: 2}
+  - {fileID: 11400000, guid: ff10a12998ad0714ca467173dbd7dd74, type: 2}
+  - {fileID: 11400000, guid: 9c4b800ef982afb4393b934dc4c6f85d, type: 2}
+  - {fileID: 11400000, guid: 28c6548b19abce645a16d769f793cab7, type: 2}
+  - {fileID: 11400000, guid: 5b96e5814c9bc5745a9095f135209d2d, type: 2}
   userCharacters: []
+  selectedCharacter: 0
 --- !u!114 &7608488531328988272
 MonoBehaviour:
   m_ObjectHideFlags: 0

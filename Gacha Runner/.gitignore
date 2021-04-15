@@ -56,5 +56,9 @@ sysinfo.txt
 *.unitypackage
 
 # Crashlytics generated file
+<<<<<<< HEAD
 crashlytics-build.properties
 
+=======
+crashlytics-build.properties
+>>>>>>> parent of 768ad7c (Merge branch 'main' into camilo---wwise-integration)

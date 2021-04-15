@@ -5,7 +5,7 @@ using GotchaGuys.GameRectangle;
 
 public class Missile : MonoBehaviour
 {
-    private GameObject player;
+    private Character player;
     private GameObject body;
     private float speed = 5.0f;
     private float lifeTime = 0f;
@@ -16,7 +16,7 @@ public class Missile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Character>();
         body = transform.GetChild(0).gameObject;
         offset = Random.Range(0, 100.0f);
     }
@@ -30,7 +30,12 @@ public class Missile : MonoBehaviour
     void MoveTowardsPlayer()
     {
         //Move towards player
-        Vector2 dir = player.transform.position - transform.position;
+        Vector3 pPos = Vector3.zero;
+        if (Vector3.SqrMagnitude(player.transform.position - transform.position) > 1.5f * 1.5f)
+            pPos = player.GetFuturePosition(0.15f);
+        else
+            pPos = player.transform.position;
+        Vector2 dir = pPos - transform.position;
         dir.Normalize();
         transform.Translate(dir * speed * Time.deltaTime);
 
