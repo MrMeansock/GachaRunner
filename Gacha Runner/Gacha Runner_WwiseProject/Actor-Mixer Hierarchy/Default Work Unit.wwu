@@ -3,50 +3,62 @@
 	<AudioObjects>
 		<WorkUnit Name="Default Work Unit" ID="{CC26E5BC-5FD3-4273-B6A1-A52D211A552C}" PersistMode="Standalone">
 			<ChildrenList>
-				<Sound Name="Confirm" ID="{9E6A71E3-C580-4041-A207-63EB0E05C16B}" ShortID="444379019">
+				<ActorMixer Name="SFX Mixer" ID="{6CDBE5DB-035F-4DE4-BE63-5EBFE26297AF}" ShortID="768213254">
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1CCBAA11-5023-42A3-B372-965A8B1ED4EC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{05ABCFB3-8BA1-441A-A4C8-6BCF775F1395}"/>
+							<ObjectRef Name="SFX Audio Bus" ID="{7620791E-7125-4270-9626-2212BD02EB04}" WorkUnitID="{05ABCFB3-8BA1-441A-A4C8-6BCF775F1395}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<AudioFileSource Name="confirm" ID="{A37BC033-257B-4245-ABBE-85AC439FA1AD}">
-							<Language>SFX</Language>
-							<AudioFile>confirm.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="778660791"/>
-							</MediaIDList>
-						</AudioFileSource>
+						<Sound Name="Confirm" ID="{9E6A71E3-C580-4041-A207-63EB0E05C16B}" ShortID="444379019">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1CCBAA11-5023-42A3-B372-965A8B1ED4EC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="SFX Audio Bus" ID="{7620791E-7125-4270-9626-2212BD02EB04}" WorkUnitID="{05ABCFB3-8BA1-441A-A4C8-6BCF775F1395}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="confirm" ID="{A37BC033-257B-4245-ABBE-85AC439FA1AD}">
+									<Language>SFX</Language>
+									<AudioFile>confirm.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="778660791"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="confirm" ID="{A37BC033-257B-4245-ABBE-85AC439FA1AD}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Cancel" ID="{04847229-34A5-4196-B6F0-462CA5A3CB73}" ShortID="641607421">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1CCBAA11-5023-42A3-B372-965A8B1ED4EC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="SFX Audio Bus" ID="{7620791E-7125-4270-9626-2212BD02EB04}" WorkUnitID="{05ABCFB3-8BA1-441A-A4C8-6BCF775F1395}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="cancel" ID="{8EB19584-0BD9-448E-BBBC-9E6A7728FD74}">
+									<Language>SFX</Language>
+									<AudioFile>cancel.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="557460623"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="cancel" ID="{8EB19584-0BD9-448E-BBBC-9E6A7728FD74}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="confirm" ID="{A37BC033-257B-4245-ABBE-85AC439FA1AD}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
-				<Sound Name="Cancel" ID="{04847229-34A5-4196-B6F0-462CA5A3CB73}" ShortID="641607421">
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1CCBAA11-5023-42A3-B372-965A8B1ED4EC}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{05ABCFB3-8BA1-441A-A4C8-6BCF775F1395}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="cancel" ID="{8EB19584-0BD9-448E-BBBC-9E6A7728FD74}">
-							<Language>SFX</Language>
-							<AudioFile>cancel.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="557460623"/>
-							</MediaIDList>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="cancel" ID="{8EB19584-0BD9-448E-BBBC-9E6A7728FD74}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
+				</ActorMixer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

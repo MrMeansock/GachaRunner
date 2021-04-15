@@ -28,12 +28,12 @@ public class LevelLoader : MonoBehaviour
     [SerializeField]
     private GameObject parallaxBackPrefab = null;
     [SerializeField]
-    private List<Sprite> backgroundSprites;
+    private List<Sprite> backgroundSprites = null;
     [SerializeField]
-    private GameObject backgroundPrefab;
+    private GameObject backgroundPrefab = null;
     [SerializeField]
     private float backgroundHeight;
-    private List<GameObject> backgroundObjects;
+    private List<GameObject> backgroundObjects = null;
 
     private float groundWidth;
     private float backgroundWidth;
