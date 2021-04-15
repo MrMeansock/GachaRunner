@@ -153,6 +153,8 @@ public class Character : MonoBehaviour
     {
         RaycastHit2D[] hits = new RaycastHit2D[16];
         bool hitFound = false;
+        bool slopeHitFound = false;
+        float upSlopeForce = 0.0f;
         int hitAmount = Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y - bottomDisplacement), Vector2.right, new ContactFilter2D(), hits, slopeRayLength);
         
         for(int i = 0; i < hitAmount; i++)
@@ -160,17 +162,17 @@ public class Character : MonoBehaviour
             if(hits[i].collider.tag != "Player")
             {
                 hitFound = true;
-                float upForce = hits[i].normal.y;
-                if (upForce > 0)
+                slopeHitFound = true;
+                upSlopeForce = hits[i].normal.y;
+                if (upSlopeForce > 0)
                 {
-                    upForce *= upSlopeForceMultiplier;
-                    rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y + upForce);
+                    upSlopeForce *= upSlopeForceMultiplier;
                 }
             }
         }
         bool bottomHitFound = false;
     
-            hitAmount = Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y - bottomDisplacement), Vector2.down, new ContactFilter2D(), hits, jumpRayLength);
+        hitAmount = Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y - bottomDisplacement), Vector2.down, new ContactFilter2D(), hits, jumpRayLength);
 
         for (int i = 0; i < hitAmount; i++)
         {
@@ -196,30 +198,34 @@ public class Character : MonoBehaviour
             }
         }
 
-        bool rightHitFound = false;
-        //If x movement is too low, try to jump over obstical
-        if(transform.position.x - prevX < minXDelta)
+        if(slopeHitFound && bottomHitFound)
         {
-            if (bottomHitFound)
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y + upSlopeForce);
+        }
+
+        bool rightHitFound = false;
+        hitAmount = Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y + headDisplacement), Vector2.right, new ContactFilter2D(), hits, jumpRayLength);
+        for (int i = 0; i < hitAmount; i++)
+        {
+            if (hits[i].collider.tag != "Player")
             {
-                Debug.Log("Trying to jump");
-                hitAmount = Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y + headDisplacement), Vector2.right, new ContactFilter2D(), hits, jumpRayLength);
-                for (int i = 0; i < hitAmount; i++)
-                {
-                    if (hits[i].collider.tag != "Player")
-                    {
-                        rightHitFound = true;
-                    }
-                }
+                rightHitFound = true;
             }
+        }
 
-
+        //If x movement is too low, try to jump over obstical
+        if (transform.position.x - prevX < minXDelta)
+        {
             if (!rightHitFound && bottomHitFound)
                 rb.AddForce(Vector2.up * jumpStrength);
         }
 
+        if (!bottomHitFound && (rightHitFound || slopeHitFound))
+            rb.velocity = new Vector2(0, rb.velocity.y);
+
         Debug.DrawLine(new Vector3(transform.position.x, transform.position.y - bottomDisplacement), new Vector3(transform.position.x + slopeRayLength, transform.position.y - bottomDisplacement), Color.red);
         Debug.DrawLine(new Vector3(transform.position.x, transform.position.y + headDisplacement), new Vector3(transform.position.x + jumpRayLength, transform.position.y + headDisplacement), Color.blue);
+        Debug.DrawLine(new Vector3(transform.position.x, transform.position.y - bottomDisplacement), new Vector3(transform.position.x, transform.position.y - bottomDisplacement - jumpRayLength), Color.green);
     }
 
     public void TakeDamage(bool doInvincibility)
