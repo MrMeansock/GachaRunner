@@ -17,12 +17,12 @@ MonoBehaviour:
   rarity: 3
   mainSprite: {fileID: 5442043502427055121, guid: f867467db5ffab54586273b2d55c5fab,
     type: 3}
-  baseSpeed: 9
+  baseSpeed: 5
   baseJump: 500
   baseHealth: 5
   invisFrames: 0.6
   downSlopeSpeed: 10
   upSlopeSpeed: 4
   maxPlatformLength: 9
-  platformCooldown: 2
+  platformCooldown: 1
   powerID: 3

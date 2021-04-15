@@ -91,7 +91,7 @@ public class GachaScript : MonoBehaviour
 
     IEnumerator NormalPull()
     {
-        if (!inPull)
+        if (!inPull && !gachaSparkles.transform.GetChild(0).GetComponent<ParticleSystem>().isPlaying)
         {
             menuCurrency.PlayerCurrency -= cost;
 

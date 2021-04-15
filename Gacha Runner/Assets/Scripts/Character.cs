@@ -84,8 +84,8 @@ public class Character : MonoBehaviour
         this.maxHealth = selectedCharacter.BaseHealth;
 
         this.iMaxTime = selectedCharacter.InvisFrames;
-        this.downSlopeForceMultiplier *= selectedCharacter.DownSlopeSpeed;
-        this.upSlopeForceMultiplier *= selectedCharacter.UpSlopeSpeed;
+        this.downSlopeForceMultiplier = selectedCharacter.DownSlopeSpeed;
+        this.upSlopeForceMultiplier = selectedCharacter.UpSlopeSpeed;
         rectPreview.MaxLength = selectedCharacter.MaxPlatformLength;
         rectPreview.Cooldown = selectedCharacter.PlatformCooldown;
         this.powerID = selectedCharacter.PowerID;
