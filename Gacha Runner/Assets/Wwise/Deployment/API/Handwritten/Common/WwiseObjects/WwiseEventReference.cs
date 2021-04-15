@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9cb13d63f3934f2d5ad862d052dc36028fbefb6143ed798a81964b24074ca0eb
-size 425
+//////////////////////////////////////////////////////////////////////
+//
+// Copyright (c) 2018 Audiokinetic Inc. / All Rights Reserved
+//
+//////////////////////////////////////////////////////////////////////
+
+/// @brief Represents Wwise events as Unity assets.
+public class WwiseEventReference : WwiseObjectReference
+{
+	public override WwiseObjectType WwiseObjectType { get { return WwiseObjectType.Event; } }
+}

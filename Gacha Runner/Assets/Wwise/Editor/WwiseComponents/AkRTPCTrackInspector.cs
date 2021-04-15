@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:57623cc686fa1a6a816013c3fa50cbb6792ca59222e1fe82c3e16cac3280e9e2
-size 766
+﻿#if !AK_DISABLE_TIMELINE
+[System.Obsolete(AkSoundEngine.Deprecation_2019_2_0)]
+[UnityEditor.CustomEditor(typeof(AkRTPCTrack))]
+public class AkRTPCTrackInspector : UnityEditor.Editor
+{
+	private UnityEditor.SerializedProperty Parameter;
+
+	public void OnEnable()
+	{
+		Parameter = serializedObject.FindProperty("Parameter");
+	}
+
+	public override void OnInspectorGUI()
+	{
+		serializedObject.Update();
+
+		UnityEngine.GUILayout.Space(UnityEditor.EditorGUIUtility.standardVerticalSpacing);
+
+		using (new UnityEditor.EditorGUILayout.VerticalScope("box"))
+		{
+			UnityEditor.EditorGUILayout.PropertyField(Parameter, new UnityEngine.GUIContent("Parameter: "));
+		}
+
+		serializedObject.ApplyModifiedProperties();
+	}
+}
+#endif //!AK_DISABLE_TIMELINE

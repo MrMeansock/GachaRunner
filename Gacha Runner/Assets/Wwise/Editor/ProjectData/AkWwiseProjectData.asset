@@ -218,11 +218,6 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8585840742016072630
     List: []
-  ExpandedItems:
-  - /Gacha Runner_WwiseProject
-  - /Gacha Runner_WwiseProject/Events
-  - /Gacha Runner_WwiseProject/Events/Default Work Unit
-  - /Gacha Runner_WwiseProject/Events/Default Work Unit/Music
-  - /Gacha Runner_WwiseProject/Events/Default Work Unit/UI
+  ExpandedItems: []
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:90f73a4935c34e38f28e5a48863b03a8538e7bf185746920b6f0303650413cb8
-size 526
+fileFormatVersion: 2
+guid: a9a5d5b26e35e6c47b30396cf7875282
+PluginImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  iconMap: {}
+  executionOrder: {}
+  defineConstraints: []
+  isPreloaded: 0
+  isOverridable: 0
+  isExplicitlyReferenced: 0
+  validateReferences: 1
+  platformData:
+  - first:
+      Any: 
+    second:
+      enabled: 0
+      settings: {}
+  - first:
+      Editor: Editor
+    second:
+      enabled: 0
+      settings:
+        DefaultValueInitialized: true
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

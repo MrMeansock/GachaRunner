@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7a52a00c63ce5c22ffd2697b424076f50aac5390cd2c4dc3ba1efafd772b896d
-size 358
+#if UNITY_EDITOR
+//public class AkWwiseMenu_Android
+//{
+//	private const string MENU_PATH = "Help/Wwise Help/";
+//	private const string Platform = "Android";
+
+//	[UnityEditor.MenuItem(MENU_PATH + Platform, false, (int)AkWwiseHelpOrder.WwiseHelpOrder)]
+//	public static void OpenDoc() { AkDocHelper.OpenDoc(Platform); }
+//}
+#endif // #if UNITY_EDITOR

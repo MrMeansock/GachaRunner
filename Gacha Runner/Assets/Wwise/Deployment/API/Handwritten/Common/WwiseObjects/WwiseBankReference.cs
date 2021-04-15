@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b03fad2ab64cd086d888a8830963efa23fbf92a6feef5ec5a5b3ffb38ed80e02
-size 427
+//////////////////////////////////////////////////////////////////////
+//
+// Copyright (c) 2018 Audiokinetic Inc. / All Rights Reserved
+//
+//////////////////////////////////////////////////////////////////////
+
+/// @brief Represents Wwise banks as Unity assets.
+public class WwiseBankReference : WwiseObjectReference
+{
+	public override WwiseObjectType WwiseObjectType { get { return WwiseObjectType.Soundbank; } }
+}

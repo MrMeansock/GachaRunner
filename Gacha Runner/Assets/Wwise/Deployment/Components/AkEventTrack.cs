@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9c2b95067eb99dc9e304f388ce59e60bfcd4c962c89385cc1bc9a651cfc1f33c
-size 1807
+#if ! (UNITY_DASHBOARD_WIDGET || UNITY_WEBPLAYER || UNITY_WII || UNITY_WIIU || UNITY_NACL || UNITY_FLASH || UNITY_BLACKBERRY) // Disable under unsupported platforms.
+#if !AK_DISABLE_TIMELINE
+
+//////////////////////////////////////////////////////////////////////
+//
+// Copyright (c) 2017 Audiokinetic Inc. / All Rights Reserved
+//
+//////////////////////////////////////////////////////////////////////
+
+[UnityEngine.Timeline.TrackColor(0.855f, 0.8623f, 0.870f)]
+[UnityEngine.Timeline.TrackClipType(typeof(AkEventPlayable))]
+[UnityEngine.Timeline.TrackBindingType(typeof(UnityEngine.GameObject))]
+[System.Obsolete(AkSoundEngine.Deprecation_2019_2_0)]
+/// @brief A track within timeline that holds \ref AkEventPlayable clips. 
+/// @details AkEventTracks are bound to a specific GameObject, which is the default emitter for all of the \ref AkEventPlayable clips. There is an option to override this in /ref AkEventPlayable.
+/// \sa
+/// - \ref AkEventPlayable
+/// - \ref AkEventPlayableBehavior
+public class AkEventTrack : UnityEngine.Timeline.TrackAsset
+{
+	public override UnityEngine.Playables.Playable CreateTrackMixer(UnityEngine.Playables.PlayableGraph graph, UnityEngine.GameObject go, int inputCount)
+	{
+		var playable = UnityEngine.Playables.ScriptPlayable<AkEventPlayableBehavior>.Create(graph);
+		UnityEngine.Playables.PlayableExtensions.SetInputCount(playable, inputCount);
+
+		var clips = GetClips();
+		foreach (var clip in clips)
+		{
+			var akEventPlayable = clip.asset as AkEventPlayable;
+			akEventPlayable.owningClip = clip;
+		}
+
+		return playable;
+	}
+}
+#endif // !AK_DISABLE_TIMELINE
+#endif // #if ! (UNITY_DASHBOARD_WIDGET || UNITY_WEBPLAYER || UNITY_WII || UNITY_WIIU || UNITY_NACL || UNITY_FLASH || UNITY_BLACKBERRY) // Disable under unsupported platforms.
