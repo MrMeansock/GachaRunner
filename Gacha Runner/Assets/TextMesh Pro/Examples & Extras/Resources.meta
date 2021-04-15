@@ -1,20 +1,9 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD:Gacha Runner/Assets/TextMesh Pro/Examples & Extras/Resources.meta
-guid: d6d3a169ad794942a21da6a552d62f6f
-=======
-guid: 54acdf21d54fbed41977966e340f2556
->>>>>>> parent of 768ad7c (Merge branch 'main' into camilo---wwise-integration):Gacha Runner/Assets/Scripts/Wwise.meta
-folderAsset: yes
-DefaultImporter:
-  externalObjects: {}
-=======
 guid: d6d3a169ad794942a21da6a552d62f6f
 folderAsset: yes
 timeCreated: 1436068007
 licenseType: Pro
 DefaultImporter:
->>>>>>> parent of 768ad7c (Merge branch 'main' into camilo---wwise-integration)
   userData: 
   assetBundleName: 
   assetBundleVariant: 

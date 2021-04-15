@@ -1,13 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 54acdf21d54fbed41977966e340f2556
-=======
-<<<<<<< HEAD:Gacha Runner/Assets/TextMesh Pro/Examples & Extras/Resources.meta
-guid: d6d3a169ad794942a21da6a552d62f6f
-=======
-guid: 54acdf21d54fbed41977966e340f2556
->>>>>>> parent of 768ad7c (Merge branch 'main' into camilo---wwise-integration):Gacha Runner/Assets/Scripts/Wwise.meta
->>>>>>> parent of 768ad7c (Merge branch 'main' into camilo---wwise-integration)
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

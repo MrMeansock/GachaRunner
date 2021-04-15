@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 13498788}
   - component: {fileID: 13498787}
   - component: {fileID: 13498790}
+  - component: {fileID: 13498791}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -275,6 +276,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 251ebe2e85e45354489198616467258b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &13498791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13498785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185f8a106ce655e44871256968276592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 1
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
 --- !u!1 &29491771
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,8 +463,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 29491771}
   m_CullTransparentMesh: 0
-<<<<<<< HEAD
-=======
 --- !u!1 &40320876
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,7 +547,6 @@ MonoBehaviour:
   unloadTriggerList: 958ca0ea
   bankNameInternal: 
   valueGuidInternal: 
->>>>>>> parent of 768ad7c (Merge branch 'main' into camilo---wwise-integration)
 --- !u!1 &55300253
 GameObject:
   m_ObjectHideFlags: 0
@@ -893,10 +913,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< HEAD
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &254216437 stripped
@@ -905,7 +921,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 626474228}
   m_PrefabAsset: {fileID: 0}
->>>>>>> parent of 768ad7c (Merge branch 'main' into camilo---wwise-integration)
 --- !u!1 &388904311
 GameObject:
   m_ObjectHideFlags: 0
@@ -1642,8 +1657,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce5084456a77c8746ad61f697ec4540c, type: 3}
-<<<<<<< HEAD
-=======
 --- !u!1 &664912366
 GameObject:
   m_ObjectHideFlags: 0
@@ -1731,7 +1744,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> parent of 768ad7c (Merge branch 'main' into camilo---wwise-integration)
 --- !u!1 &748020554
 GameObject:
   m_ObjectHideFlags: 0
@@ -1742,12 +1754,8 @@ GameObject:
   m_Component:
   - component: {fileID: 748020557}
   - component: {fileID: 748020556}
-<<<<<<< HEAD
-  - component: {fileID: 748020555}
-=======
   - component: {fileID: 748020560}
   - component: {fileID: 748020559}
->>>>>>> parent of 768ad7c (Merge branch 'main' into camilo---wwise-integration)
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1755,17 +1763,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< HEAD
---- !u!81 &748020555
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 748020554}
-  m_Enabled: 1
-=======
->>>>>>> parent of 768ad7c (Merge branch 'main' into camilo---wwise-integration)
 --- !u!20 &748020556
 Camera:
   m_ObjectHideFlags: 0
@@ -1823,8 +1820,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
 --- !u!114 &748020559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1861,7 +1856,6 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
->>>>>>> parent of 768ad7c (Merge branch 'main' into camilo---wwise-integration)
 --- !u!1 &829664436
 GameObject:
   m_ObjectHideFlags: 0
@@ -2031,8 +2025,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce300826d416d354a923eafc17f8f584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-=======
 --- !u!1 &948861890
 GameObject:
   m_ObjectHideFlags: 0
@@ -2134,7 +2126,6 @@ Transform:
   m_Father: {fileID: 1435013861}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> parent of 768ad7c (Merge branch 'main' into camilo---wwise-integration)
 --- !u!1 &1178248915
 GameObject:
   m_ObjectHideFlags: 0
@@ -2755,8 +2746,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1404215351}
   m_CullTransparentMesh: 0
-<<<<<<< HEAD
-=======
 --- !u!1 &1435013860
 GameObject:
   m_ObjectHideFlags: 0
@@ -2789,7 +2778,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> parent of 768ad7c (Merge branch 'main' into camilo---wwise-integration)
 --- !u!1 &1442275244
 GameObject:
   m_ObjectHideFlags: 0
