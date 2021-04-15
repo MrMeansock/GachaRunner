@@ -30,7 +30,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: b3cfab05a18b1a44a4c86bcf775f1395
     GuidInternal: 
-    m_lastTime: -8585831066332440183
+    m_lastTime: -8585830948955110321
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -71,7 +71,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 360467f0920aba47a80c9639a878c267
     GuidInternal: 
-    m_lastTime: -8585831475796208114
+    m_lastTime: -8585830915758862768
     List:
     - name: Master_SoundBank
       guid: 79583aae79e3944487e86f7b8f8683b2
@@ -90,104 +90,34 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: f06aef6eb29cf741b3ef5e9b30a33b95
     GuidInternal: 
-    m_lastTime: -8585830955691221736
+    m_lastTime: -8585830916446564190
     List:
-    - name: Music
-      guid: 6e735fa43446cf40b9c77009e7922ff3
-      id: 3991942870
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Music
-        ObjectType: 4
-      Path: Default Work Unit\Music
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: OnBackButtonClick
-      guid: 1b30803d07aebc4fae1601a0a3a706a8
-      id: 3784996477
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: UI
-        ObjectType: 4
-      - ElementName: OnBackButtonClick
-        ObjectType: 3
-      Path: Default Work Unit\UI\OnBackButtonClick
-      maxAttenuation: 0
-      maxDuration: 0.5
-      minDuration: 0.5
-    - name: OnButtonClick
+    - name: OnButtonClicked
       guid: 876dbf0653836b4eb48109a58a129da0
-      id: 1633782454
+      id: 3951640513
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
       - ElementName: UI
         ObjectType: 4
-      - ElementName: OnButtonClick
+      - ElementName: OnButtonClicked
         ObjectType: 3
-      Path: Default Work Unit\UI\OnButtonClick
+      Path: Default Work Unit\UI\OnButtonClicked
       maxAttenuation: 0
       maxDuration: 0.5
       minDuration: 0.5
-    - name: OnMainMenuLoad
-      guid: d511126a30a053499d6b4a762b9259ee
-      id: 2263046456
+    - name: OnGameStarted
+      guid: 32cacbba3ae10f48adc7b1cf20578339
+      id: 1329044087
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Music
-        ObjectType: 4
-      - ElementName: OnMainMenuLoad
+      - ElementName: OnGameStarted
         ObjectType: 3
-      Path: Default Work Unit\Music\OnMainMenuLoad
+      Path: Default Work Unit\OnGameStarted
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: OnMainMenuUnload
-      guid: dfe4a13ab67ec948810ce0452c0f970e
-      id: 652909205
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Music
-        ObjectType: 4
-      - ElementName: OnMainMenuUnload
-        ObjectType: 3
-      Path: Default Work Unit\Music\OnMainMenuUnload
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
-    - name: OnPlay
-      guid: d1261a7e9f637943a8b63a417450dcd6
-      id: 2012478988
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Music
-        ObjectType: 4
-      - ElementName: OnPlay
-        ObjectType: 3
-      Path: Default Work Unit\Music\OnPlay
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
-    - name: OnPlayUnload
-      guid: bc3b2084f8040d4d9529a4f8d5e2f226
-      id: 2706983445
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Music
-        ObjectType: 4
-      - ElementName: OnPlayUnload
-        ObjectType: 3
-      Path: Default Work Unit\Music\OnPlayUnload
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
     - name: UI
       guid: ded675fc8d571540afd42cf849ec3023
       id: 1551306167
@@ -208,7 +138,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: b506ff4a998f5346ae6f327790d3354f
     GuidInternal: 
-    m_lastTime: -8585831065857348317
+    m_lastTime: -8585830948959719045
     List:
     - name: MasterVolume
       guid: c245c7317f30e84db90a02a9bae68b47
@@ -260,8 +190,39 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: f3d15a996228b24795686a7ff8b00871
     GuidInternal: 
-    m_lastTime: -8585831475796198140
-    List: []
+    m_lastTime: -8585830918216495982
+    List:
+    - name: GameState
+      guid: 0f51a157198e4e4490104f77cc57513b
+      id: 4091656514
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GameState
+        ObjectType: 9
+      Path: Default Work Unit\GameState
+      values:
+      - name: InGame
+        guid: dd131a46c7027f46ba40ceede2c5f900
+        id: 984691642
+        PathAndIcons:
+        - ElementName: InGame
+          ObjectType: 8
+      - name: InMainMenu
+        guid: 94c6fea1a56a7f42a88e9d3bc2d54372
+        id: 2679786610
+        PathAndIcons:
+        - ElementName: InMainMenu
+          ObjectType: 8
+      - name: InShop
+        guid: 18e354ada258094d98906fdb529c5337
+        id: 3201166856
+        PathAndIcons:
+        - ElementName: InShop
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     PathAndIcons:
@@ -270,7 +231,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 706e6f28d1ade947895f1e4b45f5d382
     GuidInternal: 
-    m_lastTime: -8585831475796188168
+    m_lastTime: -8585830918217056542
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
@@ -284,8 +245,8 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /Gacha Runner_WwiseProject
-  - /Gacha Runner_WwiseProject/Events
-  - /Gacha Runner_WwiseProject/Events/Default Work Unit
-  - /Gacha Runner_WwiseProject/Events/Default Work Unit/Music
+  - /Gacha Runner_WwiseProject/States
+  - /Gacha Runner_WwiseProject/States/Default Work Unit
+  - /Gacha Runner_WwiseProject/States/Default Work Unit/GameState
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

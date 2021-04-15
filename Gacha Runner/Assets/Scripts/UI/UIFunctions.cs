@@ -11,7 +11,7 @@ public class UIFunctions : MonoBehaviour
         volumeManager = FindObjectOfType<VolumeManager>();
 
         WwiseEventsCollection wwiseEvents = FindObjectOfType<WwiseEventsCollection>();
-        onButtonClick = wwiseEvents.OnButtonClick;
+        onButtonClick = wwiseEvents.OnButtonClicked;
     }
 
     /// <summary>

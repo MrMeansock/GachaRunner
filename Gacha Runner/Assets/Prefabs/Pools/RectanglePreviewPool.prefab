@@ -48,7 +48,7 @@ MonoBehaviour:
   startCount: 1
   isDynamic: 1
   max: 1
-  objectPrefab: {fileID: 8728565327141470244, guid: f1498d82c64b12142ace4da6b98c509d,
+  objectPooledPrefab: {fileID: 8728565327141470244, guid: f1498d82c64b12142ace4da6b98c509d,
     type: 3}
 --- !u!114 &672060997027697517
 MonoBehaviour:

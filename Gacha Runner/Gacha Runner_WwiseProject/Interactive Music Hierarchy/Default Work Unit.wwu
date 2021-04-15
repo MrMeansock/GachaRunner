@@ -109,7 +109,7 @@
 						</MusicPlaylistItem>
 					</Playlist>
 				</MusicPlaylistContainer>
-				<MusicSwitchContainer Name="Music Container" ID="{57E521B0-6545-48D1-ACA6-3D8B63A69783}" ShortID="1011959234">
+				<MusicSwitchContainer Name="Music Switch Container" ID="{57E521B0-6545-48D1-ACA6-3D8B63A69783}" ShortID="1011959234">
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1CCBAA11-5023-42A3-B372-965A8B1ED4EC}"/>
@@ -451,6 +451,35 @@
 							<TransitionInfo/>
 						</MusicTransition>
 					</TransitionList>
+					<ArgumentList>
+						<ArgumentRef Name="GameState" ID="{57A1510F-8E19-444E-9010-4F77CC57513B}"/>
+					</ArgumentList>
+					<EntryList>
+						<Entry>
+							<Path>
+								<PathElementRef Name="InMainMenu" ID="{A1FEC694-6AA5-427F-A88E-9D3BC2D54372}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Main Menu Music Container" ID="{EB2F7B85-1BAD-4AD7-A505-8A2CD74839D6}" WorkUnitID="{F02DFECA-1B31-4CAE-A6D3-32C7B8C2D6B5}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+						<Entry>
+							<Path>
+								<PathElementRef Name="InGame" ID="{461A13DD-02C7-467F-BA40-CEEDE2C5F900}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Main Menu Music Container" ID="{EB2F7B85-1BAD-4AD7-A505-8A2CD74839D6}" WorkUnitID="{F02DFECA-1B31-4CAE-A6D3-32C7B8C2D6B5}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+						<Entry>
+							<Path>
+								<PathElementRef Name="InShop" ID="{AD54E318-58A2-4D09-9890-6FDB529C5337}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Main Menu Music Container" ID="{EB2F7B85-1BAD-4AD7-A505-8A2CD74839D6}" WorkUnitID="{F02DFECA-1B31-4CAE-A6D3-32C7B8C2D6B5}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+					</EntryList>
 				</MusicSwitchContainer>
 			</ChildrenList>
 		</WorkUnit>

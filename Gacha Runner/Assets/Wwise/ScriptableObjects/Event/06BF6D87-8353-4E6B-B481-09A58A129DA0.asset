@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07dd4654b6bd2df449ddaededc0561ac, type: 3}
   m_Name: 06BF6D87-8353-4E6B-B481-09A58A129DA0
   m_EditorClassIdentifier: 
-  objectName: OnButtonClick
-  id: 1633782454
+  objectName: OnButtonClicked
+  id: 3951640513
   guid: 06BF6D87-8353-4E6B-B481-09A58A129DA0

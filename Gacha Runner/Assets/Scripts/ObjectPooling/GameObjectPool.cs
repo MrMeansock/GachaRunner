@@ -8,7 +8,7 @@ using UnityEditor;
 public class GameObjectPool : AbstractPool
 {
     [Tooltip("Object to be pooled.")]
-    [SerializeField] internal GameObject objectPrefab = null;
+    [SerializeField] internal GameObject objectPooledPrefab = null;
 
     List<GameObject> pool = new List<GameObject>();
 
@@ -19,7 +19,7 @@ public class GameObjectPool : AbstractPool
 
         for (int i = 0; i < pool.Capacity; i++)
         {
-            GameObject pooledObject = Instantiate(objectPrefab, parent);
+            GameObject pooledObject = Instantiate(objectPooledPrefab, parent);
             pooledObject.SetActive(false);
             pool.Add(pooledObject);
         }
@@ -48,7 +48,7 @@ public class GameObjectPool : AbstractPool
         // Grow if dynamic
         if (isDynamic == true)
         {
-            GameObject pooledObject = Instantiate(objectPrefab, parent);
+            GameObject pooledObject = Instantiate(objectPooledPrefab, parent);
             pooledObject.SetActive(true);
             pool.Add(pooledObject);
             return pooledObject;
@@ -101,21 +101,21 @@ public class GameObjectPool : AbstractPool
 [CustomEditor(typeof(GameObjectPool))]
 public class GameObjectPoolEditor : AbstractPoolEditor {
 
-    public SerializedProperty objectPrefabProp;
+    public SerializedProperty objectPooledPrefabProp;
 
     protected override void OnEnable()
     {
         base.OnEnable();
 
-        objectPrefabProp = serializedObject.FindProperty("objectPrefab");
+        objectPooledPrefabProp = serializedObject.FindProperty("objectPooledPrefab");
     }
 
     public override void OnInspectorGUI()
     {
         GameObjectPool poolScript = target as GameObjectPool;
 
-        EditorGUILayout.PropertyField(objectPrefabProp);
-        poolScript.objectPrefab = (GameObject)objectPrefabProp.objectReferenceValue;
+        EditorGUILayout.PropertyField(objectPooledPrefabProp);
+        poolScript.objectPooledPrefab = (GameObject)objectPooledPrefabProp.objectReferenceValue;
 
         base.OnInspectorGUI();
     }

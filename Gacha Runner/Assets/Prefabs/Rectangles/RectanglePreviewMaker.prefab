@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2198382548701078309}
-  - component: {fileID: 6013932261655398461}
+  - component: {fileID: -1966615895833695166}
   m_Layer: 0
   m_Name: RectanglePreviewMaker
   m_TagString: Untagged
@@ -24,14 +24,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 239069509263742316}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6013932261655398461
+--- !u!114 &-1966615895833695166
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minLength: 2.5
   maxLength: 8.5
-  cooldown: 1.7
+  cooldown: 2
   badPreviewColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   goodPreviewColor: {r: 1, g: 0, b: 0, a: 1}
-  cooldownColor: {r: 1, g: 0.5, b: 0.5, a: 0.39215687}
+  cooldownColor: {r: 1, g: 0, b: 0, a: 1}

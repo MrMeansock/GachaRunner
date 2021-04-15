@@ -2,12 +2,8 @@
 
 public class WwiseEventsCollection : MonoBehaviour
 {
-    public AK.Wwise.Event OnMainMenuLoad = null;
-    public AK.Wwise.Event OnMainMenuUnload = null;
-    public AK.Wwise.Event OnPlay = null;
-    public AK.Wwise.Event OnPlayUnload = null;
+    public AK.Wwise.Event OnGameStarted = null;
 
     // UI
-    public AK.Wwise.Event OnBackButtonClick = null;
-    public AK.Wwise.Event OnButtonClick = null;
+    public AK.Wwise.Event OnButtonClicked = null;
 }

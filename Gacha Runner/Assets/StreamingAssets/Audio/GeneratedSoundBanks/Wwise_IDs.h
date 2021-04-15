@@ -13,13 +13,25 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID ONBACKBUTTONCLICK = 3784996477U;
-        static const AkUniqueID ONBUTTONCLICK = 1633782454U;
-        static const AkUniqueID ONMAINMENULOAD = 2263046456U;
-        static const AkUniqueID ONMAINMENUUNLOAD = 652909205U;
-        static const AkUniqueID ONPLAY = 2012478988U;
-        static const AkUniqueID ONPLAYUNLOAD = 2706983445U;
+        static const AkUniqueID ONBUTTONCLICKED = 3951640513U;
+        static const AkUniqueID ONGAMESTARTED = 1329044087U;
     } // namespace EVENTS
+
+    namespace STATES
+    {
+        namespace GAMESTATE
+        {
+            static const AkUniqueID GROUP = 4091656514U;
+
+            namespace STATE
+            {
+                static const AkUniqueID INGAME = 984691642U;
+                static const AkUniqueID INMAINMENU = 2679786610U;
+                static const AkUniqueID INSHOP = 3201166856U;
+            } // namespace STATE
+        } // namespace GAMESTATE
+
+    } // namespace STATES
 
     namespace GAME_PARAMETERS
     {

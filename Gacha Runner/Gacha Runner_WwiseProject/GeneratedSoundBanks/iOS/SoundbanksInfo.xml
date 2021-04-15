@@ -11,7 +11,7 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="337996731">
+		<SoundBank Id="1355168291" Language="SFX" Hash="3590941506">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -21,20 +21,12 @@
 				<GameParameter Id="2918011349" Name="MasterVolume" ObjectPath="\Game Parameters\Default Work Unit\Volumes\MasterVolume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="2469504869" Language="SFX" Hash="49892535">
+		<SoundBank Id="2469504869" Language="SFX" Hash="1685237897">
 			<ObjectPath>\SoundBanks\Default Work Unit\Master_SoundBank</ObjectPath>
 			<ShortName>Master_SoundBank</ShortName>
 			<Path>Master_SoundBank.bnk</Path>
 			<IncludedEvents>
-				<Event Id="3784996477" Name="OnBackButtonClick" ObjectPath="\Events\Default Work Unit\UI\OnBackButtonClick" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000">
-					<IncludedMemoryFiles>
-						<File Id="557460623" Language="SFX">
-							<ShortName>cancel.wav</ShortName>
-							<Path>SFX\cancel_10C4C929.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
-				<Event Id="1633782454" Name="OnButtonClick" ObjectPath="\Events\Default Work Unit\UI\OnButtonClick" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000">
+				<Event Id="3951640513" Name="OnButtonClicked" ObjectPath="\Events\Default Work Unit\UI\OnButtonClicked" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000">
 					<IncludedMemoryFiles>
 						<File Id="778660791" Language="SFX">
 							<ShortName>confirm.wav</ShortName>
@@ -42,18 +34,42 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2263046456" Name="OnMainMenuLoad" ObjectPath="\Events\Default Work Unit\Music\OnMainMenuLoad" DurationType="Infinite">
+				<Event Id="1329044087" Name="OnGameStarted" ObjectPath="\Events\Default Work Unit\OnGameStarted" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="571050330" Language="SFX">
 							<ShortName>01_MenuTheme_160bpm.wav</ShortName>
 							<Path>SFX\01_MenuTheme_160bpm_D79FB2B7.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{A1FEC694-6AA5-427F-A88E-9D3BC2D54372}">
+							<Media>
+								<File Id="571050330"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{461A13DD-02C7-467F-BA40-CEEDE2C5F900}">
+							<Media>
+								<File Id="571050330"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{AD54E318-58A2-4D09-9890-6FDB529C5337}">
+							<Media>
+								<File Id="571050330"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
 				</Event>
-				<Event Id="652909205" Name="OnMainMenuUnload" ObjectPath="\Events\Default Work Unit\Music\OnMainMenuUnload" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="2012478988" Name="OnPlay" ObjectPath="\Events\Default Work Unit\Music\OnPlay" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="2706983445" Name="OnPlayUnload" ObjectPath="\Events\Default Work Unit\Music\OnPlayUnload" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 			</IncludedEvents>
+			<StateGroups>
+				<StateGroup Id="4091656514" Name="GameState" ObjectPath="\States\Default Work Unit\GameState">
+					<States>
+						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\GameState\None"/>
+						<State Id="2679786610" Name="InMainMenu" ObjectPath="\States\Default Work Unit\GameState\InMainMenu"/>
+						<State Id="984691642" Name="InGame" ObjectPath="\States\Default Work Unit\GameState\InGame"/>
+						<State Id="3201166856" Name="InShop" ObjectPath="\States\Default Work Unit\GameState\InShop"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
 </SoundBanksInfo>

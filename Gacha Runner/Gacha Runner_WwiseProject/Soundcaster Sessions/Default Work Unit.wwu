@@ -6,16 +6,8 @@
 				<SoundcasterSession Name="TestingSession" ID="{EA57B68F-7FBD-45DB-8AA9-7E083276B2F7}">
 					<ModuleList>
 						<Module>
-							<ObjectRef Name="OnMainMenuLoad" ID="{6A1211D5-A030-4953-9D6B-4A762B9259EE}" WorkUnitID="{6EEF6AF0-9CB2-41F7-B3EF-5E9B30A33B95}"/>
-							<Position X="0" Y="0"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="OnButtonClick" ID="{06BF6D87-8353-4E6B-B481-09A58A129DA0}" WorkUnitID="{6EEF6AF0-9CB2-41F7-B3EF-5E9B30A33B95}"/>
+							<ObjectRef Name="OnButtonClicked" ID="{06BF6D87-8353-4E6B-B481-09A58A129DA0}" WorkUnitID="{6EEF6AF0-9CB2-41F7-B3EF-5E9B30A33B95}"/>
 							<Position X="1" Y="0"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="OnBackButtonClick" ID="{3D80301B-AE07-4FBC-AE16-01A0A3A706A8}" WorkUnitID="{6EEF6AF0-9CB2-41F7-B3EF-5E9B30A33B95}"/>
-							<Position X="1" Y="1"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
@@ -32,7 +24,9 @@
 							<Value>75</Value>
 						</RTPCValue>
 					</RTPCValueList>
-					<CurrentStateList ShowAll="true"/>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="InMainMenu" ID="{A1FEC694-6AA5-427F-A88E-9D3BC2D54372}"/>
+					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true"/>
 				</SoundcasterSession>
 			</ChildrenList>
