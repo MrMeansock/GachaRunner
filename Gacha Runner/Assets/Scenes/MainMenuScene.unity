@@ -216,17 +216,6 @@ MonoBehaviour:
           m_StringArgument: MainScene
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 664912368}
-        m_MethodName: PlayButtonClick
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 13498785}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &13498788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,7 +320,7 @@ RectTransform:
   m_Children:
   - {fileID: 1226036287}
   m_Father: {fileID: 509305536}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -415,17 +404,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 664912368}
-        m_MethodName: PlayButtonClick
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 29491771}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &29491775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -463,6 +441,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 29491771}
   m_CullTransparentMesh: 0
+<<<<<<< HEAD
 --- !u!1 &40320876
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,6 +526,8 @@ MonoBehaviour:
   unloadTriggerList: 958ca0ea
   bankNameInternal: 
   valueGuidInternal: 
+=======
+>>>>>>> main
 --- !u!1 &55300253
 GameObject:
   m_ObjectHideFlags: 0
@@ -913,6 +894,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &254216437 stripped
@@ -921,6 +903,10 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 626474228}
   m_PrefabAsset: {fileID: 0}
+=======
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> main
 --- !u!1 &388904311
 GameObject:
   m_ObjectHideFlags: 0
@@ -1487,11 +1473,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6936635145604437005, guid: ce5084456a77c8746ad61f697ec4540c,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6936635145604437005, guid: ce5084456a77c8746ad61f697ec4540c,
-        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1506087162}
@@ -1499,51 +1480,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Back
-      objectReference: {fileID: 0}
-    - target: {fileID: 6936635145604437005, guid: ce5084456a77c8746ad61f697ec4540c,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 664912368}
-    - target: {fileID: 6936635145604437005, guid: ce5084456a77c8746ad61f697ec4540c,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: PlayBackButtonClick
-      objectReference: {fileID: 0}
-    - target: {fileID: 6936635145604437005, guid: ce5084456a77c8746ad61f697ec4540c,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6936635145604437005, guid: ce5084456a77c8746ad61f697ec4540c,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6936635145604437005, guid: ce5084456a77c8746ad61f697ec4540c,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 6936635145604437005, guid: ce5084456a77c8746ad61f697ec4540c,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 254216437}
-    - target: {fileID: 6936635145604437005, guid: ce5084456a77c8746ad61f697ec4540c,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6936635145604437005, guid: ce5084456a77c8746ad61f697ec4540c,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6936635145604437005, guid: ce5084456a77c8746ad61f697ec4540c,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6936635145604437008, guid: ce5084456a77c8746ad61f697ec4540c,
         type: 3}
@@ -1657,6 +1593,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce5084456a77c8746ad61f697ec4540c, type: 3}
+<<<<<<< HEAD
 --- !u!1 &664912366
 GameObject:
   m_ObjectHideFlags: 0
@@ -1744,6 +1681,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> main
 --- !u!1 &748020554
 GameObject:
   m_ObjectHideFlags: 0
@@ -1754,8 +1693,12 @@ GameObject:
   m_Component:
   - component: {fileID: 748020557}
   - component: {fileID: 748020556}
+<<<<<<< HEAD
   - component: {fileID: 748020560}
   - component: {fileID: 748020559}
+=======
+  - component: {fileID: 748020555}
+>>>>>>> main
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1763,6 +1706,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
+=======
+--- !u!81 &748020555
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748020554}
+  m_Enabled: 1
+>>>>>>> main
 --- !u!20 &748020556
 Camera:
   m_ObjectHideFlags: 0
@@ -1820,6 +1774,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!114 &748020559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1856,6 +1811,8 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
+=======
+>>>>>>> main
 --- !u!1 &829664436
 GameObject:
   m_ObjectHideFlags: 0
@@ -2025,6 +1982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce300826d416d354a923eafc17f8f584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
 --- !u!1 &948861890
 GameObject:
   m_ObjectHideFlags: 0
@@ -2126,6 +2084,8 @@ Transform:
   m_Father: {fileID: 1435013861}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> main
 --- !u!1 &1178248915
 GameObject:
   m_ObjectHideFlags: 0
@@ -2282,12 +2242,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1178248915}
   m_CullTransparentMesh: 0
---- !u!1 &1203847035 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6936635145604437008, guid: ce5084456a77c8746ad61f697ec4540c,
-    type: 3}
-  m_PrefabInstance: {fileID: 6936635145911353949}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1226036286
 GameObject:
   m_ObjectHideFlags: 0
@@ -2583,11 +2537,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375791026}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 724589131}
+  m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1404215351
@@ -2746,6 +2700,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1404215351}
   m_CullTransparentMesh: 0
+<<<<<<< HEAD
 --- !u!1 &1435013860
 GameObject:
   m_ObjectHideFlags: 0
@@ -2778,6 +2733,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> main
 --- !u!1 &1442275244
 GameObject:
   m_ObjectHideFlags: 0
@@ -3030,8 +2987,8 @@ RectTransform:
   - {fileID: 509305536}
   - {fileID: 1610965009636936506}
   - {fileID: 1610965010481675860}
-  m_Father: {fileID: 724589131}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3088,12 +3045,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506087161}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 724589131}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1527619389
 GameObject:
@@ -3183,17 +3140,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 664912368}
-        m_MethodName: PlayButtonClick
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1527619389}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3348,17 +3294,6 @@ MonoBehaviour:
           m_StringArgument: TutorialScene
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 664912368}
-        m_MethodName: PlayButtonClick
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1938455093}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1938455097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3429,7 +3364,7 @@ RectTransform:
   m_Children:
   - {fileID: 1404215352}
   m_Father: {fileID: 509305536}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3485,17 +3420,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 664912368}
-        m_MethodName: PlayButtonClick
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1982217599}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3642,17 +3566,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: ShopScene
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 664912368}
-        m_MethodName: PlayButtonClick
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2088393727}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2088393730
@@ -4642,64 +4555,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6936635145604437005, guid: ce5084456a77c8746ad61f697ec4540c,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6936635145604437005, guid: ce5084456a77c8746ad61f697ec4540c,
-        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1506087162}
-    - target: {fileID: 6936635145604437005, guid: ce5084456a77c8746ad61f697ec4540c,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 664912368}
-    - target: {fileID: 6936635145604437005, guid: ce5084456a77c8746ad61f697ec4540c,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6936635145604437005, guid: ce5084456a77c8746ad61f697ec4540c,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6936635145604437005, guid: ce5084456a77c8746ad61f697ec4540c,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: PlayBackButtonClick
-      objectReference: {fileID: 0}
-    - target: {fileID: 6936635145604437005, guid: ce5084456a77c8746ad61f697ec4540c,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 6936635145604437005, guid: ce5084456a77c8746ad61f697ec4540c,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 1203847035}
-    - target: {fileID: 6936635145604437005, guid: ce5084456a77c8746ad61f697ec4540c,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Back
-      objectReference: {fileID: 0}
-    - target: {fileID: 6936635145604437005, guid: ce5084456a77c8746ad61f697ec4540c,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6936635145604437005, guid: ce5084456a77c8746ad61f697ec4540c,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6936635145604437005, guid: ce5084456a77c8746ad61f697ec4540c,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 6936635145604437008, guid: ce5084456a77c8746ad61f697ec4540c,
         type: 3}
       propertyPath: m_Name

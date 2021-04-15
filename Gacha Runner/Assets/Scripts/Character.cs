@@ -21,7 +21,6 @@ public class Character : MonoBehaviour
     protected float speed = 10f;
     protected float bounceHeight = 0.25f;
     protected float bounceInterval = 0.3f;
-    protected int powerID;
 
     //Invinciblity values
     protected float iMaxTime = 0.5f;
@@ -51,9 +50,6 @@ public class Character : MonoBehaviour
 
     public event Action OnDeath;
 
-    [SerializeField]
-    private GotchaGuys.GameRectangle.MakeRectanglePreviews rectPreview;
-
 
     // Start is called before the first frame update
     virtual protected void Start()
@@ -62,34 +58,6 @@ public class Character : MonoBehaviour
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         startX = transform.position.x;
         prevX = transform.position.x;
-
-        for(int i = healthArea.transform.childCount - 1; i > health - 1; i--)
-        {
-            healthArea.transform.GetChild(i).gameObject.SetActive(false);
-        }
-
-        //Assign Values from selected character
-        if (GameObject.Find("OverallGameManager") != null)
-            GetCharValues();
-    }
-
-    protected void GetCharValues()
-    {
-        GameObject OGM = GameObject.Find("OverallGameManager").gameObject;
-        CharacterBase selectedCharacter = OGM.GetComponent<CharacterManager>().userCharacters[OGM.GetComponent<CharacterManager>().selectedCharacter];
-        this.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = selectedCharacter.MainSprite;
-       
-        this.speed = selectedCharacter.BaseSpeed;
-        this.jumpStrength = selectedCharacter.BaseJump;
-        this.maxHealth = selectedCharacter.BaseHealth;
-
-        this.iMaxTime = selectedCharacter.InvisFrames;
-        this.downSlopeForceMultiplier *= selectedCharacter.DownSlopeSpeed;
-        this.upSlopeForceMultiplier *= selectedCharacter.UpSlopeSpeed;
-        rectPreview.MaxLength = selectedCharacter.MaxPlatformLength;
-        rectPreview.Cooldown = selectedCharacter.PlatformCooldown;
-        this.powerID = selectedCharacter.PowerID;
-
     }
 
     // Update is called once per frame
@@ -113,11 +81,6 @@ public class Character : MonoBehaviour
         force += Vector2.down * gravity;
         rb.velocity = force;
         Bounce(true);
-    }
-
-    public Vector3 GetFuturePosition(float time)
-    {
-        return transform.position + transform.right * rb.velocity.x * time;
     }
 
     protected void HandleInvinciblity()

@@ -40,9 +40,9 @@ public class CharacterPanel : MonoBehaviour
         {
             GameObject csheet = Instantiate(characterSheet, this.transform.GetChild(0).GetChild(0)) as GameObject;
             csheet.GetComponent<CharacterSelectButton>().orderNum = temp;
-            if(cm.userCharacters[temp].MainSprite != null)
-                csheet.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = cm.userCharacters[temp].MainSprite;
-            csheet.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "LV: " + cm.userCharacters[temp].Level;
+            if(cm.userCharacters[temp].GetSprite() != null)
+            csheet.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = cm.userCharacters[temp].GetSprite();
+            csheet.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "LV: " + cm.userCharacters[temp].GetLevel();
         }
     }
 }
