@@ -5,14 +5,12 @@ public class UIFunctions : MonoBehaviour
     private VolumeManager volumeManager = null;
 
     private AK.Wwise.Event onButtonClick = null;
-    private AK.Wwise.Event onBackButtonClick = null;
 
     private void Awake()
     {
         volumeManager = FindObjectOfType<VolumeManager>();
 
         WwiseEventsCollection wwiseEvents = FindObjectOfType<WwiseEventsCollection>();
-        onBackButtonClick = wwiseEvents.OnBackButtonClick;
         onButtonClick = wwiseEvents.OnButtonClick;
     }
 
@@ -24,17 +22,6 @@ public class UIFunctions : MonoBehaviour
     {
         AkSoundEngine.RegisterGameObj(gameObject);
         onButtonClick.Post(gameObject);
-        AkSoundEngine.UnregisterGameObj(gameObject);
-    }
-
-    /// <summary>
-    /// Plays the default back button click sound by posting the corresponding Wwise event
-    /// </summary>
-    /// <param name="sender">The object that called the event</param>
-    public void PlayBackButtonClick()
-    {
-        AkSoundEngine.RegisterGameObj(gameObject);
-        onBackButtonClick.Post(gameObject);
         AkSoundEngine.UnregisterGameObj(gameObject);
     }
 

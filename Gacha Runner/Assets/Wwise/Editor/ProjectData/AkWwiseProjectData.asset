@@ -90,7 +90,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: f06aef6eb29cf741b3ef5e9b30a33b95
     GuidInternal: 
-    m_lastTime: -8585831067115737707
+    m_lastTime: -8585830955691221736
     List:
     - name: Music
       guid: 6e735fa43446cf40b9c77009e7922ff3
@@ -287,6 +287,5 @@ MonoBehaviour:
   - /Gacha Runner_WwiseProject/Events
   - /Gacha Runner_WwiseProject/Events/Default Work Unit
   - /Gacha Runner_WwiseProject/Events/Default Work Unit/Music
-  - /Gacha Runner_WwiseProject/Events/Default Work Unit/UI
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
