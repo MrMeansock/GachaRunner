@@ -16,10 +16,10 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="2228651116" Language="SFX" Hash="2434260856">
-			<ObjectPath>\SoundBanks\Default Work Unit\Main_SoundBank</ObjectPath>
-			<ShortName>Main_SoundBank</ShortName>
-			<Path>Main_SoundBank.bnk</Path>
+		<SoundBank Id="2469504869" Language="SFX" Hash="3850961801">
+			<ObjectPath>\SoundBanks\Default Work Unit\Master_SoundBank</ObjectPath>
+			<ShortName>Master_SoundBank</ShortName>
+			<Path>Master_SoundBank.bnk</Path>
 			<IncludedEvents>
 				<Event Id="3784996477" Name="OnBackButtonClick" ObjectPath="\Events\Default Work Unit\UI\OnBackButtonClick" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000">
 					<IncludedMemoryFiles>

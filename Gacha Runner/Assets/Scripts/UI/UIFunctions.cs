@@ -11,7 +11,9 @@ public class UIFunctions : MonoBehaviour
     /// <param name="sender">The object that called the event</param>
     public void PlayButtonClick(GameObject sender)
     {
+        AkSoundEngine.RegisterGameObj(sender);
         onButtonClick.Post(sender);
+        AkSoundEngine.UnregisterGameObj(sender);
     }
 
     /// <summary>
@@ -20,6 +22,8 @@ public class UIFunctions : MonoBehaviour
     /// <param name="sender">The object that called the event</param>
     public void PlayBackButtonClick(GameObject sender)
     {
+        AkSoundEngine.RegisterGameObj(sender);
         onBackButtonClick.Post(sender);
+        AkSoundEngine.UnregisterGameObj(sender);
     }
 }

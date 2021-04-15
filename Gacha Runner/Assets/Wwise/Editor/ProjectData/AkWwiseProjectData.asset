@@ -49,17 +49,17 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 360467f0920aba47a80c9639a878c267
     GuidInternal: 
-    m_lastTime: -8585834627349451066
+    m_lastTime: -8585831553937604917
     List:
-    - name: Main_SoundBank
-      guid: 4833c6f62061674f824edf76f07cb0cd
-      id: 2228651116
+    - name: Master_SoundBank
+      guid: 79583aae79e3944487e86f7b8f8683b2
+      id: 2469504869
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Main_SoundBank
+      - ElementName: Master_SoundBank
         ObjectType: 7
-      Path: Default Work Unit\Main_SoundBank
+      Path: Default Work Unit\Master_SoundBank
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
@@ -68,7 +68,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: f06aef6eb29cf741b3ef5e9b30a33b95
     GuidInternal: 
-    m_lastTime: -8585834628019675553
+    m_lastTime: -8585831567439609856
     List:
     - name: Music
       guid: 6e735fa43446cf40b9c77009e7922ff3
@@ -218,6 +218,7 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8585840742016072630
     List: []
-  ExpandedItems: []
+  ExpandedItems:
+  - /Gacha Runner_WwiseProject
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
