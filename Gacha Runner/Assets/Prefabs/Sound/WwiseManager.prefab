@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4413950320835952910}
   - component: {fileID: 4811844350454477431}
   m_Layer: 0
-  m_Name: WwiseSingleton
+  m_Name: WwiseManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -170,6 +170,11 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 4aedffc5758241c42bbc6d9e4e7c225a,
+      type: 2}
+  OnRarityUp:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 06cfef6c3e15528418bbf0b48c3eead4,
       type: 2}
   OnButtonClicked:
     idInternal: 0

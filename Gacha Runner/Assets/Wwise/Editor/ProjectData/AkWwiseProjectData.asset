@@ -71,7 +71,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 360467f0920aba47a80c9639a878c267
     GuidInternal: 
-    m_lastTime: -8585830790801477338
+    m_lastTime: -8585828084418706709
     List:
     - name: Master_SoundBank
       guid: 79583aae79e3944487e86f7b8f8683b2
@@ -90,7 +90,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: f06aef6eb29cf741b3ef5e9b30a33b95
     GuidInternal: 
-    m_lastTime: -8585830790806330886
+    m_lastTime: -8585828084502806169
     List:
     - name: OnButtonClicked
       guid: 876dbf0653836b4eb48109a58a129da0
@@ -118,6 +118,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: OnRarityUp
+      guid: d94d2f371fb7b2439657e18cb0befd8b
+      id: 3922061768
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: OnRarityUp
+        ObjectType: 3
+      Path: Default Work Unit\OnRarityUp
+      maxAttenuation: 0
+      maxDuration: 2
+      minDuration: 2
     - name: UI
       guid: ded675fc8d571540afd42cf849ec3023
       id: 1551306167
@@ -190,7 +202,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: f3d15a996228b24795686a7ff8b00871
     GuidInternal: 
-    m_lastTime: -8585830790801467368
+    m_lastTime: -8585828100320400236
     List:
     - name: GameState
       guid: 0f51a157198e4e4490104f77cc57513b
@@ -219,6 +231,12 @@ MonoBehaviour:
         id: 3201166856
         PathAndIcons:
         - ElementName: InShop
+          ObjectType: 8
+      - name: None
+        guid: dac63a04790ee4459df42a496913fc80
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
           ObjectType: 8
       ValueGuids: []
       ValueIcons: []

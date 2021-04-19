@@ -5,6 +5,7 @@
 			<ChildrenList>
 				<SoundBank Name="Master_SoundBank" ID="{AE3A5879-E379-4494-87E8-6F7B8F8683B2}">
 					<ObjectInclusionList>
+						<ObjectRef Name="OnRarityUp" ID="{372F4DD9-B71F-43B2-9657-E18CB0BEFD8B}" WorkUnitID="{6EEF6AF0-9CB2-41F7-B3EF-5E9B30A33B95}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="OnGameStarted" ID="{BACBCA32-E13A-480F-ADC7-B1CF20578339}" WorkUnitID="{6EEF6AF0-9CB2-41F7-B3EF-5E9B30A33B95}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="OnButtonClicked" ID="{06BF6D87-8353-4E6B-B481-09A58A129DA0}" WorkUnitID="{6EEF6AF0-9CB2-41F7-B3EF-5E9B30A33B95}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>

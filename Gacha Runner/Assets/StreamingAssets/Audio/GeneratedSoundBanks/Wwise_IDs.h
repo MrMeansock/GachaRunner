@@ -15,6 +15,7 @@ namespace AK
     {
         static const AkUniqueID ONBUTTONCLICKED = 3951640513U;
         static const AkUniqueID ONGAMESTARTED = 1329044087U;
+        static const AkUniqueID ONRARITYUP = 3922061768U;
     } // namespace EVENTS
 
     namespace STATES
@@ -28,6 +29,7 @@ namespace AK
                 static const AkUniqueID INGAME = 984691642U;
                 static const AkUniqueID INMAINMENU = 2679786610U;
                 static const AkUniqueID INSHOP = 3201166856U;
+                static const AkUniqueID NONE = 748895195U;
             } // namespace STATE
         } // namespace GAMESTATE
 

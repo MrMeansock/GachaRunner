@@ -5,6 +5,7 @@
 			<ChildrenList>
 				<StateGroup Name="GameState" ID="{57A1510F-8E19-444E-9010-4F77CC57513B}">
 					<ChildrenList>
+						<State Name="None" ID="{043AC6DA-0E79-45E4-9DF4-2A496913FC80}"/>
 						<State Name="InMainMenu" ID="{A1FEC694-6AA5-427F-A88E-9D3BC2D54372}"/>
 						<State Name="InGame" ID="{461A13DD-02C7-467F-BA40-CEEDE2C5F900}"/>
 						<State Name="InShop" ID="{AD54E318-58A2-4D09-9890-6FDB529C5337}"/>

@@ -57,6 +57,28 @@
 								<ActiveSource Name="cancel" ID="{8EB19584-0BD9-448E-BBBC-9E6A7728FD74}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="Rarity" ID="{F03F531B-3738-4F04-BAB0-3A5924C83002}" ShortID="597043692">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1CCBAA11-5023-42A3-B372-965A8B1ED4EC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{05ABCFB3-8BA1-441A-A4C8-6BCF775F1395}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="rarity" ID="{0205AB2E-25F0-4579-AB99-1D114B726ACC}">
+									<Language>SFX</Language>
+									<AudioFile>rarity.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="702651925"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="rarity" ID="{0205AB2E-25F0-4579-AB99-1D114B726ACC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</ActorMixer>
 			</ChildrenList>
