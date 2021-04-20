@@ -71,7 +71,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 360467f0920aba47a80c9639a878c267
     GuidInternal: 
-    m_lastTime: -8585828084418706709
+    m_lastTime: -8585826626089279339
     List:
     - name: Master_SoundBank
       guid: 79583aae79e3944487e86f7b8f8683b2
@@ -90,7 +90,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: f06aef6eb29cf741b3ef5e9b30a33b95
     GuidInternal: 
-    m_lastTime: -8585828084502806169
+    m_lastTime: -8585826626102446654
     List:
     - name: OnButtonClicked
       guid: 876dbf0653836b4eb48109a58a129da0
@@ -202,7 +202,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: f3d15a996228b24795686a7ff8b00871
     GuidInternal: 
-    m_lastTime: -8585828100320400236
+    m_lastTime: -8585826626089179305
     List:
     - name: GameState
       guid: 0f51a157198e4e4490104f77cc57513b
@@ -261,10 +261,6 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8585831475796188168
     List: []
-  ExpandedItems:
-  - /Gacha Runner_WwiseProject
-  - /Gacha Runner_WwiseProject/States
-  - /Gacha Runner_WwiseProject/States/Default Work Unit
-  - /Gacha Runner_WwiseProject/States/Default Work Unit/GameState
+  ExpandedItems: []
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

@@ -9,6 +9,7 @@ public class Character : MonoBehaviour
     [SerializeField]
     protected GameObject body;
     protected GameManager gm;
+    protected ActiveAbilities activeAbilities;
 
     //Other values
     protected bool grounded = false;
@@ -60,6 +61,8 @@ public class Character : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        activeAbilities = GetComponent<ActiveAbilities>();
+
         startX = transform.position.x;
         prevX = transform.position.x;
 
@@ -67,6 +70,8 @@ public class Character : MonoBehaviour
         {
             healthArea.transform.GetChild(i).gameObject.SetActive(false);
         }
+
+        activeAbilities.SetActiveSkill(SkillType.ClearMissiles);
 
         //Assign Values from selected character
         if (GameObject.Find("OverallGameManager") != null)
@@ -100,6 +105,8 @@ public class Character : MonoBehaviour
         if (transform.position.y < -6.0f && health > 0)
             TakeDamage(false);
         prevX = transform.position.x;
+        if (Input.GetKeyDown(KeyCode.Space))
+            activeAbilities.ActivateSkill();
     }
 
     protected void FixedUpdate()
