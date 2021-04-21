@@ -8,5 +8,6 @@ public class CharacterSelectButton : MonoBehaviour
     public void SetCharacter()
     {
         GameObject.Find("OverallGameManager").GetComponent<CharacterManager>().selectedCharacter = orderNum;
+        GameObject.Find("OverallGameManager").GetComponent<SaveManager>().Save();
     }
 }

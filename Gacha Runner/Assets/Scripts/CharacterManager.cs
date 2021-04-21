@@ -12,6 +12,7 @@ public class CharacterManager : MonoBehaviour
     void Start()
     {
         userCharacters = new List<CharacterBase>();
+        this.GetComponent<SaveManager>().Load();
     }
 
     private void Awake()
@@ -19,7 +20,7 @@ public class CharacterManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    void AddCharacter (string name)
+    public void AddCharacter (string name)
     {
         foreach(CharStats charstats in baseCharacters)
         {
@@ -47,6 +48,7 @@ public class CharacterManager : MonoBehaviour
                 {
                     CharacterBase charToAdd = new CharacterBase(baseCharacters[i]);
                     userCharacters.Add(charToAdd);
+                    this.GetComponent<SaveManager>().Save();
                     return charToAdd;
                 }
             }
@@ -57,6 +59,7 @@ public class CharacterManager : MonoBehaviour
             //if peram is 0
             CharacterBase charToAdd = new CharacterBase(baseCharacters[Random.Range(0, baseCharacters.Length)]);
             userCharacters.Add(charToAdd);
+            this.GetComponent<SaveManager>().Save();
             return charToAdd;
         }
     }
@@ -64,7 +67,7 @@ public class CharacterManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.P))
+        if(Input.GetKeyDown(KeyCode.F4))
         {
             AddRandomCharacter(0);
             SortByLevel();

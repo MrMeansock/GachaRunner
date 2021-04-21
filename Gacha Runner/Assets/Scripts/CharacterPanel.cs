@@ -24,19 +24,29 @@ public class CharacterPanel : MonoBehaviour
         }
     }
 
+    public void RstProgress (GameObject button)
+    {
+        GameObject.Find("OverallGameManager").GetComponent<SaveManager>().ResetProgress(button, this);
+    }
+
+    public void Clear()
+    {
+        Transform contentPanel = this.transform.GetChild(0).GetChild(0);
+        foreach (Transform child in contentPanel)
+        {
+            Destroy(child.gameObject);
+        }
+    }
+
     public void CreatePanel()
     {
         if (cm.userCharacters.Count == 0)
             return;
 
 
-        Transform contentPanel = this.transform.GetChild(0).GetChild(0);
-        foreach (Transform child in contentPanel)
-        {
-            Destroy(child.gameObject);
-        }
+        Clear();
 
-        for(int temp = 0; temp < cm.userCharacters.Count; temp++)
+        for (int temp = 0; temp < cm.userCharacters.Count; temp++)
         {
             GameObject csheet = Instantiate(characterSheet, this.transform.GetChild(0).GetChild(0)) as GameObject;
             csheet.GetComponent<CharacterSelectButton>().orderNum = temp;
