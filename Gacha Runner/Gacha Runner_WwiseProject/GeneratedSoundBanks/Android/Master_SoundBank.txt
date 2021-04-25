@@ -14,7 +14,8 @@ State	ID	Name	State Group			Notes
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	258564215	03_LabTheme_160bpm	C:\Users\Camilo\source\repos\crlimacastro\GachaRunner\Gacha Runner\Gacha Runner_WwiseProject\.cache\Android\SFX\03_LabTheme_160bpm_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music Switch Container\In Game Music Container\03_LabTheme_160bpm\03_LabTheme_160bpm		16934464
-	571050330	01_MenuTheme_160bpm	C:\Users\Camilo\source\repos\crlimacastro\GachaRunner\Gacha Runner\Gacha Runner_WwiseProject\.cache\Android\SFX\01_MenuTheme_160bpm_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music Switch Container\Main Menu Music Container\Intro Segment\01_MenuTheme_160bpm		14817664
+	390967997	02_ShopTheme_80bpm	C:\Users\Camilo\source\repos\crlimacastro\GachaRunner\Gacha Runner\Gacha Runner_WwiseProject\.cache\Android\SFX\02_ShopTheme_80bpm_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music Switch Container\Shop Music Container\02_ShopTheme_80bpm\02_ShopTheme_80bpm		16934464
+	571050330	01_MenuTheme_160bpm	C:\Users\Camilo\source\repos\crlimacastro\GachaRunner\Gacha Runner\Gacha Runner_WwiseProject\.cache\Android\SFX\01_MenuTheme_160bpm_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music Switch Container\Main Menu Music Container\Intro Segment\01_MenuTheme_160bpm		21168064
 	702651925	Rarity	C:\Users\Camilo\source\repos\crlimacastro\GachaRunner\Gacha Runner\Gacha Runner_WwiseProject\.cache\Android\SFX\rarity_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX Mixer\Rarity		352864
 	778660791	Confirm	C:\Users\Camilo\source\repos\crlimacastro\GachaRunner\Gacha Runner\Gacha Runner_WwiseProject\.cache\Android\SFX\confirm_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX Mixer\Confirm		88264
 

@@ -90,7 +90,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: f06aef6eb29cf741b3ef5e9b30a33b95
     GuidInternal: 
-    m_lastTime: -8585825881555597285
+    m_lastTime: -8585822432705491755
     List:
     - name: OnButtonClicked
       guid: 876dbf0653836b4eb48109a58a129da0
@@ -128,8 +128,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\OnRarityUp
       maxAttenuation: 0
-      maxDuration: 2
-      minDuration: 2
+      maxDuration: 4.5
+      minDuration: 3.622462
     - name: UI
       guid: ded675fc8d571540afd42cf849ec3023
       id: 1551306167
@@ -261,6 +261,9 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8585831475796188168
     List: []
-  ExpandedItems: []
+  ExpandedItems:
+  - /Gacha Runner_WwiseProject
+  - /Gacha Runner_WwiseProject/States
+  - /Gacha Runner_WwiseProject/States/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

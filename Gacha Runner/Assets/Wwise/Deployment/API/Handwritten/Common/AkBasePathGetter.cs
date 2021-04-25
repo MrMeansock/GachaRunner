@@ -88,7 +88,7 @@ public partial class AkBasePathGetter
 		if (string.IsNullOrEmpty(sourcePlatformBasePath))
 		{
 			if (LogWarnings)
-				UnityEngine.Debug.LogErrorFormat("WwiseUnity: Could not find source folder for <{0}> platform. Did you remember to generate your banks?", platformName);
+				UnityEngine.Debug.LogWarningFormat("WwiseUnity: Could not find source folder for <{0}> platform. Did you remember to generate your banks?", platformName);
 
 			destinationPlatformBasePath = string.Empty;
 			return false;
@@ -145,7 +145,7 @@ public partial class AkBasePathGetter
 		{
 			if (string.IsNullOrEmpty(SoundBankDest))
 			{
-				UnityEngine.Debug.LogWarning("WwiseUnity: The platform SoundBank subfolder within the Wwise project could not be found.");
+				UnityEngine.Debug.LogErrorFormat("WwiseUnity: The platform SoundBank subfolder within the Wwise project could not be found.");
 				return null;
 			}
 

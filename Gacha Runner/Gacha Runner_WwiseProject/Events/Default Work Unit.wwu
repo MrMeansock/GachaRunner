@@ -32,6 +32,9 @@
 				<Event Name="OnRarityUp" ID="{372F4DD9-B71F-43B2-9657-E18CB0BEFD8B}">
 					<ChildrenList>
 						<Action Name="" ID="{12E4E42A-57BA-49AC-A51B-B55B37A06046}" ShortID="1065636965">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="2.5"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Rarity" ID="{F03F531B-3738-4F04-BAB0-3A5924C83002}" WorkUnitID="{CC26E5BC-5FD3-4273-B6A1-A52D211A552C}"/>

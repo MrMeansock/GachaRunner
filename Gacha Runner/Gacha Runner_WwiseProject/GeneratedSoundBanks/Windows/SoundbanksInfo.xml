@@ -21,7 +21,7 @@
 				<GameParameter Id="2918011349" Name="MasterVolume" ObjectPath="\Game Parameters\Default Work Unit\Volumes\MasterVolume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="2469504869" Language="SFX" Hash="799291101">
+		<SoundBank Id="2469504869" Language="SFX" Hash="691761214">
 			<ObjectPath>\SoundBanks\Default Work Unit\Master_SoundBank</ObjectPath>
 			<ShortName>Master_SoundBank</ShortName>
 			<Path>Master_SoundBank.bnk</Path>
@@ -39,6 +39,10 @@
 						<File Id="258564215" Language="SFX">
 							<ShortName>03_LabTheme_160bpm.wav</ShortName>
 							<Path>SFX\03_LabTheme_160bpm_D79FB2B7.wem</Path>
+						</File>
+						<File Id="390967997" Language="SFX">
+							<ShortName>02_ShopTheme_80bpm.wav</ShortName>
+							<Path>SFX\02_ShopTheme_80bpm_D79FB2B7.wem</Path>
 						</File>
 						<File Id="571050330" Language="SFX">
 							<ShortName>01_MenuTheme_160bpm.wav</ShortName>
@@ -58,12 +62,12 @@
 						</SwitchContainer>
 						<SwitchContainer SwitchValue="{AD54E318-58A2-4D09-9890-6FDB529C5337}">
 							<Media>
-								<File Id="571050330"/>
+								<File Id="390967997"/>
 							</Media>
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="3922061768" Name="OnRarityUp" ObjectPath="\Events\Default Work Unit\OnRarityUp" DurationType="OneShot" DurationMin="2.000000" DurationMax="2.000000">
+				<Event Id="3922061768" Name="OnRarityUp" ObjectPath="\Events\Default Work Unit\OnRarityUp" DurationType="OneShot" DurationMin="3.622462" DurationMax="4.500000">
 					<IncludedMemoryFiles>
 						<File Id="702651925" Language="SFX">
 							<ShortName>rarity.wav</ShortName>

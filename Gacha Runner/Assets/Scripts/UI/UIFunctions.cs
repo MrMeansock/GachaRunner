@@ -14,6 +14,18 @@ public class UIFunctions : MonoBehaviour
         onButtonClick = wwiseEvents.OnButtonClicked;
     }
 
+    public void SetShopState()
+    {
+        WwiseSingleton.Instance.SetState("GameState", "InShop");
+    }
+
+    public void SetMenuState()
+    {
+        WwiseSingleton.Instance.SetState("GameState", "InMainMenu");
+    }
+
+    #region Sound
+
     /// <summary>
     /// Plays the default button click sound by posting the corresponding Wwise event
     /// </summary>
@@ -49,4 +61,6 @@ public class UIFunctions : MonoBehaviour
     {
         volumeManager.SetSFXMute(mute);
     }
+
+    #endregion
 }
