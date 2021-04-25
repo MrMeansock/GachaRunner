@@ -27,7 +27,7 @@ public class ActiveAbilities : MonoBehaviour
     private ActiveSkill skill;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         character = gameObject.GetComponent<Character>();

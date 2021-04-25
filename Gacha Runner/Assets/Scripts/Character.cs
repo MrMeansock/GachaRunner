@@ -76,6 +76,7 @@ public class Character : MonoBehaviour
         //Assign Values from selected character
         if (GameObject.Find("OverallGameManager") != null)
             GetCharValues();
+
     }
 
     protected void GetCharValues()
