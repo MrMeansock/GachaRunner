@@ -18,6 +18,8 @@ public class CharacterManager : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
+
+
     }
 
     public void AddCharacter (string name)
