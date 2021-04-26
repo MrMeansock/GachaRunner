@@ -10,6 +10,7 @@ public class Character : MonoBehaviour
     protected GameObject body;
     protected GameManager gm;
     protected ActiveAbilities activeAbilities;
+    protected CharacterBase selectedCharacter;
 
     //Other values
     protected bool grounded = false;
@@ -48,6 +49,21 @@ public class Character : MonoBehaviour
     protected float jumpStrength = 500.0f;
     protected float jumpRayLength = 1.0f;
 
+    //Effect boost
+    protected float speedBoost = 1.0f;
+    public float SpeedBoost
+    {
+        get { return speedBoost; }
+        set { speedBoost = value; }
+    }
+    protected bool invulnerabilityBoost = false;
+    public bool InvulnerabilityBoost
+    {
+        get { return invulnerabilityBoost; }
+        set { invulnerabilityBoost = value; }
+    }
+
+
     public float DisplacementX => Math.Abs(transform.position.x - startX); // (Abs to get pure distance, left or right).
 
     public event Action OnDeath;
@@ -82,7 +98,7 @@ public class Character : MonoBehaviour
     protected void GetCharValues()
     {
         GameObject OGM = GameObject.Find("OverallGameManager").gameObject;
-        CharacterBase selectedCharacter = OGM.GetComponent<CharacterManager>().userCharacters[OGM.GetComponent<CharacterManager>().selectedCharacter];
+        selectedCharacter = OGM.GetComponent<CharacterManager>().userCharacters[OGM.GetComponent<CharacterManager>().selectedCharacter];
         this.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = selectedCharacter.MainSprite;
        
         this.speed = selectedCharacter.BaseSpeed;
@@ -117,7 +133,7 @@ public class Character : MonoBehaviour
 
     protected void MoveForward()
     {
-        Vector2 force = transform.right * speed * gm.PlayerSpeedMultiplier;
+        Vector2 force = transform.right * speed * gm.PlayerSpeedMultiplier * speedBoost;
         force += Vector2.down * gravity;
         rb.velocity = force;
         Bounce(true);
@@ -130,10 +146,10 @@ public class Character : MonoBehaviour
 
     protected void HandleInvinciblity()
     {
-        if(isInvincible)
+        if(isInvincible || invulnerabilityBoost)
         {
             //Do invincilibity timer
-            if(iTime >= iMaxTime)
+            if(iTime >= iMaxTime && !invulnerabilityBoost)
             {
                 isInvincible = false;
                 //Make sure body is visible upon ending iFrames
@@ -240,7 +256,7 @@ public class Character : MonoBehaviour
     {
         if (!godMode)
         {
-            if (!isInvincible)
+            if (!isInvincible && !(invulnerabilityBoost && doInvincibility))
             {
                 //Handle damage taking
                 health--;
@@ -291,6 +307,19 @@ public class Character : MonoBehaviour
                 body.transform.localPosition = new Vector3(body.transform.localPosition.x, Mathf.Abs(Mathf.Sin((bounceTime / bounceInterval) * Mathf.PI)) * bounceHeight, body.transform.localPosition.z);
             }
         }
+    }
+
+    public void SetRectCooldown(float cooldown)
+    {
+        rectPreview.Cooldown = cooldown;
+    }
+
+    public void ResetRectCooldown()
+    {
+        if (selectedCharacter != null)
+            rectPreview.Cooldown = selectedCharacter.PlatformCooldown;
+        else
+            rectPreview.Cooldown = 0.7f;
     }
 
     /*protected void RotateTowardsVelocity()

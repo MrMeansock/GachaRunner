@@ -120,6 +120,16 @@ public class ActiveAbilities : MonoBehaviour
         {
             case SkillType.ClearMissiles:
                 return new ActiveSkill("Clear Missiles", ClearMissiles, 15.0f);
+            case SkillType.SpeedBoost:
+                return new ActiveSkill("Speed Boost", SpeedBoost, 20.0f);
+            case SkillType.Invulnerable:
+                return new ActiveSkill("Invulnerable!", Invulnerability, 25.0f);
+            case SkillType.QuickDraw:
+                return new ActiveSkill("Quick Draw", QuickDraw, 30.0f);
+            case SkillType.CoinGrab:
+                return new ActiveSkill("Coin Grab", CoinGrab, 15.0f);
+            case SkillType.Upwarp:
+                return new ActiveSkill("Upwarp", Upwarp, 10.0f);
         }
         return null;
     }
@@ -135,6 +145,86 @@ public class ActiveAbilities : MonoBehaviour
         GameObject[] missiles = GameObject.FindGameObjectsWithTag("Missile");
         foreach (GameObject missile in missiles)
             Destroy(missile);
+        return true;
+    }
+
+    /// <summary>
+    /// Gives the player a 25% speed boost for 5 seconds
+    /// </summary>
+    /// <param name="time"></param>
+    /// <returns></returns>
+    private bool SpeedBoost(ref float time)
+    {
+        if(time == 0)
+        {
+            character.SpeedBoost = 1.25f;
+        }
+
+        if(time >= 5.0f)
+        {
+            character.SpeedBoost = 1.0f;
+            return true;
+        }
+
+        return false;
+    }
+
+    /// <summary>
+    /// Makes player invulnerable for 5 seconds
+    /// </summary>
+    /// <param name="time"></param>
+    /// <returns></returns>
+    private bool Invulnerability(ref float time)
+    {
+        if (time == 0)
+        {
+            character.InvulnerabilityBoost = true;
+        }
+
+        if (time >= 5.0f)
+        {
+            character.InvulnerabilityBoost = false;
+            return true;
+        }
+
+        return false;
+    }
+
+    /// <summary>
+    /// Decrease cooldown of rect drawing for 10 seconds
+    /// </summary>
+    /// <param name="time"></param>
+    /// <returns></returns>
+    private bool QuickDraw(ref float time)
+    {
+        if (time == 0)
+            character.SetRectCooldown(0.0f);
+
+        if (time >= 10.0f)
+        {
+            character.ResetRectCooldown();
+            return true;
+        }
+        return false;
+    }
+
+    /// <summary>
+    /// Collects all coins on screen
+    /// </summary>
+    /// <returns></returns>
+    private bool CoinGrab()
+    {
+        gm.CollectAllCoins();
+        return true;
+    }
+
+    /// <summary>
+    /// Warps player to top of screen
+    /// </summary>
+    /// <returns></returns>
+    private bool Upwarp()
+    {
+        character.transform.position = new Vector3(character.transform.position.x, 4.0f, character.transform.position.z);
         return true;
     }
 

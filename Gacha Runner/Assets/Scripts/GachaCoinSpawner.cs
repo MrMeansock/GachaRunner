@@ -6,6 +6,8 @@ public class GachaCoinSpawner : MonoBehaviour
 {
     [SerializeField]
     private GameObject coinPrefab = null;
+    [SerializeField]
+    private GameObject coinContainer;
     private BoxCollider2D spawnArea;
     private GameManager gm;
 
@@ -46,6 +48,6 @@ public class GachaCoinSpawner : MonoBehaviour
         Vector2 coinPos = new Vector2(transform.position.x + Random.Range(-spawnArea.bounds.extents.x, spawnArea.bounds.extents.x),
             transform.position.y + Random.Range(-spawnArea.bounds.extents.y, spawnArea.bounds.extents.y));
         //Spawn Coin
-        Instantiate(coinPrefab, coinPos, Quaternion.identity);
+        Instantiate(coinPrefab, coinPos, Quaternion.identity, coinContainer.transform);
     }
 }

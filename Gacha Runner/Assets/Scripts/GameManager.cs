@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     private Character player;
     [SerializeField]
     private GameObject gameOverMenu = null;
+    [SerializeField]
+    private GameObject coinContainer;
     private float gameTimer;
 
     //Progression values
@@ -75,6 +77,14 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void CollectAllCoins()
+    {
+        for(int i = 0; i < coinContainer.transform.childCount; i++)
+        {
+            coinContainer.transform.GetChild(i).GetComponent<GachaCoin>().Collect();
+        }
     }
 
 }

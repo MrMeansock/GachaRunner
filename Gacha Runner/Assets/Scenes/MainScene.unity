@@ -1708,6 +1708,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382339461}
   m_CullTransparentMesh: 0
+--- !u!1 &1410524145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1410524146}
+  m_Layer: 0
+  m_Name: CoinContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1410524146
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410524145}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.5095677, y: -0.7596854, z: -1.0177959}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1425361949
 GameObject:
   m_ObjectHideFlags: 0
@@ -2507,6 +2537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 7527988312298553247, guid: 4a00ab4b993873540bbe97247dc85e21,
     type: 3}
+  coinContainer: {fileID: 1410524145}
 --- !u!1001 &1887902149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3365,6 +3396,11 @@ PrefabInstance:
       propertyPath: gameOverMenu
       value: 
       objectReference: {fileID: 761242969}
+    - target: {fileID: 1693425715638607430, guid: 30596a332a1490448bdb82ad0c74efb2,
+        type: 3}
+      propertyPath: coinContainer
+      value: 
+      objectReference: {fileID: 1410524145}
     - target: {fileID: 1693425715638607431, guid: 30596a332a1490448bdb82ad0c74efb2,
         type: 3}
       propertyPath: m_LocalPosition.x
