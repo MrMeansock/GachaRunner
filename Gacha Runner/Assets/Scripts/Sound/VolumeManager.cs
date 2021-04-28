@@ -128,21 +128,29 @@ public class VolumeManagerInspector : Editor
 {
     private float masterVolume = 0.75f;
 
+    private void OnEnable()
+    {
+        if (PlayerPrefs.HasKey("MasterVolume"))
+        {
+            masterVolume = PlayerPrefs.GetFloat("MasterVolume");
+        }
+    }
+
     public override void OnInspectorGUI()
     {
-        VolumeManager script = target as VolumeManager;
-
-        masterVolume = script.MasterVolume;
-
         base.OnInspectorGUI();
 
-        masterVolume = EditorGUILayout.Slider("Master Volume", masterVolume, 0f, 1f);
+        VolumeManager script = target as VolumeManager;
+        
         if (Application.isPlaying)
         {
+            masterVolume = script.MasterVolume;
+            masterVolume = EditorGUILayout.Slider("Master Volume", masterVolume, 0f, 1f);
             script.MasterVolume = masterVolume;
         }
         else
         {
+            masterVolume = EditorGUILayout.Slider("Master Volume", masterVolume, 0f, 1f);
             PlayerPrefs.SetFloat("MasterVolume", masterVolume);
         }   
     }
