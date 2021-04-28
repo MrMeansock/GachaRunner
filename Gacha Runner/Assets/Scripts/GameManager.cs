@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject gameOverMenu = null;
     [SerializeField]
-    private GameObject coinContainer;
+    private GameObject coinContainer = null;
     private float gameTimer;
 
     //Progression values

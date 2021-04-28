@@ -25,13 +25,6 @@ public class GachaScript : MonoBehaviour
     public int R_Rate;
     public int C_Rate;
 
-    private WwiseEventsCollection wwiseEvents = null;
-
-    private void Awake()
-    {
-        wwiseEvents = FindObjectOfType<WwiseEventsCollection>();
-    }
-
     void Start()
     {
         characterSprite = transform.Find("CharacterSprite").gameObject;
@@ -109,7 +102,6 @@ public class GachaScript : MonoBehaviour
             int chance = Random.Range(0, 101);
             Debug.Log("[Hit] - " + chance + "/100");
 
-            AkSoundEngine.RegisterGameObj(gameObject);
             if (chance <= SR_Rate)
             {
                 if (Random.Range(0, 4) == 3) //1/4 Chance to get sparkles instantly
@@ -120,7 +112,6 @@ public class GachaScript : MonoBehaviour
                 {
                     SetParticleColor("Void", particleColor[0]).Play();
                     SetParticleColor("Void1", particleColor[0]).Play();
-                    wwiseEvents.OnRarityUp.Post(gameObject);
                     yield return new WaitForSeconds(3f);
                     SetParticleColor("Void2", particleColor[1]).Play();
                     SetParticleColor("Void3", particleColor[1]).Play();
@@ -128,7 +119,6 @@ public class GachaScript : MonoBehaviour
 
                     SetParticleColor("VoidBurst", particleColor[1]).Play();
                     SetParticleColor("VoidBurst1", particleColor[1]).Play();
-                    wwiseEvents.OnRarityUp.Post(gameObject);
                     yield return new WaitForSeconds(3f);
 
                     SetParticleColor("Void2", particleColor[2]).Play();
@@ -136,7 +126,6 @@ public class GachaScript : MonoBehaviour
 
                     SetParticleColor("VoidBurst", particleColor[2]).Play();
                     SetParticleColor("VoidBurst1", particleColor[2]).Play();
-                    wwiseEvents.OnRarityUp.Post(gameObject);
                     yield return new WaitForSeconds(3f);
                 }
                 charPulled = cm.AddRandomCharacter(3);
@@ -145,15 +134,12 @@ public class GachaScript : MonoBehaviour
             {
                 SetParticleColor("Void", particleColor[0]).Play();
                 SetParticleColor("Void1", particleColor[0]).Play();
-                wwiseEvents.OnRarityUp.Post(gameObject);
                 yield return new WaitForSeconds(3f);
                 SetParticleColor("Void2", particleColor[1]).Play();
                 SetParticleColor("Void3", particleColor[1]).Play();
-                wwiseEvents.OnRarityUp.Post(gameObject);
 
                 SetParticleColor("VoidBurst", particleColor[1]).Play();
                 SetParticleColor("VoidBurst1", particleColor[1]).Play();
-                wwiseEvents.OnRarityUp.Post(gameObject);
                 yield return new WaitForSeconds(3f);
                 charPulled = cm.AddRandomCharacter(2);
             }
@@ -162,11 +148,9 @@ public class GachaScript : MonoBehaviour
                 //Common
                 SetParticleColor("Void", particleColor[0]).Play();
                 SetParticleColor("Void1", particleColor[0]).Play();
-                wwiseEvents.OnRarityUp.Post(gameObject);
                 yield return new WaitForSeconds(3f);
                 charPulled = cm.AddRandomCharacter(1);
             }
-            AkSoundEngine.UnregisterGameObj(gameObject);
 
             Debug.Log("A");
             if (charPulled.MainSprite != null)

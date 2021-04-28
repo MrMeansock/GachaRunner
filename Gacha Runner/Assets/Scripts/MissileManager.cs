@@ -11,8 +11,8 @@ public class MissileManager : MonoBehaviour
 
     private float minMissileSpawnDelay = 2.0f;
     private float maxMissileSpawnDelay = 3.5f;
-    private int minMissilesSpawned = 1;
-    private int maxMissilesSpawned = 3;
+    //private int minMissilesSpawned = 1;
+    //private int maxMissilesSpawned = 3;
 
     private float missileSpawnDelay;
     private float missileSpawnTimer;

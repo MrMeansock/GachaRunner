@@ -8,11 +8,11 @@ public class LevelLoader : MonoBehaviour
     private float groundHeight = 0;
     [Tooltip("Prefabs that will be loaded before generating random levels")]
     [SerializeField]
-    private List<GameObject> directLoadLevels;
+    private List<GameObject> directLoadLevels = null;
     private int directLevelsLoaded = 0;
     [Tooltip("Height of the last directly loaded. Used to start generating new levels")]
     [SerializeField]
-    private float lastLoadHeight;
+    private float lastLoadHeight = 0.5f;
     [SerializeField]
     private float parallaxFrontHeight = 0;
     [SerializeField]
@@ -32,7 +32,7 @@ public class LevelLoader : MonoBehaviour
     [SerializeField]
     private GameObject backgroundPrefab = null;
     [SerializeField]
-    private float backgroundHeight;
+    private float backgroundHeight = 0f;
     private List<GameObject> backgroundObjects = null;
 
     private float groundWidth;

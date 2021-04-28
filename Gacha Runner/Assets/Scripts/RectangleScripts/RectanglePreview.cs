@@ -8,7 +8,7 @@ namespace GotchaGuys
         [RequireComponent(typeof(SpriteRenderer))]
         public class RectanglePreview : MonoBehaviour
         {
-            private float maxMoveWithScreenY = -2.5f;
+            //private float maxMoveWithScreenY = -2.5f;
 
             private Vector2 startPosition;
             public Vector2 StartPosition

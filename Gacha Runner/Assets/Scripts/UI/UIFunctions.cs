@@ -2,26 +2,15 @@
 
 public class UIFunctions : MonoBehaviour
 {
+    private SoundManager soundManager = null;
+    private SFXCollection sfxCollection = null;
     private VolumeManager volumeManager = null;
-
-    private AK.Wwise.Event onButtonClick = null;
 
     private void Awake()
     {
+        soundManager = FindObjectOfType<SoundManager>();
+        sfxCollection = FindObjectOfType<SFXCollection>();
         volumeManager = FindObjectOfType<VolumeManager>();
-
-        WwiseEventsCollection wwiseEvents = FindObjectOfType<WwiseEventsCollection>();
-        onButtonClick = wwiseEvents.OnButtonClicked;
-    }
-
-    public void SetShopState()
-    {
-        WwiseSingleton.Instance.SetState("GameState", "InShop");
-    }
-
-    public void SetMenuState()
-    {
-        WwiseSingleton.Instance.SetState("GameState", "InMainMenu");
     }
 
     #region Sound
@@ -32,9 +21,7 @@ public class UIFunctions : MonoBehaviour
     /// <param name="sender">The object that called the event</param>
     public void PlayButtonClick()
     {
-        AkSoundEngine.RegisterGameObj(gameObject);
-        onButtonClick.Post(gameObject);
-        AkSoundEngine.UnregisterGameObj(gameObject);
+        soundManager.PlaySFX(sfxCollection.buttonClick);
     }
 
     public void SetMasterVolume(float volume)

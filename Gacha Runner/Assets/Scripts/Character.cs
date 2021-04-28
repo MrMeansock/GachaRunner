@@ -69,7 +69,7 @@ public class Character : MonoBehaviour
     public event Action OnDeath;
 
     [SerializeField]
-    private GotchaGuys.GameRectangle.MakeRectanglePreviews rectPreview;
+    private GotchaGuys.GameRectangle.MakeRectanglePreviews rectPreview = null;
 
 
     // Start is called before the first frame update

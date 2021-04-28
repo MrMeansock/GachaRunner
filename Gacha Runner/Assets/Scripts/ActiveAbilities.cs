@@ -20,7 +20,7 @@ public class ActiveAbilities : MonoBehaviour
     private SkillType skillType;
 
     [SerializeField]
-    private Button skillButton;
+    private Button skillButton = null;
     private Slider cooldownSlider;
     private Text skillText;
 

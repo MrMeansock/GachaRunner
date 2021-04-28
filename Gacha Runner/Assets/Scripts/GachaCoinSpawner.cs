@@ -7,7 +7,7 @@ public class GachaCoinSpawner : MonoBehaviour
     [SerializeField]
     private GameObject coinPrefab = null;
     [SerializeField]
-    private GameObject coinContainer;
+    private GameObject coinContainer = null;
     private BoxCollider2D spawnArea;
     private GameManager gm;
 
