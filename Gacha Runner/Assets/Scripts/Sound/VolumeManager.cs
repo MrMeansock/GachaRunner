@@ -1,13 +1,10 @@
 ﻿using UnityEngine;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
+using UnityEngine.Audio;
 
 public class VolumeManager : MonoBehaviour
 {
     // Dependencies
-    private AudioSource sfxSource = null;
-    private AudioSource musicSource = null;
+    private AudioMixer mainMixer = null;
 
     private float masterVolume;
     public float MasterVolume
@@ -16,10 +13,7 @@ public class VolumeManager : MonoBehaviour
         set
         {
             masterVolume = value;
-
-            sfxSource.volume = sfxVolume * masterVolume;
-            musicSource.volume = musicVolume * masterVolume;
-
+            mainMixer.SetFloat("MasterVolume", PercentToMixerDB(masterVolume));
             PlayerPrefs.SetFloat("MasterVolume", masterVolume);
         }
     }
@@ -28,10 +22,8 @@ public class VolumeManager : MonoBehaviour
     public void SetMasterMute(bool mute)
     {
         MasterIsMuted = mute;
+        mainMixer.SetFloat("MasterVolume", MasterIsMuted ? PercentToMixerDB(0) : PercentToMixerDB(masterVolume));
         PlayerPrefs.SetInt("MasterMute", MasterIsMuted ? 1 : 0);
-
-        sfxSource.mute = MasterIsMuted;
-        musicSource.mute = MasterIsMuted;
     }
 
     private float musicVolume;
@@ -41,9 +33,7 @@ public class VolumeManager : MonoBehaviour
         set
         {
             musicVolume = value;
-
-            musicSource.volume = musicVolume;
-            
+            mainMixer.SetFloat("MusicVolume", PercentToMixerDB(musicVolume));
             PlayerPrefs.SetFloat("MusicVolume", musicVolume);
         }
     }
@@ -52,9 +42,8 @@ public class VolumeManager : MonoBehaviour
     public void SetMusicMute(bool mute)
     {
         MusicIsMuted = mute;
+        mainMixer.SetFloat("MusicVolume", MusicIsMuted ? PercentToMixerDB(0) : PercentToMixerDB(musicVolume));
         PlayerPrefs.SetInt("MusicMute", MusicIsMuted ? 1 : 0);
-
-        musicSource.mute = MusicIsMuted;
     }
 
     private float sfxVolume;
@@ -64,9 +53,7 @@ public class VolumeManager : MonoBehaviour
         set
         {
             sfxVolume = value;
-
-            sfxSource.volume = sfxVolume;
-
+            mainMixer.SetFloat("SFXVolume", PercentToMixerDB(sfxVolume));
             PlayerPrefs.SetFloat("SFXVolume", sfxVolume);
         }
     }
@@ -75,22 +62,23 @@ public class VolumeManager : MonoBehaviour
     public void SetSFXMute(bool mute)
     {
         SFXIsMuted = mute;
+        mainMixer.SetFloat("SFXVolume", SFXIsMuted ? PercentToMixerDB(0) : PercentToMixerDB(sfxVolume));
         PlayerPrefs.SetInt("SFXMute", SFXIsMuted ? 1 : 0);
-
-        sfxSource.mute = SFXIsMuted;
     }
 
     private void Awake()
     {
-        sfxSource = GetComponentInChildren<SFXSource>().GetComponent<AudioSource>();
-        musicSource = GetComponentInChildren<MusicSource>().GetComponent<AudioSource>();
+        mainMixer = GetComponentInChildren<Mixer>().mixer;
+    }
 
+    private void Start()
+    {
         if (PlayerPrefs.HasKey("MasterVolume")) MasterVolume = PlayerPrefs.GetFloat("MasterVolume");
-        else MasterVolume = 75.0f;
+        else MasterVolume = 0.75f;
         if (PlayerPrefs.HasKey("MusicVolume")) MusicVolume = PlayerPrefs.GetFloat("MusicVolume");
-        else MusicVolume = 75.0f;
+        else MusicVolume = 0.75f;
         if (PlayerPrefs.HasKey("SFXVolume")) SFXVolume = PlayerPrefs.GetFloat("SFXVolume");
-        else SFXVolume = 75.0f;
+        else SFXVolume = 0.75f;
 
         int masterMute = PlayerPrefs.GetInt("MasterMute");
         if (masterMute == 0)
@@ -120,39 +108,10 @@ public class VolumeManager : MonoBehaviour
             SetSFXMute(true);
         }
     }
-}
 
-#if UNITY_EDITOR
-[CustomEditor(typeof(VolumeManager))]
-public class VolumeManagerInspector : Editor
-{
-    private float masterVolume = 0.75f;
-
-    private void OnEnable()
+    // Helper 0-1 to Mixer DB's conversion function
+    private float PercentToMixerDB(float percent)
     {
-        if (PlayerPrefs.HasKey("MasterVolume"))
-        {
-            masterVolume = PlayerPrefs.GetFloat("MasterVolume");
-        }
-    }
-
-    public override void OnInspectorGUI()
-    {
-        base.OnInspectorGUI();
-
-        VolumeManager script = target as VolumeManager;
-        
-        if (Application.isPlaying)
-        {
-            masterVolume = script.MasterVolume;
-            masterVolume = EditorGUILayout.Slider("Master Volume", masterVolume, 0f, 1f);
-            script.MasterVolume = masterVolume;
-        }
-        else
-        {
-            masterVolume = EditorGUILayout.Slider("Master Volume", masterVolume, 0f, 1f);
-            PlayerPrefs.SetFloat("MasterVolume", masterVolume);
-        }   
+        return Mathf.Lerp(-80f, 5, percent);
     }
 }
-#endif

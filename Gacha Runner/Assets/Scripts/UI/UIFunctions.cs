@@ -6,6 +6,7 @@ public class UIFunctions : MonoBehaviour
     private SFXCollection sfxCollection = null;
     private VolumeManager volumeManager = null;
 
+
     private void Awake()
     {
         soundManager = FindObjectOfType<SoundManager>();

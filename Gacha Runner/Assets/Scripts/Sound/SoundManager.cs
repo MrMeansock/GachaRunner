@@ -1,15 +1,13 @@
 ﻿using UnityEngine;
 
-public class SoundManager : Singleton<SoundManager>
+public class SoundManager : MonoBehaviour
 {
     // Dependencies
-    private AudioSource sfxSource = null;
-    private AudioSource musicSource = null;
+    [HideInInspector] public AudioSource sfxSource = null;
+    [HideInInspector] public AudioSource musicSource = null;
 
-    protected override void Awake()
+    private void Awake()
     {
-        base.Awake();
-
         sfxSource = GetComponentInChildren<SFXSource>().GetComponent<AudioSource>();
         musicSource = GetComponentInChildren<MusicSource>().GetComponent<AudioSource>();
     }
@@ -22,5 +20,6 @@ public class SoundManager : Singleton<SoundManager>
     public void PlayMusic(AudioClip clip)
     {
         musicSource.clip = clip;
+        musicSource.Play();
     }
 }

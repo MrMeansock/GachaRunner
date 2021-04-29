@@ -12,6 +12,8 @@ public class GachaScript : MonoBehaviour
     private GameObject characterSprite;
 
     private MenuCurrencyHandler menuCurrency;
+    private AudioSource raritySFXSource;
+
 
     public int totalPulls;
 
@@ -24,6 +26,11 @@ public class GachaScript : MonoBehaviour
     public int SR_Rate;
     public int R_Rate;
     public int C_Rate;
+
+    private void Awake()
+    {
+        raritySFXSource = GetComponent<AudioSource>();
+    }
 
     void Start()
     {
@@ -41,6 +48,12 @@ public class GachaScript : MonoBehaviour
         {
             StartPull(false);
         }
+    }
+
+    private void PlayRaritySound()
+    {
+        raritySFXSource.pitch = UnityEngine.Random.Range(1f, 2f);
+        raritySFXSource.Play();
     }
 
     public void StartPull(bool tenPull = false)
@@ -116,6 +129,7 @@ public class GachaScript : MonoBehaviour
                     SetParticleColor("Void2", particleColor[1]).Play();
                     SetParticleColor("Void3", particleColor[1]).Play();
 
+                    PlayRaritySound();
 
                     SetParticleColor("VoidBurst", particleColor[1]).Play();
                     SetParticleColor("VoidBurst1", particleColor[1]).Play();
@@ -124,10 +138,15 @@ public class GachaScript : MonoBehaviour
                     SetParticleColor("Void2", particleColor[2]).Play();
                     SetParticleColor("Void3", particleColor[2]).Play();
 
+                    PlayRaritySound();
+
                     SetParticleColor("VoidBurst", particleColor[2]).Play();
                     SetParticleColor("VoidBurst1", particleColor[2]).Play();
                     yield return new WaitForSeconds(3f);
                 }
+
+                PlayRaritySound();
+
                 charPulled = cm.AddRandomCharacter(3);
             }
             else if (chance <= R_Rate)
@@ -138,9 +157,14 @@ public class GachaScript : MonoBehaviour
                 SetParticleColor("Void2", particleColor[1]).Play();
                 SetParticleColor("Void3", particleColor[1]).Play();
 
+                PlayRaritySound();
+
                 SetParticleColor("VoidBurst", particleColor[1]).Play();
                 SetParticleColor("VoidBurst1", particleColor[1]).Play();
                 yield return new WaitForSeconds(3f);
+
+                PlayRaritySound();
+
                 charPulled = cm.AddRandomCharacter(2);
             }
             else
@@ -149,6 +173,9 @@ public class GachaScript : MonoBehaviour
                 SetParticleColor("Void", particleColor[0]).Play();
                 SetParticleColor("Void1", particleColor[0]).Play();
                 yield return new WaitForSeconds(3f);
+
+                PlayRaritySound();
+
                 charPulled = cm.AddRandomCharacter(1);
             }
 
