@@ -8,6 +8,15 @@ public class SoundManager : MonoBehaviour
 
     private void Awake()
     {
+        var soundManagers = FindObjectsOfType<SoundManager>();
+        if (soundManagers.Length > 1)
+        {
+            gameObject.SetActive(false);
+            Destroy(gameObject);
+            return;
+        }
+        DontDestroyOnLoad(gameObject);
+
         sfxSource = GetComponentInChildren<SFXSource>().GetComponent<AudioSource>();
         musicSource = GetComponentInChildren<MusicSource>().GetComponent<AudioSource>();
     }
