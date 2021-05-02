@@ -11,6 +11,14 @@
 						<State Name="InShop" ID="{AD54E318-58A2-4D09-9890-6FDB529C5337}"/>
 					</ChildrenList>
 				</StateGroup>
+				<StateGroup Name="PlayerHealth" ID="{5CB885F9-AC8F-43ED-A959-8F40641E59DB}">
+					<ChildrenList>
+						<State Name="None" ID="{C9674E9B-2E22-4CA7-A775-7D1B16778979}"/>
+						<State Name="Full" ID="{380C3023-887D-46F7-85F9-2868963CD56E}"/>
+						<State Name="Damaged" ID="{DB276179-AE9D-4191-B881-DFC20918F0DD}"/>
+						<State Name="NearDeath" ID="{2F1F7ECD-B14A-44FC-AE29-C06D1B29139E}"/>
+					</ChildrenList>
+				</StateGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</States>

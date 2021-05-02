@@ -67,10 +67,16 @@ public class Character : MonoBehaviour
     public float DisplacementX => Math.Abs(transform.position.x - startX); // (Abs to get pure distance, left or right).
 
     public event Action OnDeath;
+    private AK.Wwise.Event wwiseOnDeath;
 
     [SerializeField]
     private GotchaGuys.GameRectangle.MakeRectanglePreviews rectPreview;
 
+    private void Awake()
+    {
+        WwiseEventsCollection wwiseEvents = FindObjectOfType<WwiseEventsCollection>();
+        wwiseOnDeath = wwiseEvents.OnDeath;
+    }
 
     // Start is called before the first frame update
     virtual protected void Start()
@@ -93,6 +99,7 @@ public class Character : MonoBehaviour
         if (GameObject.Find("OverallGameManager") != null)
             GetCharValues();
 
+        WwiseSingleton.Instance.SetState("PlayerHealth", "Full");
     }
 
     protected void GetCharValues()
@@ -262,12 +269,20 @@ public class Character : MonoBehaviour
                 health--;
                 if (health >= 0)
                 {
+                    WwiseSingleton.Instance.SetState("PlayerHealth", "Damaged");
                     healthArea.transform.GetChild(health).gameObject.SetActive(false);
+                }
+                if (health == 1)
+                {
+                    WwiseSingleton.Instance.SetState("PlayerHealth", "NearDeath");
                 }
                 if (health <= 0)
                 {
                     // Handle player death
                     OnDeath?.Invoke();
+                    AkSoundEngine.RegisterGameObj(gameObject);
+                    wwiseOnDeath.Post(gameObject);
+                    AkSoundEngine.UnregisterGameObj(gameObject);
                     gm.GameOver();
                 }
 

@@ -102,6 +102,93 @@
 								<ActiveSource Name="rarity" ID="{0205AB2E-25F0-4579-AB99-1D114B726ACC}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="coin" ID="{85A595A5-F7CA-4C16-97AA-5C6EA17C2099}" ShortID="385059174">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>10</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1CCBAA11-5023-42A3-B372-965A8B1ED4EC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{05ABCFB3-8BA1-441A-A4C8-6BCF775F1395}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="coin" ID="{D7C3B9A1-6C54-49C0-B0DE-C5E4C630094C}">
+									<Language>SFX</Language>
+									<AudioFile>coin.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="366684200"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="coin" ID="{D7C3B9A1-6C54-49C0-B0DE-C5E4C630094C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="explosion" ID="{B0E3755C-B486-4A65-B2C2-B349DE446C95}" ShortID="292280255">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>8</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1CCBAA11-5023-42A3-B372-965A8B1ED4EC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{05ABCFB3-8BA1-441A-A4C8-6BCF775F1395}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="explosion" ID="{A4EA575B-45AF-4E6C-9089-ADA86489551B}">
+									<Language>SFX</Language>
+									<AudioFile>explosion.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="618504077"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="explosion" ID="{A4EA575B-45AF-4E6C-9089-ADA86489551B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="death" ID="{730D6419-A7F9-4EFC-A05E-0B75BBFBD58E}" ShortID="186739374">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1CCBAA11-5023-42A3-B372-965A8B1ED4EC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{05ABCFB3-8BA1-441A-A4C8-6BCF775F1395}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="death" ID="{C466BC02-3754-4BE4-8B5D-7FB407106393}">
+									<Language>SFX</Language>
+									<AudioFile>death.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="793221455"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="death" ID="{C466BC02-3754-4BE4-8B5D-7FB407106393}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</ActorMixer>
 			</ChildrenList>

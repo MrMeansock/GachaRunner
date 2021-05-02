@@ -1,7 +1,13 @@
 State Group	ID	Name			Wwise Object Path	Notes
+	151362964	PlayerHealth			\Default Work Unit\PlayerHealth	
 	4091656514	GameState			\Default Work Unit\GameState	
 
 State	ID	Name	State Group			Notes
+	748895195	None	PlayerHealth			
+	898449699	NearDeath	PlayerHealth			
+	2510516222	Full	PlayerHealth			
+	3258988170	Damaged	PlayerHealth			
+	748895195	None	GameState			
 	984691642	InGame	GameState			
 	2679786610	InMainMenu	GameState			
 	3201166856	InShop	GameState			

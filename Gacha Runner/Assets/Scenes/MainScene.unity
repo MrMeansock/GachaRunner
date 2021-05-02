@@ -692,6 +692,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: WwiseManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4811844350454477431, guid: 613bbc8b8029b044cb2508524398488d,
+        type: 3}
+      propertyPath: OnDeath.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: fd0bce195670e114b9985268775105a0,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 613bbc8b8029b044cb2508524398488d, type: 3}
 --- !u!224 &622523089 stripped

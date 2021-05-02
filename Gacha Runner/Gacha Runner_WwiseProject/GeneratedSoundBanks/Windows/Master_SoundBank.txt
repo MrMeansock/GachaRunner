@@ -1,21 +1,35 @@
 Event	ID	Name			Wwise Object Path	Notes
+	539274093	OnMissileHit			\Default Work Unit\OnMissileHit	
 	1329044087	OnGameStarted			\Default Work Unit\OnGameStarted	
+	2598090648	OnDeath			\Default Work Unit\OnDeath	
+	3091484954	OnCoinCollected			\Default Work Unit\OnCoinCollected	
 	3922061768	OnRarityUp			\Default Work Unit\OnRarityUp	
 	3951640513	OnButtonClicked			\Default Work Unit\UI\OnButtonClicked	
 
 State Group	ID	Name			Wwise Object Path	Notes
+	151362964	PlayerHealth			\Default Work Unit\PlayerHealth	
 	4091656514	GameState			\Default Work Unit\GameState	
 
 State	ID	Name	State Group			Notes
+	748895195	None	PlayerHealth			
+	898449699	NearDeath	PlayerHealth			
+	2510516222	Full	PlayerHealth			
+	3258988170	Damaged	PlayerHealth			
 	748895195	None	GameState			
 	984691642	InGame	GameState			
 	2679786610	InMainMenu	GameState			
 	3201166856	InShop	GameState			
 
+Custom State	ID	Name	State Group	Owner		Notes
+	938511431	NearDeath	PlayerHealth	\Interactive Music Hierarchy\Default Work Unit\Music Switch Container\In Game Music Container\03_LabTheme_160bpm		
+
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	258564215	03_LabTheme_160bpm	C:\Users\Camilo\source\repos\crlimacastro\GachaRunner\Gacha Runner\Gacha Runner_WwiseProject\.cache\Windows\SFX\03_LabTheme_160bpm_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music Switch Container\In Game Music Container\03_LabTheme_160bpm\03_LabTheme_160bpm		16934464
+	366684200	coin	C:\Users\Camilo\source\repos\crlimacastro\GachaRunner\Gacha Runner\Gacha Runner_WwiseProject\.cache\Windows\SFX\coin_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX Mixer\coin		88264
 	390967997	02_ShopTheme_80bpm	C:\Users\Camilo\source\repos\crlimacastro\GachaRunner\Gacha Runner\Gacha Runner_WwiseProject\.cache\Windows\SFX\02_ShopTheme_80bpm_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music Switch Container\Shop Music Container\02_ShopTheme_80bpm\02_ShopTheme_80bpm		16934464
 	571050330	01_MenuTheme_160bpm	C:\Users\Camilo\source\repos\crlimacastro\GachaRunner\Gacha Runner\Gacha Runner_WwiseProject\.cache\Windows\SFX\01_MenuTheme_160bpm_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music Switch Container\Main Menu Music Container\Intro Segment\01_MenuTheme_160bpm		21168064
+	618504077	explosion	C:\Users\Camilo\source\repos\crlimacastro\GachaRunner\Gacha Runner\Gacha Runner_WwiseProject\.cache\Windows\SFX\explosion_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX Mixer\explosion		176464
 	702651925	Rarity	C:\Users\Camilo\source\repos\crlimacastro\GachaRunner\Gacha Runner\Gacha Runner_WwiseProject\.cache\Windows\SFX\rarity_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX Mixer\Rarity		352864
 	778660791	Confirm	C:\Users\Camilo\source\repos\crlimacastro\GachaRunner\Gacha Runner\Gacha Runner_WwiseProject\.cache\Windows\SFX\confirm_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX Mixer\Confirm		88264
+	793221455	death	C:\Users\Camilo\source\repos\crlimacastro\GachaRunner\Gacha Runner\Gacha Runner_WwiseProject\.cache\Windows\SFX\death_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX Mixer\death		352864
 

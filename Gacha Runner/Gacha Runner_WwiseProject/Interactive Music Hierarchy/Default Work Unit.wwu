@@ -136,6 +136,7 @@
 								<MusicSegment Name="03_LabTheme_160bpm" ID="{15C10AAB-D077-4D92-9188-6565D2F87D62}" ShortID="75052015">
 									<PropertyList>
 										<Property Name="EndPosition" Type="Real64" Value="96000"/>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -185,6 +186,32 @@
 											</SequenceList>
 										</MusicTrack>
 									</ChildrenList>
+									<StateInfo>
+										<StateGroupList>
+											<StateGroupInfo>
+												<StateGroupRef Name="PlayerHealth" ID="{5CB885F9-AC8F-43ED-A959-8F40641E59DB}"/>
+											</StateGroupInfo>
+										</StateGroupList>
+										<CustomStateList>
+											<CustomState>
+												<StateRef Name="Damaged" ID="{DB276179-AE9D-4191-B881-DFC20918F0DD}"/>
+												<CustomState Name="" ID="{913944B9-1836-4F62-8F78-6EA12F5A6973}" ShortID="766929057"/>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="NearDeath" ID="{2F1F7ECD-B14A-44FC-AE29-C06D1B29139E}"/>
+												<CustomState Name="" ID="{DB129AF7-9A86-4227-99C8-C8C7A005BC82}" ShortID="938511431">
+													<PropertyList>
+														<Property Name="Lowpass" Type="int16" Value="50"/>
+														<Property Name="MakeUpGain" Type="Real64" Value="2"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Full" ID="{380C3023-887D-46F7-85F9-2868963CD56E}"/>
+												<CustomState Name="" ID="{3BB36FDC-3498-432A-9E47-C20C2F943C83}" ShortID="900883146"/>
+											</CustomState>
+										</CustomStateList>
+									</StateInfo>
 									<CueList>
 										<MusicCue Name="Entry Cue" ID="{0FE6216D-9682-4772-A094-44EB788DAF3E}"/>
 										<MusicCue Name="Exit Cue" ID="{AA1C6747-4D19-445E-96A4-04B6CB3C94E1}">
@@ -295,7 +322,7 @@
 																		</PropertyList>
 																		<PointList>
 																			<Point>
-																				<XPos>-0</XPos>
+																				<XPos>0</XPos>
 																				<YPos>0</YPos>
 																				<Flags>5</Flags>
 																			</Point>
@@ -314,7 +341,7 @@
 																		</PropertyList>
 																		<PointList>
 																			<Point>
-																				<XPos>-0</XPos>
+																				<XPos>0</XPos>
 																				<YPos>0</YPos>
 																				<Flags>5</Flags>
 																			</Point>
@@ -333,7 +360,7 @@
 																		</PropertyList>
 																		<PointList>
 																			<Point>
-																				<XPos>-0</XPos>
+																				<XPos>0</XPos>
 																				<YPos>0</YPos>
 																				<Flags>5</Flags>
 																			</Point>

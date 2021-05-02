@@ -13,6 +13,14 @@ public class Missile : MonoBehaviour
     private float wiggleStrength = 10.0f;
     private float perlinMult = 2.5f;
 
+    private AK.Wwise.Event onMissileHit;
+
+    private void Awake()
+    {
+        WwiseEventsCollection wwiseEvents = FindObjectOfType<WwiseEventsCollection>();
+        onMissileHit = wwiseEvents.OnMissileHit;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,6 +69,9 @@ public class Missile : MonoBehaviour
         {
             //Player has been hit
             collision.GetComponent<Character>().TakeDamage(true);
+            AkSoundEngine.RegisterGameObj(gameObject);
+            onMissileHit.Post(gameObject);
+            AkSoundEngine.UnregisterGameObj(gameObject);
             GameObject.Destroy(gameObject);
         }
         if (collision.TryGetComponent<Rectangle>(out Rectangle rectangle))

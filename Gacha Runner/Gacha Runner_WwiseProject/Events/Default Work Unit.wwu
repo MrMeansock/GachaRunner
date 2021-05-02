@@ -43,6 +43,39 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="OnMissileHit" ID="{52A159D7-2403-402E-ABFA-E16AADFFABC3}">
+					<ChildrenList>
+						<Action Name="" ID="{08DA23BD-5CB3-4B71-845F-369D759B4576}" ShortID="529432237">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="explosion" ID="{B0E3755C-B486-4A65-B2C2-B349DE446C95}" WorkUnitID="{CC26E5BC-5FD3-4273-B6A1-A52D211A552C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="OnCoinCollected" ID="{0318DBCD-EBD9-46DA-AC9E-A262C92EA998}">
+					<ChildrenList>
+						<Action Name="" ID="{980E0B03-B9D5-4B9F-9A64-E82276DEA2A2}" ShortID="160614412">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="coin" ID="{85A595A5-F7CA-4C16-97AA-5C6EA17C2099}" WorkUnitID="{CC26E5BC-5FD3-4273-B6A1-A52D211A552C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="OnDeath" ID="{FA90FC37-C096-4E2F-95FD-90CC9609E4CE}">
+					<ChildrenList>
+						<Action Name="" ID="{632E3EE9-5DD8-413E-B41D-07D61ADBA4C9}" ShortID="103903105">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="death" ID="{730D6419-A7F9-4EFC-A05E-0B75BBFBD58E}" WorkUnitID="{CC26E5BC-5FD3-4273-B6A1-A52D211A552C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

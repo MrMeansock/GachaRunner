@@ -14,7 +14,10 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID ONBUTTONCLICKED = 3951640513U;
+        static const AkUniqueID ONCOINCOLLECTED = 3091484954U;
+        static const AkUniqueID ONDEATH = 2598090648U;
         static const AkUniqueID ONGAMESTARTED = 1329044087U;
+        static const AkUniqueID ONMISSILEHIT = 539274093U;
         static const AkUniqueID ONRARITYUP = 3922061768U;
     } // namespace EVENTS
 
@@ -32,6 +35,19 @@ namespace AK
                 static const AkUniqueID NONE = 748895195U;
             } // namespace STATE
         } // namespace GAMESTATE
+
+        namespace PLAYERHEALTH
+        {
+            static const AkUniqueID GROUP = 151362964U;
+
+            namespace STATE
+            {
+                static const AkUniqueID DAMAGED = 3258988170U;
+                static const AkUniqueID FULL = 2510516222U;
+                static const AkUniqueID NEARDEATH = 898449699U;
+                static const AkUniqueID NONE = 748895195U;
+            } // namespace STATE
+        } // namespace PLAYERHEALTH
 
     } // namespace STATES
 

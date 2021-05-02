@@ -176,6 +176,16 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 06cfef6c3e15528418bbf0b48c3eead4,
       type: 2}
+  OnMissileHit:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f24f76b459784f7459315bb68eb3098e,
+      type: 2}
+  OnCoinCollected:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 50030c2a26a52854dae31e2d0552712c,
+      type: 2}
   OnButtonClicked:
     idInternal: 0
     valueGuidInternal: 

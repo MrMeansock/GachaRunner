@@ -6,6 +6,14 @@ public class GachaCoin : MonoBehaviour
     public static event Action<GachaCoin> OnGachaCoinCollected;
     private float lifeTime = 0.0f;
 
+    private AK.Wwise.Event onCoinCollected = null;
+
+    private void Awake()
+    {
+        WwiseEventsCollection wwiseEvents = FindObjectOfType<WwiseEventsCollection>();
+        onCoinCollected = wwiseEvents.OnCoinCollected;
+    }
+
     private void Update()
     {
         if (lifeTime >= 10.0f)
@@ -20,6 +28,9 @@ public class GachaCoin : MonoBehaviour
         if (collision.tag == "Player")
         {
             Collect();
+            AkSoundEngine.RegisterGameObj(gameObject);
+            onCoinCollected.Post(gameObject);
+            AkSoundEngine.UnregisterGameObj(gameObject);
         }
     }
 
