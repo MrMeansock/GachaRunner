@@ -51,7 +51,7 @@
 				<Property Name="Interactive Music\x64_{94F3BAEE-4E6F-418D-AA57-1928C29B5FA9} - SegmentEditorZoomInfo" Type="string" Value="AAAAAAAA8D8AAAAAAADwPwAAAAAAOGtAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
 				<Property Name="Interactive Music\x64_{96449098-0B41-453C-A46E-5F382FC85B5C} - SegmentEditorZoomInfo" Type="string" Value="AAAAAAAA8D8AAAAAAADwPwAAAAAAOGtAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
 				<Property Name="Interactive Music\x64_{9FF65403-8F7A-4D7A-BFD1-C4BE70F61C18} - SegmentEditorZoomInfo" Type="string" Value="9PpVxUHb3T8AAAAAAADwP8/zPM/zvCRAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
-				<Property Name="Interactive Music\x64_{BE74C64D-8FFF-4C76-94CC-3619EE62EF19} - SegmentEditorZoomInfo" Type="string" Value="lVfnGJC9wj/Y71tWxQroPwAAAAAAOGtAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
+				<Property Name="Interactive Music\x64_{BE74C64D-8FFF-4C76-94CC-3619EE62EF19} - SegmentEditorZoomInfo" Type="string" Value="MK0LGWFClD+mVJh4P3LqPwAAAAAAOGtAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
 				<Property Name="LoudnessMeterView\LastObject1" Type="string" Value="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>
 				<Property Name="MeterView\LastObject1" Type="string" Value="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>
 				<Property Name="MeterView\MeterMode1" Type="int32" Value="1"/>
@@ -64,6 +64,7 @@
 				<Property Name="MonitoringManager\GameObjectFilter\GameObjectFiltersEnable" Type="bool" Value="True"/>
 				<Property Name="MonitoringManager\GameObjectFilter\x64_GameObjectFilters" Type="string" Value=""/>
 				<Property Name="Music Transition List\{57E521B0-6545-48D1-ACA6-3D8B63A69783}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Music Transition List\{623F138B-2F23-4CB3-AB86-1DC775DFE321}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Music Transition List\{79789B4E-0E23-40CC-A62A-5367456715AA}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Music Transition List\{EB2F7B85-1BAD-4AD7-A505-8A2CD74839D6}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Music Transition List\{EE75F946-47CD-4E6B-A2F8-894E6221E16C}\x64_Expand States" Type="string" Value=""/>
@@ -94,7 +95,7 @@
 				<Property Name="ProjectExplorer\x64_Expanded_2_1" Type="string" Value="vOUmzNNfc0K2oaUtIRpVLNvl22xfA+RNvmNev+Jil68="/>
 				<Property Name="ProjectExplorer\x64_Expanded_3_1" Type="string" Value="3tZ1/I1XFUCv1Cz4SewwI/Bq726ynPdBs+9emzCjO5U="/>
 				<Property Name="ProjectExplorer\x64_Expanded_4_1" Type="string" Value="cG5vKNGt6UeJXx5LRfXTgg=="/>
-				<Property Name="ProjectExplorer\x64_Expanded_5_1" Type="string" Value="D1GhVxmOTkSQEE93zFdRO/PRWpliKLJHlWhqf/iwCHE="/>
+				<Property Name="ProjectExplorer\x64_Expanded_5_1" Type="string" Value="+YW4XI+s7UOpWY9AZB5Z2w9RoVcZjk5EkBBPd8xXUTvz0VqZYiiyR5Voan/4sAhx"/>
 				<Property Name="ProjectExplorer\x64_Expanded_6_1" Type="string" Value="NgRn8JIKukeoDJY5qHjCZw=="/>
 				<Property Name="ProjectExplorer\x64_Expanded_7_1" Type="string" Value="fDJ+soqvd0W4Iqi6sqBrybUG/0qZj1NGrm8yd5DTNU8="/>
 				<Property Name="ProjectExplorer\x64_Expanded_8_1" Type="string" Value=""/>

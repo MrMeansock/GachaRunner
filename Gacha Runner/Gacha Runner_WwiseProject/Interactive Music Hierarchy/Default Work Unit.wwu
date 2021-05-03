@@ -279,23 +279,23 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<MusicTrack Name="01_MenuTheme_160bpm" ID="{2FE0FE37-6F5A-4B79-96AB-93CEAA116186}" ShortID="654938158">
+										<MusicTrack Name="01_MenuTheme_Choir_160bpm" ID="{623F138B-2F23-4CB3-AB86-1DC775DFE321}" ShortID="342737801">
 											<ReferenceList>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{05ABCFB3-8BA1-441A-A4C8-6BCF775F1395}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="01_MenuTheme_160bpm" ID="{EB5C876F-4EE1-4CD6-9CC1-99F2756CFAAA}">
+												<AudioFileSource Name="01_MenuTheme_Choir_160bpm" ID="{401E4CCB-DE3F-4EA6-9DD5-D400697120A7}">
 													<Language>SFX</Language>
-													<AudioFile>01_MenuTheme_160bpm.wav</AudioFile>
+													<AudioFile>01_MenuTheme_Choir_160bpm.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="571050330"/>
+														<MediaID ID="824779169"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<TransitionList>
-												<MusicTransition Name="Root" ID="{BF2F193B-4547-40E5-9D85-3719A1DA5E65}">
+												<MusicTransition Name="Root" ID="{8BEC870B-BC36-4F5F-9F9E-FC2BFA547C56}">
 													<PropertyList>
 														<Property Name="IsFolder" Type="bool" Value="True"/>
 													</PropertyList>
@@ -303,20 +303,18 @@
 												</MusicTransition>
 											</TransitionList>
 											<SequenceList>
-												<MusicTrackSequence Name="" ID="{C898B337-3CF2-47FC-90A4-38038323305A}">
+												<MusicTrackSequence Name="" ID="{B26CC95E-6127-4CC5-BF99-2F4847BEDB26}">
 													<ClipList>
-														<MusicClip Name="01_MenuTheme_160bpm" ID="{31D67F43-C304-46E7-8BC9-A2F93457AB3B}">
+														<MusicClip Name="01_MenuTheme_Choir_160bpm" ID="{484A7FD7-FB05-4665-9D8F-E0C44105FEFF}">
 															<PropertyList>
-																<Property Name="BeginTrimOffset" Type="Real64" Value="2.66453525910038E-13"/>
-																<Property Name="EndTrimOffset" Type="Real64" Value="23999.9999999998"/>
+																<Property Name="EndTrimOffset" Type="Real64" Value="24000"/>
 																<Property Name="FadeInMode" Type="int16" Value="0"/>
 																<Property Name="FadeOutMode" Type="int16" Value="0"/>
-																<Property Name="PlayAt" Type="Real64" Value="-2.66453525910038E-13"/>
 															</PropertyList>
-															<AudioSourceRef Name="01_MenuTheme_160bpm" ID="{EB5C876F-4EE1-4CD6-9CC1-99F2756CFAAA}"/>
+															<AudioSourceRef Name="01_MenuTheme_Choir_160bpm" ID="{401E4CCB-DE3F-4EA6-9DD5-D400697120A7}"/>
 															<PropertyCurveList>
 																<PropertyCurve PropertyName="Highpass">
-																	<Curve Name="" ID="{D0F5A7CA-0FE4-4809-9F02-F4003A3E1394}">
+																	<Curve Name="" ID="{25043AF2-791B-4B5A-9001-8740A3AF2210}">
 																		<PropertyList>
 																			<Property Name="Flags" Type="int32" Value="1"/>
 																		</PropertyList>
@@ -335,7 +333,7 @@
 																	</Curve>
 																</PropertyCurve>
 																<PropertyCurve PropertyName="Lowpass">
-																	<Curve Name="" ID="{23A5D2F3-C7D3-4BF4-91BC-1640E40A6A3A}">
+																	<Curve Name="" ID="{D15B5B30-926B-4C57-8B12-D7CE5860DAB4}">
 																		<PropertyList>
 																			<Property Name="Flags" Type="int32" Value="1"/>
 																		</PropertyList>
@@ -354,7 +352,7 @@
 																	</Curve>
 																</PropertyCurve>
 																<PropertyCurve PropertyName="Volume">
-																	<Curve Name="" ID="{AE20038F-2FAB-4685-86D7-931C8398D1A2}">
+																	<Curve Name="" ID="{7D323B13-2982-4D3A-BE15-1480BDAE7406}">
 																		<PropertyList>
 																			<Property Name="Flags" Type="int32" Value="3"/>
 																		</PropertyList>
@@ -404,23 +402,23 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<MusicTrack Name="01_MenuTheme_160bpm" ID="{941BF422-7B02-410C-9BF3-286642BF6BEC}" ShortID="602435035">
+										<MusicTrack Name="01_MenuTheme_Choir_160bpm" ID="{BC9A2B65-186B-47B6-B540-31B4B384200D}" ShortID="818509957">
 											<ReferenceList>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{05ABCFB3-8BA1-441A-A4C8-6BCF775F1395}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="01_MenuTheme_160bpm" ID="{11022519-0239-4326-9FAE-C82A2EE2D961}">
+												<AudioFileSource Name="01_MenuTheme_Choir_160bpm" ID="{0633D6E0-2406-4326-8CF3-E9F5CFAF9F8E}">
 													<Language>SFX</Language>
-													<AudioFile>01_MenuTheme_160bpm.wav</AudioFile>
+													<AudioFile>01_MenuTheme_Choir_160bpm.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="571050330"/>
+														<MediaID ID="824779169"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<TransitionList>
-												<MusicTransition Name="Root" ID="{912AFC9C-2829-4CF5-84CD-CDF25074016E}">
+												<MusicTransition Name="Root" ID="{032B1107-8C02-4B6E-9779-9319FCA5F593}">
 													<PropertyList>
 														<Property Name="IsFolder" Type="bool" Value="True"/>
 													</PropertyList>
@@ -428,9 +426,9 @@
 												</MusicTransition>
 											</TransitionList>
 											<SequenceList>
-												<MusicTrackSequence Name="" ID="{1D64A674-2BEC-46D2-9DC2-ABBD9E4E2802}">
+												<MusicTrackSequence Name="" ID="{D7B99CA2-55E7-4357-BC02-497BE5060F52}">
 													<ClipList>
-														<MusicClip Name="01_MenuTheme_160bpm" ID="{F240F02F-60BD-40DF-8251-60187F97BAA5}">
+														<MusicClip Name="01_MenuTheme_Choir_160bpm" ID="{791C5009-99A8-4244-8CC0-400E9C8FC627}">
 															<PropertyList>
 																<Property Name="BeginTrimOffset" Type="Real64" Value="24000"/>
 																<Property Name="EndTrimOffset" Type="Real64" Value="120000"/>
@@ -438,10 +436,10 @@
 																<Property Name="FadeOutMode" Type="int16" Value="0"/>
 																<Property Name="PlayAt" Type="Real64" Value="-24000"/>
 															</PropertyList>
-															<AudioSourceRef Name="01_MenuTheme_160bpm" ID="{11022519-0239-4326-9FAE-C82A2EE2D961}"/>
+															<AudioSourceRef Name="01_MenuTheme_Choir_160bpm" ID="{0633D6E0-2406-4326-8CF3-E9F5CFAF9F8E}"/>
 															<PropertyCurveList>
 																<PropertyCurve PropertyName="Highpass">
-																	<Curve Name="" ID="{5D0670B9-8F93-45EA-8DA3-BCFE0266984E}">
+																	<Curve Name="" ID="{BFC81F73-A391-401D-8137-372C914C3500}">
 																		<PropertyList>
 																			<Property Name="Flags" Type="int32" Value="1"/>
 																		</PropertyList>
@@ -460,7 +458,7 @@
 																	</Curve>
 																</PropertyCurve>
 																<PropertyCurve PropertyName="Lowpass">
-																	<Curve Name="" ID="{3A9CEDBA-010D-4ACF-B6E4-991C896E18BA}">
+																	<Curve Name="" ID="{BB36845A-E1CB-49A2-8613-1093DAE1E418}">
 																		<PropertyList>
 																			<Property Name="Flags" Type="int32" Value="1"/>
 																		</PropertyList>
@@ -479,7 +477,7 @@
 																	</Curve>
 																</PropertyCurve>
 																<PropertyCurve PropertyName="Volume">
-																	<Curve Name="" ID="{61FD7D3C-BE41-4D5A-8EB1-5CBE7B86516A}">
+																	<Curve Name="" ID="{CE8D5E50-E422-4495-BD73-1B44A404604D}">
 																		<PropertyList>
 																			<Property Name="Flags" Type="int32" Value="3"/>
 																		</PropertyList>

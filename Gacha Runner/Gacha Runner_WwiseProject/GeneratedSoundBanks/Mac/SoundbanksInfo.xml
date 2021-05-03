@@ -21,7 +21,7 @@
 				<GameParameter Id="2918011349" Name="MasterVolume" ObjectPath="\Game Parameters\Default Work Unit\Volumes\MasterVolume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="2469504869" Language="SFX" Hash="1657426720">
+		<SoundBank Id="2469504869" Language="SFX" Hash="3801463382">
 			<ObjectPath>\SoundBanks\Default Work Unit\Master_SoundBank</ObjectPath>
 			<ShortName>Master_SoundBank</ShortName>
 			<Path>Master_SoundBank.bnk</Path>
@@ -60,15 +60,15 @@
 							<ShortName>02_ShopTheme_80bpm.wav</ShortName>
 							<Path>SFX\02_ShopTheme_80bpm_D79FB2B7.wem</Path>
 						</File>
-						<File Id="571050330" Language="SFX">
-							<ShortName>01_MenuTheme_160bpm.wav</ShortName>
-							<Path>SFX\01_MenuTheme_160bpm_D79FB2B7.wem</Path>
+						<File Id="824779169" Language="SFX">
+							<ShortName>01_MenuTheme_Choir_160bpm.wav</ShortName>
+							<Path>SFX\01_MenuTheme_Choir_160bpm_D79FB2B7.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 					<SwitchContainers>
 						<SwitchContainer SwitchValue="{A1FEC694-6AA5-427F-A88E-9D3BC2D54372}">
 							<Media>
-								<File Id="571050330"/>
+								<File Id="824779169"/>
 							</Media>
 						</SwitchContainer>
 						<SwitchContainer SwitchValue="{461A13DD-02C7-467F-BA40-CEEDE2C5F900}">
