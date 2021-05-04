@@ -46,6 +46,7 @@ public class RunCurrencyHandler : MonoBehaviour
     private void CalculateRunEarnings(int finalScore)
     {
         OnEndOfRoundCurrency?.Invoke(RunEarnings);
+        runEarnings = 0;
     }
 
     private void IncreaseRunEarnings(GachaCoin coin)

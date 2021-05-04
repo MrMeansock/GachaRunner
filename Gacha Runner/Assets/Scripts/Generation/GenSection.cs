@@ -5,7 +5,8 @@ using UnityEngine;
 public class GenSection : MonoBehaviour
 {
     //Config
-    const float MAX_HEIGHT_DELTA = 0.2f;
+    const float MIN_HEIGHT_DELTA = 0.2f;
+    const float MAX_HEIGHT_DELTA = 0.3f;
     const float MIN_GAP_LENGTH = 0.05f;
     const float MAX_GAP_LENGTH = 0.2f;
     const float MIN_PLATFORM_LENGTH = 0.2f;
@@ -62,6 +63,13 @@ public class GenSection : MonoBehaviour
                 AddGenGround(genProgress, currHeight, platformLen);
                 break;
             }
+            if(genProgress + platformLen + MIN_PLATFORM_LENGTH > 1.0f)
+            {
+                platformLen = 1 - genProgress;
+                AddGenGround(genProgress, currHeight, platformLen);
+                break;
+            }
+
             AddGenGround(genProgress, currHeight, platformLen);
             genProgress += platformLen;
             
@@ -71,19 +79,22 @@ public class GenSection : MonoBehaviour
 
             //Change Height
             float deltaHeight = 0;
-            if(currHeight == 1.0f)
+            while (deltaHeight < MIN_HEIGHT_DELTA)
             {
-                deltaHeight = Random.Range(-MAX_HEIGHT_DELTA, 0);
+                if (currHeight == 1.0f)
+                {
+                    deltaHeight = Random.Range(-MAX_HEIGHT_DELTA, -MIN_HEIGHT_DELTA);
+                }
+                else if (currHeight == 0)
+                {
+                    deltaHeight = Random.Range(MIN_HEIGHT_DELTA, MAX_HEIGHT_DELTA);
+                }
+                else
+                {
+                    deltaHeight = Random.Range(-MAX_HEIGHT_DELTA, MAX_HEIGHT_DELTA);
+                }
+                currHeight = Mathf.Clamp(currHeight + deltaHeight, 0, 1.0f);
             }
-            else if(currHeight == 0)
-            {
-                deltaHeight = Random.Range(0, MAX_HEIGHT_DELTA);
-            }
-            else
-            {
-                deltaHeight = Random.Range(-MAX_HEIGHT_DELTA, MAX_HEIGHT_DELTA);
-            }
-            currHeight = Mathf.Clamp(currHeight + deltaHeight, 0, 1.0f);
         }
 
         return currHeight;
