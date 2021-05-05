@@ -1098,7 +1098,7 @@ RectTransform:
   - {fileID: 1489663301}
   - {fileID: 1425361950}
   m_Father: {fileID: 2025260584}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1487,6 +1487,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1039533004 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7034954030014355461, guid: af1726cca75943342b852c76e7e79f12,
+    type: 3}
+  m_PrefabInstance: {fileID: 622287369}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbcaa06dc55f2d6449a915671bcf91b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1185626248
 GameObject:
   m_ObjectHideFlags: 0
@@ -1523,7 +1535,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 123.23001, y: -117.100006}
+  m_AnchoredPosition: {x: 123.22998, y: -117.099976}
   m_SizeDelta: {x: 224.46954, y: 26.575867}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1185626250
@@ -1787,7 +1799,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 123.23001, y: -86}
+  m_AnchoredPosition: {x: 123.22998, y: -86}
   m_SizeDelta: {x: 224.46954, y: 26.575867}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1382339463
@@ -2207,6 +2219,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1039533004}
+        m_MethodName: PlaySFX
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 08bba05b8bde769459008ed0a7f84430,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3347,9 +3371,9 @@ RectTransform:
   - {fileID: 1382339462}
   - {fileID: 1185626249}
   - {fileID: 876407277}
+  - {fileID: 761242970}
   - {fileID: 622523089}
   - {fileID: 894158885}
-  - {fileID: 761242970}
   - {fileID: 1436120417}
   m_Father: {fileID: 0}
   m_RootOrder: 5

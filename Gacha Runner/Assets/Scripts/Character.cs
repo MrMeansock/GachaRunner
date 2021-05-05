@@ -49,6 +49,10 @@ public class Character : MonoBehaviour
     protected float jumpStrength = 500.0f;
     protected float jumpRayLength = 1.0f;
 
+    // Sound
+    protected SFXCollection sfxCollection;
+    protected SoundManager soundManager;
+
     //Effect boost
     protected float speedBoost = 1.0f;
     public float SpeedBoost
@@ -71,6 +75,11 @@ public class Character : MonoBehaviour
     [SerializeField]
     private GotchaGuys.GameRectangle.MakeRectanglePreviews rectPreview = null;
 
+    private void Awake()
+    {
+        sfxCollection = FindObjectOfType<SFXCollection>();
+        soundManager = FindObjectOfType<SoundManager>();
+    }
 
     // Start is called before the first frame update
     virtual protected void Start()
@@ -266,6 +275,7 @@ public class Character : MonoBehaviour
                 }
                 if (health <= 0)
                 {
+                    soundManager.PlaySFX(sfxCollection.playerDeath);
                     // Handle player death
                     OnDeath?.Invoke();
                     gm.GameOver();

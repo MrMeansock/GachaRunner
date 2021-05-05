@@ -6,6 +6,15 @@ public class GachaCoin : MonoBehaviour
     public static event Action<GachaCoin> OnGachaCoinCollected;
     private float lifeTime = 0.0f;
 
+    private SFXCollection sfxCollection;
+    private SoundManager soundManager;
+
+    private void Awake()
+    {
+        sfxCollection = FindObjectOfType<SFXCollection>();
+        soundManager = FindObjectOfType<SoundManager>();
+    }
+
     private void Update()
     {
         if (lifeTime >= 10.0f)
@@ -20,6 +29,7 @@ public class GachaCoin : MonoBehaviour
         if (collision.tag == "Player")
         {
             Collect();
+            soundManager.PlaySFX(sfxCollection.coinCollect);
         }
     }
 

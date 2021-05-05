@@ -230,6 +230,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonClick: {fileID: 8300000, guid: 58a44f0da96c13c448b64527789097cf, type: 3}
   rarityUp: {fileID: 8300000, guid: 16e49c77494d2ca46bc707edd35cb2c0, type: 3}
+  missileHit: {fileID: 8300000, guid: 08bba05b8bde769459008ed0a7f84430, type: 3}
+  playerDeath: {fileID: 8300000, guid: bbed7a673c5548948ab8707c73e6739f, type: 3}
+  coinCollect: {fileID: 8300000, guid: 13b5ab4cea30d8b47bab37d18e02a8d4, type: 3}
 --- !u!1 &7034954029499374075
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,6 +481,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuThemeIntro: {fileID: 8300000, guid: 3038c4ab41ab1dd44831dfb589848269, type: 3}
-  menuThemeLoop: {fileID: 8300000, guid: 207d704e56d96ac4aa4d4111ba83356e, type: 3}
+  menuThemeLoop: {fileID: 8300000, guid: 6da93d9fac00bca46a68489121fcc44b, type: 3}
   shopTheme: {fileID: 8300000, guid: 19740ce070c42944a8ee28fc2dde8c50, type: 3}
   runTheme: {fileID: 8300000, guid: abf7578b2dd00f6448ba932d38167552, type: 3}

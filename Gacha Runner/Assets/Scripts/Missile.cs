@@ -13,6 +13,16 @@ public class Missile : MonoBehaviour
     private float wiggleStrength = 10.0f;
     private float perlinMult = 2.5f;
 
+    // Sound
+    private SFXCollection sfxCollection;
+    private SoundManager soundManager;
+
+    private void Awake()
+    {
+        sfxCollection = FindObjectOfType<SFXCollection>();
+        soundManager = FindObjectOfType<SoundManager>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,6 +72,7 @@ public class Missile : MonoBehaviour
             //Player has been hit
             collision.GetComponent<Character>().TakeDamage(true);
             GameObject.Destroy(gameObject);
+            soundManager.PlaySFX(sfxCollection.missileHit);
         }
         if (collision.TryGetComponent<Rectangle>(out Rectangle rectangle))
         {
