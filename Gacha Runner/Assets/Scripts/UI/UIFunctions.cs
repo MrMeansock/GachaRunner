@@ -10,7 +10,7 @@ public class UIFunctions : MonoBehaviour
     {
         soundManager = FindObjectOfType<SoundManager>();
         sfxCollection = FindObjectOfType<SFXCollection>();
-        volumeManager = FindObjectOfType<VolumeManager>();
+        // volumeManager = FindObjectOfType<VolumeManager>();
     }
 
     #region Sound
@@ -26,27 +26,27 @@ public class UIFunctions : MonoBehaviour
 
     public void SetMasterVolume(float volume)
     {
-        volumeManager.MasterVolume = volume;
+        FindObjectOfType<VolumeManager>().MasterVolume = volume;
     }
 
     public void SetMusicVolume(float volume)
     {
-        volumeManager.MusicVolume = volume;
+        FindObjectOfType<VolumeManager>().MusicVolume = volume;
     }
 
     public void SetSFXVolume(float volume)
     {
-        volumeManager.SFXVolume = volume;
+        FindObjectOfType<VolumeManager>().SFXVolume = volume;
     }
 
     public void SetMusicMute(bool mute)
     {
-        volumeManager.SetMusicMute(mute);
+        FindObjectOfType<VolumeManager>().SetMusicMute(mute);
     }
 
     public void SetSFXMute(bool mute)
     {
-        volumeManager.SetSFXMute(mute);
+        FindObjectOfType<VolumeManager>().SetSFXMute(mute);
     }
 
     #endregion

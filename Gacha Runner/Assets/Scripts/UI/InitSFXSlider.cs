@@ -10,11 +10,11 @@ public class InitSFXSlider : MonoBehaviour
     private void Awake()
     {
         slider = GetComponent<Slider>();
-        volumeManager = FindObjectOfType<VolumeManager>();
     }
 
     void Start()
     {
+        volumeManager = FindObjectOfType<VolumeManager>();
         slider.value = volumeManager.SFXVolume;
     }
 }
