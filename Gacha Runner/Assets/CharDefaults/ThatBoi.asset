@@ -10,18 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67b9854b4e3864441ad3b085024f056f, type: 3}
-  m_Name: Terry 1
+  m_Name: ThatBoi
   m_EditorClassIdentifier: 
-  name: Terry
+  name: ThatBoi
   level: 0
-  rarity: 1
-  mainSprite: {fileID: 21300000, guid: 06868367745d6b444a6330ecbc107c0f, type: 3}
-  baseSpeed: 5
+  rarity: 2
+  mainSprite: {fileID: -5809546008263616053, guid: 663efdbaf80f92f499a5a783777c5dc9,
+    type: 3}
+  baseSpeed: 6
   baseJump: 500
   baseHealth: 2
   invisFrames: 0.5
-  downSlopeSpeed: 10
+  downSlopeSpeed: 12
   upSlopeSpeed: 4
-  maxPlatformLength: 8.5
+  maxPlatformLength: 8
   platformCooldown: 1
   powerID: 1
