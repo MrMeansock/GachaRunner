@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67b9854b4e3864441ad3b085024f056f, type: 3}
+  m_Name: Terry 1
+  m_EditorClassIdentifier: 
+  name: Terry
+  level: 0
+  rarity: 1
+  mainSprite: {fileID: 21300000, guid: 06868367745d6b444a6330ecbc107c0f, type: 3}
+  baseSpeed: 5
+  baseJump: 500
+  baseHealth: 2
+  invisFrames: 0.5
+  downSlopeSpeed: 10
+  upSlopeSpeed: 4
+  maxPlatformLength: 8.5
+  platformCooldown: 1
+  powerID: 1

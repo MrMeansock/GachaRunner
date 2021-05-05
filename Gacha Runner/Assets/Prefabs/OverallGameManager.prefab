@@ -67,5 +67,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9c4b800ef982afb4393b934dc4c6f85d, type: 2}
   - {fileID: 11400000, guid: 28c6548b19abce645a16d769f793cab7, type: 2}
   - {fileID: 11400000, guid: 5b96e5814c9bc5745a9095f135209d2d, type: 2}
+  - {fileID: 11400000, guid: 43467bafdd166a04d88c7ab62c57d51b, type: 2}
+  - {fileID: 11400000, guid: eaf10920226ebdf4daecb6926bbec322, type: 2}
+  - {fileID: 11400000, guid: f344b797881d5c14ba122277ba72a44f, type: 2}
+  - {fileID: 11400000, guid: 9da1c0c2176dbaf459e31852e72ec5f9, type: 2}
+  - {fileID: 11400000, guid: 5ba8be32be6c8ad4883f14bc987c8f43, type: 2}
+  - {fileID: 11400000, guid: ab49cea5b7e63434ca72961406611c91, type: 2}
   userCharacters: []
   selectedCharacter: 0
