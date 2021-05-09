@@ -96,8 +96,6 @@ public class Character : MonoBehaviour
             healthArea.transform.GetChild(i).gameObject.SetActive(false);
         }
 
-        activeAbilities.SetActiveSkill(SkillType.ClearMissiles);
-
         //Assign Values from selected character
         if (GameObject.Find("OverallGameManager") != null)
             GetCharValues();
@@ -120,6 +118,7 @@ public class Character : MonoBehaviour
         rectPreview.MaxLength = selectedCharacter.MaxPlatformLength;
         rectPreview.Cooldown = selectedCharacter.PlatformCooldown;
         this.powerID = selectedCharacter.PowerID;
+        activeAbilities.SetActiveSkill((SkillType)powerID);
     }
 
     // Update is called once per frame
