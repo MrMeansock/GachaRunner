@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Gold Brain
   level: 0
   rarity: 3
-  mainSprite: {fileID: 5444858826147273094, guid: ef7f004ad627fcf4c86f3e9be8a80f7c,
+  mainSprite: {fileID: 495138163458652773, guid: 8b164398c62aaed429309b37b8f5065b,
     type: 3}
   baseSpeed: 6
   baseJump: 500

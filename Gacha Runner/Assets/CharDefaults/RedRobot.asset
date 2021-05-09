@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Red Robot
   level: 0
   rarity: 3
-  mainSprite: {fileID: 5442043502427055121, guid: f867467db5ffab54586273b2d55c5fab,
+  mainSprite: {fileID: 7961650085479062190, guid: a034963decd057f4f9da9925233de8b1,
     type: 3}
   baseSpeed: 5
   baseJump: 500

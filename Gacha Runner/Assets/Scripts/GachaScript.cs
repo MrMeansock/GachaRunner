@@ -183,7 +183,7 @@ public class GachaScript : MonoBehaviour
             if (charPulled.MainSprite != null)
             {
                 characterSprite.SetActive(true);
-                characterSprite.GetComponent<Image>().sprite = charPulled.MainSprite;
+                characterSprite.GetComponent<Image>().sprite = charPulled.MainSprite.GetComponent<SpriteRenderer>().sprite;
             }
 
             inPull = false;

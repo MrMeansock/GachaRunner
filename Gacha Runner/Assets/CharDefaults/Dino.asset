@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Dino
   level: 0
   rarity: 3
-  mainSprite: {fileID: 5098517551361714147, guid: acfa8ed4bb8b513409481168b027f22a,
+  mainSprite: {fileID: 2301256823682467999, guid: 1e4459365c56d25458f5c46c61722222,
     type: 3}
   baseSpeed: 4
   baseJump: 500

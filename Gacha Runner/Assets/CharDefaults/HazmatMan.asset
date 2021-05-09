@@ -15,7 +15,7 @@ MonoBehaviour:
   name: HazmatMan
   level: 0
   rarity: 2
-  mainSprite: {fileID: -7412260916914596183, guid: cfc05bd040c48bb499f55f812de0e904,
+  mainSprite: {fileID: 2376346893846400212, guid: d05672dbfa01c66459d544e0872ecb13,
     type: 3}
   baseSpeed: 4
   baseJump: 400

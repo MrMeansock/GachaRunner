@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Robot
   level: 0
   rarity: 2
-  mainSprite: {fileID: -4467266811179974332, guid: 1e4271db98e927245afd7dda5620b194,
+  mainSprite: {fileID: 136674010991866635, guid: 295cd546d157b6e478ecec39f6eb7b3f,
     type: 3}
   baseSpeed: 4
   baseJump: 450

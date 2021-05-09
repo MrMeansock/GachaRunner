@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Professor
   level: 0
   rarity: 2
-  mainSprite: {fileID: 7635620058121499215, guid: 5eaf5ab26ddea834193f7a7c13f579e7,
+  mainSprite: {fileID: 4972068544669108684, guid: fbcae3c1b26d98243899187462aa0557,
     type: 3}
   baseSpeed: 4
   baseJump: 500

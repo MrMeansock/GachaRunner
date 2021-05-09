@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Cloud
   level: 0
   rarity: 3
-  mainSprite: {fileID: -3836618114302922999, guid: 6e9357e9f5a0ace4890092b07db64d8a,
+  mainSprite: {fileID: 1160782858963317525, guid: 1e07cca1f88b4534c9812768d44a4aae,
     type: 3}
   baseSpeed: 6
   baseJump: 520

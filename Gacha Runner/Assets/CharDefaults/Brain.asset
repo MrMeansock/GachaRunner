@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Brain
   level: 0
   rarity: 2
-  mainSprite: {fileID: -2702560004363224197, guid: 51fa5160fab21f048b053cfdf23e40d0,
+  mainSprite: {fileID: 7303904848768336092, guid: 74e62b32f85d3d14995265fdd59ee005,
     type: 3}
   baseSpeed: 5
   baseJump: 520

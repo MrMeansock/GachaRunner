@@ -8,7 +8,7 @@ public class CharStats : ScriptableObject
     public new string name;
     public int level;
     public int rarity;
-    public Sprite mainSprite;
+    public GameObject mainSprite;
     //Movement
     public float baseSpeed;
     public float baseJump;

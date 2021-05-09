@@ -15,8 +15,8 @@ public class CharacterBase
     private int rarity;
     public int Rarity => rarity;
     [SerializeField]
-    private Sprite mainSprite;
-    public Sprite MainSprite => mainSprite;
+    private GameObject mainSprite;
+    public GameObject MainSprite => mainSprite;
 
     //Movement
     [SerializeField]

@@ -6,7 +6,6 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     protected Rigidbody2D rb;
-    [SerializeField]
     protected GameObject body;
     protected GameManager gm;
     protected ActiveAbilities activeAbilities;
@@ -106,7 +105,9 @@ public class Character : MonoBehaviour
     {
         GameObject OGM = GameObject.Find("OverallGameManager").gameObject;
         selectedCharacter = OGM.GetComponent<CharacterManager>().userCharacters[OGM.GetComponent<CharacterManager>().selectedCharacter];
-        this.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = selectedCharacter.MainSprite;
+        Destroy(this.gameObject.transform.GetChild(0).gameObject);
+        body = Instantiate(selectedCharacter.MainSprite, transform.position, Quaternion.identity, transform);
+        //this.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = selectedCharacter.MainSprite;
        
         this.speed = selectedCharacter.BaseSpeed;
         this.jumpStrength = selectedCharacter.BaseJump;
