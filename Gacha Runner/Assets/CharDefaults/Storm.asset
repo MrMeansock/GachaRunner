@@ -25,4 +25,4 @@ MonoBehaviour:
   upSlopeSpeed: 6
   maxPlatformLength: 8.2
   platformCooldown: 0.9
-  powerID: 1
+  powerID: 0

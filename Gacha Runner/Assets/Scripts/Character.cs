@@ -120,7 +120,6 @@ public class Character : MonoBehaviour
         rectPreview.MaxLength = selectedCharacter.MaxPlatformLength;
         rectPreview.Cooldown = selectedCharacter.PlatformCooldown;
         this.powerID = selectedCharacter.PowerID;
-
     }
 
     // Update is called once per frame
