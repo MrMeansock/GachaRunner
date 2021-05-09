@@ -53,7 +53,7 @@ public class CharacterManager : MonoBehaviour
                     {
                         if(ch.Name == charToAdd.Name)
                         {
-                            return null;
+                            return charToAdd;
                         }
                     }
                     userCharacters.Add(charToAdd);
