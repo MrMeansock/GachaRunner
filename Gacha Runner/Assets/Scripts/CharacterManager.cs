@@ -49,6 +49,13 @@ public class CharacterManager : MonoBehaviour
                 if(baseCharacters[i].rarity == r)
                 {
                     CharacterBase charToAdd = new CharacterBase(baseCharacters[i]);
+                    foreach(CharacterBase ch in userCharacters)
+                    {
+                        if(ch.Name == charToAdd.Name)
+                        {
+                            return null;
+                        }
+                    }
                     userCharacters.Add(charToAdd);
                     this.GetComponent<SaveManager>().Save();
                     return charToAdd;
