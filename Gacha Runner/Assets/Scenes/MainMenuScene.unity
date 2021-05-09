@@ -7633,8 +7633,8 @@ MonoBehaviour:
   totalPulls: 0
   inPull: 0
   cost: 10
-  SR_Rate: 10
-  R_Rate: 30
+  SR_Rate: 5
+  R_Rate: 20
   C_Rate: 100
 --- !u!114 &1610965009636936508
 MonoBehaviour:
